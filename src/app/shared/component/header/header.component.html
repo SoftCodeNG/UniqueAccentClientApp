@@ -1,0 +1,19 @@
+<header class="bg-light sticky-top">
+
+  <img src="../assets/UACLLogo.png" alt="UACL"/>
+  <div class="menu">
+    <div class="mobilMenuTrigger">
+      <button (click)="toggleMenu()">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+    <div id="overlay" class="overlay" (click)="toggleMenu()"></div>
+    <nav id="navBar" class="navbar">
+      <span routerLink="/" routerLinkActive="active">Home</span>
+      <span>Services</span>
+      <span>Courses</span>
+      <span>Training</span>
+      <span class="upcomingTraining">Upcoming Training</span>
+    </nav>
+  </div>
+</header>

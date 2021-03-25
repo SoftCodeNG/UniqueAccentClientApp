@@ -1,0 +1,251 @@
+.row1 {
+  width: 100%;
+  min-height: calc(100vh - 80px);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  > div {
+    width: 50%;
+
+    @media (max-width: 700px) {
+      width: 100%;
+    }
+
+    &:first-child {
+      padding: 10px 5vw;
+      .introText {
+        font-family: 'Philosopher', sans-serif;
+        font-size: 4vw;
+        font-weight: 700;
+        @media (max-width: 700px) {
+          font-size: 40px;
+        }
+      }
+
+      .subIntro {
+        margin-top: 20px;
+        font-size: 2vw;
+        @media (max-width: 700px) {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+
+.row2 {
+  background: #e2e2e2;
+  padding: 4vw;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+
+  h1 {
+    text-align: center;
+    font-family: 'Philosopher', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 30px 0;
+  }
+  .serviceList {
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+    justify-content: center;
+    cursor: pointer;
+
+    .service {
+      min-width: 250px;
+      width: 20vw;
+      padding: 5vh 20px;
+      box-shadow: 0 0 4px 1px white;
+      transition: box-shadow linear 200ms;
+      &:hover {
+        box-shadow: 0 0 20px 10px white;
+        transition: box-shadow linear 200ms;
+      }
+
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+        margin: auto;
+      }
+
+      .title {
+        font-size: 1.6vw;
+        font-weight: 600;
+        text-align: center;
+        margin: 10px 0;
+      }
+
+      .description {
+        font-size: 1rem;
+        text-align: center;
+
+        span {
+          display: block;
+          margin: 10px;
+        }
+
+        .readMore {
+          border-radius: 10px;
+          padding: 5px 10px;
+          background: #9d9d9d;
+          width: fit-content;
+          margin: auto;
+          box-shadow: 0 0 5px black;
+        }
+      }
+    }
+  }
+}
+
+.row3 {
+  padding: 4vw;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  h1 {
+    text-align: center;
+    font-family: 'Philosopher', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 30px 0;
+  }
+
+  img {
+    width: 100%;
+    max-width: 550px;
+    height: auto;
+    display: block;
+    margin: auto
+  }
+
+  .title {
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .subTitle {
+    text-align: center;
+    font-size: 1.2em;
+    color: #FF6600;
+    font-weight: 900;
+    margin: 10px 0;
+  }
+
+  .description {
+    margin: 30px 0;
+    line-height: 30px;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+
+    .learnMore {
+      border: none;
+      border-radius: 10px;
+      padding: 10px 20px;
+      background: #111111;
+      color: white;
+      box-shadow: 0 0 5px black;
+      cursor: pointer;
+    }
+
+    .actionButton {
+      border: none;
+      border-radius: 10px;
+      padding: 10px 20px;
+      background: #FF6600;
+      box-shadow: 0 0 5px black;
+      cursor: pointer;
+      font-weight: 900;
+    }
+  }
+}
+
+.row4 {
+  background: #e2e2e2;
+  padding: 4vw 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+
+  h1 {
+    text-align: center;
+    font-family: 'Philosopher', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 30px 0;
+  }
+
+  > div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    > div {
+      iframe {
+        height: 70vh;
+        max-width: 100%;
+        margin: 5px;
+        display: block;
+        transition: box-shadow linear 200ms;
+
+        &:hover {
+          box-shadow: 0 0 20px white;
+          transition: box-shadow linear 200ms;
+        }
+      }
+
+      div {
+        text-align: center;
+        font-weight: 900;
+        font-size: 1.1em;
+      }
+    }
+  }
+}
+
+.row5 {
+  position: relative;
+
+  h1 {
+    font-family: 'Philosopher', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 10px 0;
+    padding: 0 20px;
+  }
+
+  .coach {
+    margin-top: 50px;
+    max-width: 300px;
+    height: 85vh;
+  }
+
+  div {
+    padding: 0 20px;
+    font-size: 1.2em;
+    font-weight: 700;
+  }
+  .courses {
+    img {
+      width: 90%;
+      height: auto;
+      margin: 5%;
+    }
+  }
+}
