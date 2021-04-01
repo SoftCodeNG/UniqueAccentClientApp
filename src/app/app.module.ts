@@ -9,11 +9,17 @@ import {SharedModule} from './shared/shared.module';
 import {MatIconModule} from '@angular/material/icon';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {DragScrollModule} from 'ngx-drag-scroll';
+import { CoursesComponent } from './pages/courses/courses.component';
+import { ServicesComponent } from './pages/services/services.component';
+import { CourseDetailsComponent } from './pages/courses/course-details/course-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingPageComponent,
+    CoursesComponent,
+    ServicesComponent,
+    CourseDetailsComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,18 @@
+.mainDiv {
+  margin: 20px;
+
+  > :first-child {
+    display: flex;
+  //justify-content: space-between;
+    background: #FF6600;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 0 5px #FF6600;
+    height: 400px;
+    width: 400px;
+  }
+
+  :last-child {
+    //height: 400px;
+  }
+}
