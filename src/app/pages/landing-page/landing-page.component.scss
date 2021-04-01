@@ -4,6 +4,11 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  background: url('../../../assets/landingPage/bg1.png') no-repeat;
+  @media (orientation: portrait) {
+    min-height: min-content;
+    padding: 50px 0;
+  }
 
   > div {
     width: 50%;
@@ -42,6 +47,9 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  @media (max-width: 617px) {
+    min-height: max-content;
+  }
 
 
   h1 {
@@ -57,6 +65,9 @@
     flex-wrap: wrap;
     justify-content: center;
     cursor: pointer;
+    @media (max-width: 617px) {
+      display: none;
+    }
 
     .service {
       min-width: 250px;
@@ -101,6 +112,58 @@
           box-shadow: 0 0 5px black;
         }
       }
+
+
+      @media (max-width: 701px) {
+        .title {
+          font-size: 1.2em;
+        }
+        .description {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .serviceListAccordion {
+    display: none;
+    @media (max-width: 617px) {
+      display: block;
+    }
+
+    .title {
+      font-size: 1.5em;
+      font-weight: 900;
+      font-family: 'Philosopher', sans-serif;
+      text-align: center;
+      margin: 10px 0;
+    }
+
+    .description {
+      font-size: 1.4em;
+      text-align: center;
+      line-height: 40px;
+
+      span {
+        display: block;
+        margin: 10px;
+      }
+
+      .readMore {
+        border-radius: 10px;
+        padding: 5px 20px;
+        background: #9d9d9d;
+        width: fit-content;
+        margin: auto;
+        box-shadow: 0 0 5px black;
+      }
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin: auto;
     }
   }
 }
@@ -246,6 +309,30 @@
       width: 90%;
       height: auto;
       margin: 5%;
+      cursor: pointer;
     }
+  }
+}
+
+
+.row6 {
+  width: 100%;
+  height: 300px;
+
+  .carousel-item {
+    display: flex;
+    //justify-content: center;
+    //align-items: center;
+    height: 100%;
+
+    //drag-scroll {
+    //  height: 100%;
+    //  width: 50%;
+    //}
+    //img {
+    //  height: 150px;
+    //  width: auto;
+    //  margin: 20px;
+    //}
   }
 }
