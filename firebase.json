@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/unique-accent",
+    "public": "dist/UniqueAccent",
     "ignore": [
       "firebase.json",
       "**/.*",
