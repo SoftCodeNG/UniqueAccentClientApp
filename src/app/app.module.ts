@@ -12,6 +12,9 @@ import {DragScrollModule} from 'ngx-drag-scroll';
 import { CoursesComponent } from './pages/courses/courses.component';
 import { ServicesComponent } from './pages/services/services.component';
 import { CourseDetailsComponent } from './pages/courses/course-details/course-details.component';
+import { CourseDetails2Component } from './pages/courses/course-details2/course-details2.component';
+import { CourseDetails3Component } from './pages/courses/course-details3/course-details3.component';
+import { CourseDetails4Component } from './pages/courses/course-details4/course-details4.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +23,9 @@ import { CourseDetailsComponent } from './pages/courses/course-details/course-de
     CoursesComponent,
     ServicesComponent,
     CourseDetailsComponent,
+    CourseDetails2Component,
+    CourseDetails3Component,
+    CourseDetails4Component,
   ],
   imports: [
     BrowserModule,
