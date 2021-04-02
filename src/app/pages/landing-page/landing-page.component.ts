@@ -1,5 +1,5 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {DragScrollComponent} from "ngx-drag-scroll";
+import {DragScrollComponent} from 'ngx-drag-scroll';
 import * as mdb from 'mdb-ui-kit'; // lib
 
 

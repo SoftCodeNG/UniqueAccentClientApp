@@ -11,13 +11,13 @@
 
     <div>
       <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
-        </div>
+<!--        <div class="carousel-indicators">-->
+<!--          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>-->
+<!--          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>-->
+<!--          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>-->
+<!--          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>-->
+<!--          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>-->
+<!--        </div>-->
         <div class="carousel-inner">
           <div class="carousel-item active">
             <img src="../../../assets/landingPage/slide1.jpeg" class="d-block w-100" alt="...">
@@ -50,7 +50,7 @@
   <div class="row2">
     <h1>Our Services</h1>
     <div class="serviceList">
-      <div class="service">
+      <div class="service" routerLink="services/service-details">
         <img src="../../../assets/services/dictionTraining.jpeg" alt=""/>
         <div class="title">Diction Training</div>
         <div class="description">
@@ -59,7 +59,7 @@
         </div>
       </div>
 
-      <div class="service">
+      <div class="service" routerLink="services/service-details2">
         <img src="../../../assets/services/publicSpeaking.jpeg" alt=""/>
         <div class="title">Public Speaking</div>
         <div class="description">
@@ -68,7 +68,7 @@
         </div>
       </div>
 
-      <div class="service">
+      <div class="service" routerLink="services/service-details3">
         <img src="../../../assets/services/onlineChildrenHub.jpeg" alt=""/>
         <div class="title">Children Hub</div>
         <div class="description">
@@ -77,7 +77,7 @@
         </div>
       </div>
 
-      <div class="service">
+      <div class="service" routerLink="services/service-details4">
         <img src="../../../assets/services/customerServiceTraining.jpeg" alt=""/>
         <div class="title">Customer Service</div>
         <div class="description">
@@ -255,235 +255,235 @@
     </div>
   </div>
 
-  <div class="row6">
-    <h1>Our Clients</h1>
-    <div>
-      <!-- Carousel wrapper -->
-      <div
-        id="carouselMultiItemExample"
-        class="carousel slide carousel-dark text-center"
-        data-mdb-ride="carousel"
-      >
-        <!-- Controls -->
-        <div class="d-flex justify-content-center mb-4">
-          <button
-            class="carousel-control-prev position-relative"
-            type="button"
-            data-mdb-target="#carouselMultiItemExample"
-            data-mdb-slide="prev"
-          >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button
-            class="carousel-control-next position-relative"
-            type="button"
-            data-mdb-target="#carouselMultiItemExample"
-            data-mdb-slide="next"
-          >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div>
-        <!-- Inner -->
-        <div class="carousel-inner py-4">
-          <!-- Single item -->
-          <div class="carousel-item active">
-            <div class="container">
-              <div class="row">
-                <div class="col-lg-4">
-                  <div class="card">
-                    <img
-                      src="https://mdbootstrap.com/img/new/standard/nature/181.jpg"
-                      class="card-img-top"
-                      alt="..."
-                    />
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">
-                        Some quick example text to build on the card title and make up the bulk
-                        of the card's content.
-                      </p>
-                      <a href="#!" class="btn btn-primary">Button</a>
-                    </div>
-                  </div>
-                </div>
+<!--  <div class="row6">-->
+<!--    <h1>Our Clients</h1>-->
+<!--    <div>-->
+<!--      &lt;!&ndash; Carousel wrapper &ndash;&gt;-->
+<!--      <div-->
+<!--        id="carouselMultiItemExample"-->
+<!--        class="carousel slide carousel-dark text-center"-->
+<!--        data-mdb-ride="carousel"-->
+<!--      >-->
+<!--        &lt;!&ndash; Controls &ndash;&gt;-->
+<!--        <div class="d-flex justify-content-center mb-4">-->
+<!--          <button-->
+<!--            class="carousel-control-prev position-relative"-->
+<!--            type="button"-->
+<!--            data-mdb-target="#carouselMultiItemExample"-->
+<!--            data-mdb-slide="prev"-->
+<!--          >-->
+<!--            <span class="carousel-control-prev-icon" aria-hidden="true"></span>-->
+<!--            <span class="visually-hidden">Previous</span>-->
+<!--          </button>-->
+<!--          <button-->
+<!--            class="carousel-control-next position-relative"-->
+<!--            type="button"-->
+<!--            data-mdb-target="#carouselMultiItemExample"-->
+<!--            data-mdb-slide="next"-->
+<!--          >-->
+<!--            <span class="carousel-control-next-icon" aria-hidden="true"></span>-->
+<!--            <span class="visually-hidden">Next</span>-->
+<!--          </button>-->
+<!--        </div>-->
+<!--        &lt;!&ndash; Inner &ndash;&gt;-->
+<!--        <div class="carousel-inner py-4">-->
+<!--          &lt;!&ndash; Single item &ndash;&gt;-->
+<!--          <div class="carousel-item active">-->
+<!--            <div class="container">-->
+<!--              <div class="row">-->
+<!--                <div class="col-lg-4">-->
+<!--                  <div class="card">-->
+<!--                    <img-->
+<!--                      src="https://mdbootstrap.com/img/new/standard/nature/181.jpg"-->
+<!--                      class="card-img-top"-->
+<!--                      alt="..."-->
+<!--                    />-->
+<!--                    <div class="card-body">-->
+<!--                      <h5 class="card-title">Card title</h5>-->
+<!--                      <p class="card-text">-->
+<!--                        Some quick example text to build on the card title and make up the bulk-->
+<!--                        of the card's content.-->
+<!--                      </p>-->
+<!--                      <a href="#!" class="btn btn-primary">Button</a>-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                </div>-->
 
-                <div class="col-lg-4 d-none d-lg-block">
-                  <div class="card">
-                    <img
-                      src="https://mdbootstrap.com/img/new/standard/nature/182.jpg"
-                      class="card-img-top"
-                      alt="..."
-                    />
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">
-                        Some quick example text to build on the card title and make up the bulk
-                        of the card's content.
-                      </p>
-                      <a href="#!" class="btn btn-primary">Button</a>
-                    </div>
-                  </div>
-                </div>
+<!--                <div class="col-lg-4 d-none d-lg-block">-->
+<!--                  <div class="card">-->
+<!--                    <img-->
+<!--                      src="https://mdbootstrap.com/img/new/standard/nature/182.jpg"-->
+<!--                      class="card-img-top"-->
+<!--                      alt="..."-->
+<!--                    />-->
+<!--                    <div class="card-body">-->
+<!--                      <h5 class="card-title">Card title</h5>-->
+<!--                      <p class="card-text">-->
+<!--                        Some quick example text to build on the card title and make up the bulk-->
+<!--                        of the card's content.-->
+<!--                      </p>-->
+<!--                      <a href="#!" class="btn btn-primary">Button</a>-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                </div>-->
 
-                <div class="col-lg-4 d-none d-lg-block">
-                  <div class="card">
-                    <img
-                      src="https://mdbootstrap.com/img/new/standard/nature/183.jpg"
-                      class="card-img-top"
-                      alt="..."
-                    />
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">
-                        Some quick example text to build on the card title and make up the bulk
-                        of the card's content.
-                      </p>
-                      <a href="#!" class="btn btn-primary">Button</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+<!--                <div class="col-lg-4 d-none d-lg-block">-->
+<!--                  <div class="card">-->
+<!--                    <img-->
+<!--                      src="https://mdbootstrap.com/img/new/standard/nature/183.jpg"-->
+<!--                      class="card-img-top"-->
+<!--                      alt="..."-->
+<!--                    />-->
+<!--                    <div class="card-body">-->
+<!--                      <h5 class="card-title">Card title</h5>-->
+<!--                      <p class="card-text">-->
+<!--                        Some quick example text to build on the card title and make up the bulk-->
+<!--                        of the card's content.-->
+<!--                      </p>-->
+<!--                      <a href="#!" class="btn btn-primary">Button</a>-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
 
-          <!-- Single item -->
-          <div class="carousel-item">
-            <div class="container">
-              <div class="row">
-                <div class="col-lg-4 col-md-12">
-                  <div class="card">
-                    <img
-                      src="https://mdbootstrap.com/img/new/standard/nature/184.jpg"
-                      class="card-img-top"
-                      alt="..."
-                    />
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">
-                        Some quick example text to build on the card title and make up the bulk
-                        of the card's content.
-                      </p>
-                      <a href="#!" class="btn btn-primary">Button</a>
-                    </div>
-                  </div>
-                </div>
+<!--          &lt;!&ndash; Single item &ndash;&gt;-->
+<!--          <div class="carousel-item">-->
+<!--            <div class="container">-->
+<!--              <div class="row">-->
+<!--                <div class="col-lg-4 col-md-12">-->
+<!--                  <div class="card">-->
+<!--                    <img-->
+<!--                      src="https://mdbootstrap.com/img/new/standard/nature/184.jpg"-->
+<!--                      class="card-img-top"-->
+<!--                      alt="..."-->
+<!--                    />-->
+<!--                    <div class="card-body">-->
+<!--                      <h5 class="card-title">Card title</h5>-->
+<!--                      <p class="card-text">-->
+<!--                        Some quick example text to build on the card title and make up the bulk-->
+<!--                        of the card's content.-->
+<!--                      </p>-->
+<!--                      <a href="#!" class="btn btn-primary">Button</a>-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                </div>-->
 
-                <div class="col-lg-4 d-none d-lg-block">
-                  <div class="card">
-                    <img
-                      src="https://mdbootstrap.com/img/new/standard/nature/185.jpg"
-                      class="card-img-top"
-                      alt="..."
-                    />
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">
-                        Some quick example text to build on the card title and make up the bulk
-                        of the card's content.
-                      </p>
-                      <a href="#!" class="btn btn-primary">Button</a>
-                    </div>
-                  </div>
-                </div>
+<!--                <div class="col-lg-4 d-none d-lg-block">-->
+<!--                  <div class="card">-->
+<!--                    <img-->
+<!--                      src="https://mdbootstrap.com/img/new/standard/nature/185.jpg"-->
+<!--                      class="card-img-top"-->
+<!--                      alt="..."-->
+<!--                    />-->
+<!--                    <div class="card-body">-->
+<!--                      <h5 class="card-title">Card title</h5>-->
+<!--                      <p class="card-text">-->
+<!--                        Some quick example text to build on the card title and make up the bulk-->
+<!--                        of the card's content.-->
+<!--                      </p>-->
+<!--                      <a href="#!" class="btn btn-primary">Button</a>-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                </div>-->
 
-                <div class="col-lg-4 d-none d-lg-block">
-                  <div class="card">
-                    <img
-                      src="https://mdbootstrap.com/img/new/standard/nature/186.jpg"
-                      class="card-img-top"
-                      alt="..."
-                    />
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">
-                        Some quick example text to build on the card title and make up the bulk
-                        of the card's content.
-                      </p>
-                      <a href="#!" class="btn btn-primary">Button</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+<!--                <div class="col-lg-4 d-none d-lg-block">-->
+<!--                  <div class="card">-->
+<!--                    <img-->
+<!--                      src="https://mdbootstrap.com/img/new/standard/nature/186.jpg"-->
+<!--                      class="card-img-top"-->
+<!--                      alt="..."-->
+<!--                    />-->
+<!--                    <div class="card-body">-->
+<!--                      <h5 class="card-title">Card title</h5>-->
+<!--                      <p class="card-text">-->
+<!--                        Some quick example text to build on the card title and make up the bulk-->
+<!--                        of the card's content.-->
+<!--                      </p>-->
+<!--                      <a href="#!" class="btn btn-primary">Button</a>-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
 
-          <!-- Single item -->
-          <div class="carousel-item">
-            <div class="container">
-              <div class="row">
-                <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
-                  <div class="card">
-                    <img
-                      src="https://mdbootstrap.com/img/new/standard/nature/187.jpg"
-                      class="card-img-top"
-                      alt="..."
-                    />
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">
-                        Some quick example text to build on the card title and make up the bulk
-                        of the card's content.
-                      </p>
-                      <a href="#!" class="btn btn-primary">Button</a>
-                    </div>
-                  </div>
-                </div>
+<!--          &lt;!&ndash; Single item &ndash;&gt;-->
+<!--          <div class="carousel-item">-->
+<!--            <div class="container">-->
+<!--              <div class="row">-->
+<!--                <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">-->
+<!--                  <div class="card">-->
+<!--                    <img-->
+<!--                      src="https://mdbootstrap.com/img/new/standard/nature/187.jpg"-->
+<!--                      class="card-img-top"-->
+<!--                      alt="..."-->
+<!--                    />-->
+<!--                    <div class="card-body">-->
+<!--                      <h5 class="card-title">Card title</h5>-->
+<!--                      <p class="card-text">-->
+<!--                        Some quick example text to build on the card title and make up the bulk-->
+<!--                        of the card's content.-->
+<!--                      </p>-->
+<!--                      <a href="#!" class="btn btn-primary">Button</a>-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                </div>-->
 
-                <div class="col-lg-4 mb-4 mb-lg-0 d-none d-lg-block">
-                  <div class="card">
-                    <img
-                      src="https://mdbootstrap.com/img/new/standard/nature/188.jpg"
-                      class="card-img-top"
-                      alt="..."
-                    />
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">
-                        Some quick example text to build on the card title and make up the bulk
-                        of the card's content.
-                      </p>
-                      <a href="#!" class="btn btn-primary">Button</a>
-                    </div>
-                  </div>
-                </div>
+<!--                <div class="col-lg-4 mb-4 mb-lg-0 d-none d-lg-block">-->
+<!--                  <div class="card">-->
+<!--                    <img-->
+<!--                      src="https://mdbootstrap.com/img/new/standard/nature/188.jpg"-->
+<!--                      class="card-img-top"-->
+<!--                      alt="..."-->
+<!--                    />-->
+<!--                    <div class="card-body">-->
+<!--                      <h5 class="card-title">Card title</h5>-->
+<!--                      <p class="card-text">-->
+<!--                        Some quick example text to build on the card title and make up the bulk-->
+<!--                        of the card's content.-->
+<!--                      </p>-->
+<!--                      <a href="#!" class="btn btn-primary">Button</a>-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                </div>-->
 
-                <div class="col-lg-4 mb-4 mb-lg-0 d-none d-lg-block">
-                  <div class="card">
-                    <img
-                      src="https://mdbootstrap.com/img/new/standard/nature/189.jpg"
-                      class="card-img-top"
-                      alt="..."
-                    />
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">
-                        Some quick example text to build on the card title and make up the bulk
-                        of the card's content.
-                      </p>
-                      <a href="#!" class="btn btn-primary">Button</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Inner -->
-      </div>
-      <!-- Carousel wrapper -->
-<!--      <button (click)="moveLeft()">Prev</button>-->
-<!--      <drag-scroll [scroll-x-wheel-enabled]="true">-->
-<!--        <img drag-scroll-item src="../../../assets/clients/client1.jpeg" alt=""/>-->
-<!--        <img drag-scroll-item src="../../../assets/clients/client2.jpeg" alt=""/>-->
-<!--        <img drag-scroll-item src="../../../assets/clients/client3.jpeg" alt=""/>-->
-<!--        <img drag-scroll-item src="../../../assets/clients/client4.jpeg" alt=""/>-->
-<!--        <img drag-scroll-item src="../../../assets/clients/client5.jpeg" alt=""/>-->
-<!--        <img drag-scroll-item src="../../../assets/clients/client6.jpeg" alt=""/>-->
-<!--        <img drag-scroll-item src="../../../assets/clients/client7.jpeg" alt=""/>-->
-<!--      </drag-scroll>-->
-<!--      <button (click)="moveRight()">Next</button>-->
-    </div>
-  </div>
+<!--                <div class="col-lg-4 mb-4 mb-lg-0 d-none d-lg-block">-->
+<!--                  <div class="card">-->
+<!--                    <img-->
+<!--                      src="https://mdbootstrap.com/img/new/standard/nature/189.jpg"-->
+<!--                      class="card-img-top"-->
+<!--                      alt="..."-->
+<!--                    />-->
+<!--                    <div class="card-body">-->
+<!--                      <h5 class="card-title">Card title</h5>-->
+<!--                      <p class="card-text">-->
+<!--                        Some quick example text to build on the card title and make up the bulk-->
+<!--                        of the card's content.-->
+<!--                      </p>-->
+<!--                      <a href="#!" class="btn btn-primary">Button</a>-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        &lt;!&ndash; Inner &ndash;&gt;-->
+<!--      </div>-->
+<!--      &lt;!&ndash; Carousel wrapper &ndash;&gt;-->
+<!--&lt;!&ndash;      <button (click)="moveLeft()">Prev</button>&ndash;&gt;-->
+<!--&lt;!&ndash;      <drag-scroll [scroll-x-wheel-enabled]="true">&ndash;&gt;-->
+<!--&lt;!&ndash;        <img drag-scroll-item src="../../../assets/clients/client1.jpeg" alt=""/>&ndash;&gt;-->
+<!--&lt;!&ndash;        <img drag-scroll-item src="../../../assets/clients/client2.jpeg" alt=""/>&ndash;&gt;-->
+<!--&lt;!&ndash;        <img drag-scroll-item src="../../../assets/clients/client3.jpeg" alt=""/>&ndash;&gt;-->
+<!--&lt;!&ndash;        <img drag-scroll-item src="../../../assets/clients/client4.jpeg" alt=""/>&ndash;&gt;-->
+<!--&lt;!&ndash;        <img drag-scroll-item src="../../../assets/clients/client5.jpeg" alt=""/>&ndash;&gt;-->
+<!--&lt;!&ndash;        <img drag-scroll-item src="../../../assets/clients/client6.jpeg" alt=""/>&ndash;&gt;-->
+<!--&lt;!&ndash;        <img drag-scroll-item src="../../../assets/clients/client7.jpeg" alt=""/>&ndash;&gt;-->
+<!--&lt;!&ndash;      </drag-scroll>&ndash;&gt;-->
+<!--&lt;!&ndash;      <button (click)="moveRight()">Next</button>&ndash;&gt;-->
+<!--    </div>-->
+<!--  </div>-->
 </main>

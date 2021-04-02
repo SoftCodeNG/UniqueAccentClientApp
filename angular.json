@@ -32,19 +32,13 @@
             ],
             "styles": [
               "src/styles.scss",
-              "bootstrap/dist/css/bootstrap.css",
-              "bootstrap/dist/css/bootstrap-grid.css",
-              "bootstrap/dist/css/bootstrap-reboot.css",
-              "bootstrap/dist/css/bootstrap-utilities.css",
               "@fortawesome/fontawesome-free/css/all.css",
               "@fortawesome/fontawesome-free/css/brands.css",
               "@fortawesome/fontawesome-free/css/regular.css",
               "@fortawesome/fontawesome-free/css/solid.css",
               "@fortawesome/fontawesome-free/css/fontawesome.css"
             ],
-            "scripts": [
-              "bootstrap/dist/js/bootstrap.js"
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
