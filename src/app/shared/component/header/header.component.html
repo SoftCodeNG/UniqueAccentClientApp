@@ -9,10 +9,10 @@
     </div>
     <div id="overlay" class="overlay" (click)="toggleMenu()"></div>
     <nav id="navBar" class="navbar">
-      <span routerLink="/" routerLinkActive="active">Home</span>
-      <span routerLink="services">Services</span>
-      <span routerLink="courses">Courses</span>
-      <span>Training</span>
+      <span routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</span>
+      <span routerLink="/services" routerLinkActive="active">Services</span>
+      <span routerLink="/courses" routerLinkActive="active">Courses</span>
+      <span routerLinkActive="active">Training</span>
       <span class="upcomingTraining">Upcoming Training</span>
     </nav>
   </div>

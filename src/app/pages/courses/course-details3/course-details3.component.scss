@@ -11,12 +11,21 @@
     box-shadow: 0 0 5px #e2e2e2;
     height: 400px;
 
+    @media (max-width: 700px) {
+      flex-flow: column-reverse;
+      height: fit-content;
+    }
+
     > :first-child {
       margin: auto 0;
 
       h1 {
         font-size: 50px;
         font-weight: 700;
+        @media (max-width: 700px) {
+          text-align: center;
+          font-size: 30px;
+        }
       }
 
       button {
@@ -36,6 +45,11 @@
 
     :last-child {
       height: 100%;
+      @media (max-width: 700px) {
+        width: 100%;
+        height: auto;
+        margin: 0;
+      }
     }
   }
 

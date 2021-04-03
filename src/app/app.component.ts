@@ -12,11 +12,26 @@ export class AppComponent implements OnInit{
   }
 
   ngOnInit(): void {
+    self.addEventListener('activate', event => {
+      // event.waitUntil(
+        caches.keys().then(cacheNames => {
+          return Promise.all(
+            cacheNames.filter(cacheName => {
+              // Return true if you want to remove this cache,
+              // but remember that caches are shared across
+              // the whole origin
+            }).map(cacheName => {
+              return caches.delete(cacheName);
+            })
+          );
+        });
+      // );
+    });
+
     this.router.events.subscribe((evt) => {
       if (!(evt instanceof NavigationEnd)) {
         return;
       }
-      console.log('This is cool');
       document.body.scrollTo(0, 0);
     });
   }
