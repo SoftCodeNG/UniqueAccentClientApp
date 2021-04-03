@@ -19,6 +19,10 @@
     align-content: center;
     text-align: center;
 
+    .credit {
+      display: none!important;
+    }
+
     > :first-child {
       display: none;
     }
@@ -30,7 +34,10 @@
 
     > :last-child {
       display: flex !important;
+      flex-direction: column;
       justify-content: center;
+      align-items: center;
+      color: white;
     }
   }
 
@@ -78,6 +85,17 @@
           box-shadow: white 0 0 20px;
         }
       }
+    }
+  }
+
+  .credit {
+    display: block;
+    min-width: 100%;
+    text-align: center;
+    a {
+      cursor: pointer;
+      text-decoration: none;
+      color: white;
     }
   }
 }
