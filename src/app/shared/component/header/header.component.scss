@@ -9,6 +9,7 @@ header {
   img {
     width: 70px;
     height: auto;
+    cursor: pointer;
   }
 
   .menu {
@@ -61,7 +62,7 @@ header {
         border-radius: 10px;
         transition: background-color linear 200ms;
 
-        &:hover {
+        &:hover, &:active, &.active {
           background: gray;
           transition: background-color linear 200ms;
         }
@@ -121,6 +122,7 @@ header {
           }
         }
       }
+
 
       &.show {
         right: 0;
