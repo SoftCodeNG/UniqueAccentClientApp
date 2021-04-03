@@ -10,14 +10,7 @@
     </div>
 
     <div>
-      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-<!--        <div class="carousel-indicators">-->
-<!--          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>-->
-<!--          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>-->
-<!--          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>-->
-<!--          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>-->
-<!--          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>-->
-<!--        </div>-->
+      <div id="carouselExampleControls" class="carousel slide" data-mdb-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
             <img src="../../../assets/landingPage/slide1.jpeg" class="d-block w-100" alt="...">
@@ -35,11 +28,21 @@
             <img src="../../../assets/landingPage/slide5.jpeg" class="d-block w-100" alt="...">
           </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"  data-bs-slide="prev">
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-mdb-target="#carouselExampleControls"
+          data-mdb-slide="prev"
+        >
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"  data-bs-slide="next">
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-mdb-target="#carouselExampleControls"
+          data-mdb-slide="next"
+        >
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
         </button>
@@ -89,7 +92,7 @@
 
     <div class="serviceListAccordion">
       <mat-accordion>
-        <mat-expansion-panel>
+        <mat-expansion-panel expanded>
           <mat-expansion-panel-header>
             <mat-panel-title>
               <div class="title">Diction Training</div>
@@ -141,7 +144,6 @@
           </div>
         </mat-expansion-panel>
 
-
       </mat-accordion>
     </div>
 
@@ -150,7 +152,7 @@
   <div class="row3">
     <h1>Upcoming Events</h1>
     <div>
-      <div id="upcomingEvents" class="carousel slide" data-bs-ride="carousel">
+      <div id="upcomingEvents" class="carousel slide" data-mdb-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
             <div class="row d-block w-100" style="display: flex!important;">
@@ -202,14 +204,22 @@
               </div>
             </div>
           </div>
-
-
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#upcomingEvents"  data-bs-slide="prev">
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-mdb-target="#upcomingEvents"
+          data-mdb-slide="prev"
+        >
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#upcomingEvents"  data-bs-slide="next">
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-mdb-target="#upcomingEvents"
+          data-mdb-slide="next"
+        >
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
         </button>
@@ -219,17 +229,299 @@
 
   <div class="row4">
     <h1>Testimonials</h1>
-    <div>
-      <div>
-        <iframe style="aspect-ratio: 4 / 8" src="https://www.youtube.com/embed/cffrN2THny8?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <div>Gloria</div>
-      </div>
 
-      <div>
-        <iframe style="aspect-ratio: 16 / 9" src="https://www.youtube.com/embed/q2ZJ06gGfv0?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <div>Abigael</div>
-      </div>
-    </div>
+    <mat-tab-group mat-align-tabs="center" dynamicHeight>
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <mat-icon class="example-tab-icon">textsms</mat-icon>
+          Text
+        </ng-template>
+
+        <div class="textTestimonial">
+          <div id="textTestimonial" class="carousel slide" data-mdb-ride="carousel">
+            <div class="carousel-indicators">
+              <button
+                type="button"
+                data-mdb-target="#textTestimonial"
+                data-mdb-slide-to="0"
+                class="active"
+                aria-current="true"
+                aria-label="Slide 1"
+              ></button>
+              <button
+                type="button"
+                data-mdb-target="#textTestimonial"
+                data-mdb-slide-to="1"
+                aria-label="Slide 2"
+              ></button>
+              <button
+                type="button"
+                data-mdb-target="#textTestimonial"
+                data-mdb-slide-to="2"
+                aria-label="Slide 3"
+              ></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                  <div>
+                    <mat-card class="testimonial">
+                      <mat-card-header>
+                        <div mat-card-avatar class="image">
+                          <img src="https://png.pngtree.com/png-vector/20190710/ourlarge/pngtree-user-vector-avatar-png-image_1541962.jpg" alt="">
+                        </div>
+                        <mat-card-title>Shiba Inu</mat-card-title>
+                        <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+                      </mat-card-header>
+                      <mat-card-content>
+                        <p>
+                          The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+                          A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+                          bred for hunting.
+                        </p>
+                      </mat-card-content>
+                    </mat-card>
+
+                    <mat-card class="testimonial">
+                      <mat-card-header>
+                        <div mat-card-avatar class="image">
+                          <img src="https://png.pngtree.com/png-vector/20190710/ourlarge/pngtree-user-vector-avatar-png-image_1541962.jpg" alt="">
+                        </div>
+                        <mat-card-title>Shiba Inu</mat-card-title>
+                        <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+                      </mat-card-header>
+                      <mat-card-content>
+                        <p>
+                          The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+                          A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+                          bred for hunting.
+                        </p>
+                      </mat-card-content>
+                    </mat-card>
+
+                    <mat-card class="testimonial">
+                      <mat-card-header>
+                        <div mat-card-avatar class="image">
+                          <img src="https://png.pngtree.com/png-vector/20190710/ourlarge/pngtree-user-vector-avatar-png-image_1541962.jpg" alt="">
+                        </div>
+                        <mat-card-title>Shiba Inu</mat-card-title>
+                        <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+                      </mat-card-header>
+                      <mat-card-content>
+                        <p>
+                          The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+                          A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+                          bred for hunting.
+                        </p>
+                      </mat-card-content>
+                    </mat-card>
+
+                    <mat-card class="testimonial">
+                      <mat-card-header>
+                        <div mat-card-avatar class="image">
+                          <img src="https://png.pngtree.com/png-vector/20190710/ourlarge/pngtree-user-vector-avatar-png-image_1541962.jpg" alt="">
+                        </div>
+                        <mat-card-title>Shiba Inu</mat-card-title>
+                        <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+                      </mat-card-header>
+                      <mat-card-content>
+                        <p>
+                          The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+                          A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+                          bred for hunting.
+                        </p>
+                      </mat-card-content>
+                    </mat-card>
+
+
+                  </div>
+              </div>
+              <div class="carousel-item">
+                <div>
+                  <mat-card class="testimonial">
+                    <mat-card-header>
+                      <div mat-card-avatar class="image">
+                        <img src="https://png.pngtree.com/png-vector/20190710/ourlarge/pngtree-user-vector-avatar-png-image_1541962.jpg" alt="">
+                      </div>
+                      <mat-card-title>Shiba Inu</mat-card-title>
+                      <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+                    </mat-card-header>
+                    <mat-card-content>
+                      <p>
+                        The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+                        A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+                        bred for hunting.
+                      </p>
+                    </mat-card-content>
+                  </mat-card>
+
+                  <mat-card class="testimonial">
+                    <mat-card-header>
+                      <div mat-card-avatar class="image">
+                        <img src="https://png.pngtree.com/png-vector/20190710/ourlarge/pngtree-user-vector-avatar-png-image_1541962.jpg" alt="">
+                      </div>
+                      <mat-card-title>Shiba Inu</mat-card-title>
+                      <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+                    </mat-card-header>
+                    <mat-card-content>
+                      <p>
+                        The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+                        A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+                        bred for hunting.
+                      </p>
+                    </mat-card-content>
+                  </mat-card>
+
+                  <mat-card class="testimonial">
+                    <mat-card-header>
+                      <div mat-card-avatar class="image">
+                        <img src="https://png.pngtree.com/png-vector/20190710/ourlarge/pngtree-user-vector-avatar-png-image_1541962.jpg" alt="">
+                      </div>
+                      <mat-card-title>Shiba Inu</mat-card-title>
+                      <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+                    </mat-card-header>
+                    <mat-card-content>
+                      <p>
+                        The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+                        A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+                        bred for hunting.
+                      </p>
+                    </mat-card-content>
+                  </mat-card>
+
+                  <mat-card class="testimonial">
+                    <mat-card-header>
+                      <div mat-card-avatar class="image">
+                        <img src="https://png.pngtree.com/png-vector/20190710/ourlarge/pngtree-user-vector-avatar-png-image_1541962.jpg" alt="">
+                      </div>
+                      <mat-card-title>Shiba Inu</mat-card-title>
+                      <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+                    </mat-card-header>
+                    <mat-card-content>
+                      <p>
+                        The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+                        A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+                        bred for hunting.
+                      </p>
+                    </mat-card-content>
+                  </mat-card>
+
+
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div>
+                  <mat-card class="testimonial">
+                    <mat-card-header>
+                      <div mat-card-avatar class="image">
+                        <img src="https://png.pngtree.com/png-vector/20190710/ourlarge/pngtree-user-vector-avatar-png-image_1541962.jpg" alt="">
+                      </div>
+                      <mat-card-title>Shiba Inu</mat-card-title>
+                      <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+                    </mat-card-header>
+                    <mat-card-content>
+                      <p>
+                        The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+                        A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+                        bred for hunting.
+                      </p>
+                    </mat-card-content>
+                  </mat-card>
+
+                  <mat-card class="testimonial">
+                    <mat-card-header>
+                      <div mat-card-avatar class="image">
+                        <img src="https://png.pngtree.com/png-vector/20190710/ourlarge/pngtree-user-vector-avatar-png-image_1541962.jpg" alt="">
+                      </div>
+                      <mat-card-title>Shiba Inu</mat-card-title>
+                      <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+                    </mat-card-header>
+                    <mat-card-content>
+                      <p>
+                        The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+                        A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+                        bred for hunting.
+                      </p>
+                    </mat-card-content>
+                  </mat-card>
+
+                  <mat-card class="testimonial">
+                    <mat-card-header>
+                      <div mat-card-avatar class="image">
+                        <img src="https://png.pngtree.com/png-vector/20190710/ourlarge/pngtree-user-vector-avatar-png-image_1541962.jpg" alt="">
+                      </div>
+                      <mat-card-title>Shiba Inu</mat-card-title>
+                      <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+                    </mat-card-header>
+                    <mat-card-content>
+                      <p>
+                        The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+                        A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+                        bred for hunting.
+                      </p>
+                    </mat-card-content>
+                  </mat-card>
+
+                  <mat-card class="testimonial">
+                    <mat-card-header>
+                      <div mat-card-avatar class="image">
+                        <img src="https://png.pngtree.com/png-vector/20190710/ourlarge/pngtree-user-vector-avatar-png-image_1541962.jpg" alt="">
+                      </div>
+                      <mat-card-title>Shiba Inu</mat-card-title>
+                      <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+                    </mat-card-header>
+                    <mat-card-content>
+                      <p>
+                        The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+                        A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+                        bred for hunting.
+                      </p>
+                    </mat-card-content>
+                  </mat-card>
+
+
+                </div>
+              </div>
+            </div>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-mdb-target="#textTestimonial"
+              data-mdb-slide="prev"
+            >
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-mdb-target="#textTestimonial"
+              data-mdb-slide="next"
+            >
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </mat-tab>
+
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <mat-icon class="example-tab-icon">videocam</mat-icon>
+          Video
+        </ng-template>
+        <div class="videoTestimonial">
+          <div>
+            <iframe style="aspect-ratio: 4 / 8" src="https://www.youtube.com/embed/cffrN2THny8?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div>Gloria</div>
+          </div>
+
+          <div>
+            <iframe style="aspect-ratio: 16 / 9" src="https://www.youtube.com/embed/q2ZJ06gGfv0?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div>Abigael</div>
+          </div>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
   </div>
 
   <div class="row5 row">

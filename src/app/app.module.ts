@@ -22,6 +22,9 @@ import { ServiceDetails4Component } from './pages/services/service-details4/serv
 import { ServiceDetails5Component } from './pages/services/service-details5/service-details5.component';
 import { ServiceDetails6Component } from './pages/services/service-details6/service-details6.component';
 import { ServiceDetails7Component } from './pages/services/service-details7/service-details7.component';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatCardModule} from '@angular/material/card';
+import { LinksComponent } from './pages/links/links.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +43,7 @@ import { ServiceDetails7Component } from './pages/services/service-details7/serv
     ServiceDetails5Component,
     ServiceDetails6Component,
     ServiceDetails7Component,
+    LinksComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,7 +52,9 @@ import { ServiceDetails7Component } from './pages/services/service-details7/serv
     SharedModule,
     MatIconModule,
     MatExpansionModule,
-    DragScrollModule
+    DragScrollModule,
+    MatTabsModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

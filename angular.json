@@ -38,7 +38,9 @@
               "@fortawesome/fontawesome-free/css/solid.css",
               "@fortawesome/fontawesome-free/css/fontawesome.css"
             ],
-            "scripts": []
+            "scripts": [
+              "mdb-ui-kit/js/mdb.min.js"
+            ]
           },
           "configurations": {
             "production": {

@@ -14,11 +14,16 @@ import {ServiceDetails4Component} from './pages/services/service-details4/servic
 import {ServiceDetails5Component} from './pages/services/service-details5/service-details5.component';
 import {ServiceDetails6Component} from './pages/services/service-details6/service-details6.component';
 import {ServiceDetails7Component} from './pages/services/service-details7/service-details7.component';
+import {LinksComponent} from './pages/links/links.component';
 
 const routes: Routes = [
   {
     path: '',
     component: LandingPageComponent
+  },
+  {
+    path: 'links',
+    component: LinksComponent
   },
    {
     path: 'courses',
