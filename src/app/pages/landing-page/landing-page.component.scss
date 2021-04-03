@@ -1,13 +1,13 @@
 .row1 {
   width: 100%;
-  min-height: calc(100vh - 80px);
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   background: url('../../../assets/landingPage/bg1.png') no-repeat;
-  @media (orientation: portrait) {
-    min-height: min-content;
-    padding: 50px 0;
+
+  @media (max-width: 700px) {
+    flex-flow: column-reverse;
+    background: url('../../../assets/landingPage/bg1.png') no-repeat center;
   }
 
   > div {
@@ -22,9 +22,13 @@
       .introText {
         font-family: 'Philosopher', sans-serif;
         font-size: 4vw;
-        font-weight: 700;
+        font-weight: 800;
+        color: #242424;
         @media (max-width: 700px) {
           font-size: 40px;
+        }
+        @media (max-width: 400px) {
+          font-size: 28px;
         }
       }
 
@@ -40,7 +44,7 @@
 }
 
 .row2 {
-  background: #e2e2e2;
+  background: #FF6600;
   padding: 4vw;
   margin: 0;
   min-height: 100vh;
@@ -75,6 +79,8 @@
       padding: 5vh 20px;
       box-shadow: 0 0 4px 1px white;
       transition: box-shadow linear 200ms;
+      background: white;
+      border-radius: 20px;
       &:hover {
         box-shadow: 0 0 20px 10px white;
         transition: box-shadow linear 200ms;
@@ -106,10 +112,11 @@
         .readMore {
           border-radius: 10px;
           padding: 5px 10px;
-          background: #9d9d9d;
+          background: #FF6600;
+          color: black;
           width: fit-content;
           margin: auto;
-          box-shadow: 0 0 5px black;
+          box-shadow: 0 0 5px #FF6600;
         }
       }
 
@@ -152,10 +159,11 @@
       .readMore {
         border-radius: 10px;
         padding: 5px 20px;
-        background: #9d9d9d;
+        background: #FF6600;
+        color: black;
         width: fit-content;
         margin: auto;
-        box-shadow: 0 0 5px black;
+        box-shadow: 0 0 5px #FF6600;
       }
     }
 
@@ -238,12 +246,16 @@
 }
 
 .row4 {
-  background: #e2e2e2;
+  background: #ff6600;
   padding: 4vw 0;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  * {
+    color: black;
+  }
 
 
   h1 {
@@ -254,7 +266,43 @@
     margin: 30px 0;
   }
 
-  > div {
+  .textTestimonial {
+
+    .carousel-inner {
+      padding: 50px 10%;
+
+      .carousel-item {
+        > div {
+          display: flex;
+          flex-wrap: wrap;
+          width: 100%;
+          justify-content: space-between;
+
+          .testimonial {
+            width: 40%;
+            margin: 50px auto;
+
+            @media (max-width: 600px) {
+              width: 100%;
+              margin: 5px auto;
+            }
+
+            .image {
+              width: 60px;
+              height: 60px;
+              overflow: hidden;
+              border-radius: 100%;
+              img {
+                width: 100%;
+                height: auto;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .videoTestimonial {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
