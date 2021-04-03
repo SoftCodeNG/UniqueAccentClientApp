@@ -1,3 +1,10 @@
+.title {
+  font-family: 'Philosopher', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 30px 20px;
+}
+
 .courses {
   background: white;
   margin: 20px;
@@ -19,7 +26,11 @@
 
   .aboutCourse {
     font-weight: bold;
-    font-size: 1.17em;
+    font-size: 1.2em;
+
+    h1 {
+      font-weight: 600;
+    }
   }
 
   > :last-child {
