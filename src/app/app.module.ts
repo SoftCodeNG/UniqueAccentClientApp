@@ -25,6 +25,7 @@ import { ServiceDetails7Component } from './pages/services/service-details7/serv
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatCardModule} from '@angular/material/card';
 import { LinksComponent } from './pages/links/links.component';
+import { AboutComponent } from './pages/about/about.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { LinksComponent } from './pages/links/links.component';
     ServiceDetails6Component,
     ServiceDetails7Component,
     LinksComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,

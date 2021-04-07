@@ -15,6 +15,7 @@ import {ServiceDetails5Component} from './pages/services/service-details5/servic
 import {ServiceDetails6Component} from './pages/services/service-details6/service-details6.component';
 import {ServiceDetails7Component} from './pages/services/service-details7/service-details7.component';
 import {LinksComponent} from './pages/links/links.component';
+import {AboutComponent} from './pages/about/about.component';
 
 const routes: Routes = [
   {
@@ -76,6 +77,10 @@ const routes: Routes = [
    {
     path: 'services/service-details7',
     component: ServiceDetails7Component
+  },
+  {
+    path: 'about',
+    component: AboutComponent
   },
 ];
 
