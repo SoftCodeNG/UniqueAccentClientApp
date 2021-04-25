@@ -25,6 +25,11 @@ import { ServiceDetails7Component } from './pages/services/service-details7/serv
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatCardModule} from '@angular/material/card';
 import { LinksComponent } from './pages/links/links.component';
+import {NgxsModule} from '@ngxs/store';
+import {environment} from '../environments/environment';
+import {AppState} from '../store/app-store/app.state';
+import {NgxsReduxDevtoolsPluginModule} from '@ngxs/devtools-plugin';
+import {NgxsStoragePluginModule} from '@ngxs/storage-plugin';
 
 @NgModule({
   declarations: [
@@ -54,7 +59,12 @@ import { LinksComponent } from './pages/links/links.component';
     MatExpansionModule,
     DragScrollModule,
     MatTabsModule,
-    MatCardModule
+    MatCardModule,
+    NgxsModule.forRoot([AppState], {
+      developmentMode: !environment.production
+    }),
+    NgxsReduxDevtoolsPluginModule.forRoot(),
+    NgxsStoragePluginModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
