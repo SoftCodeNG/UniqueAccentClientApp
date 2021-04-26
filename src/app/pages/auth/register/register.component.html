@@ -6,20 +6,20 @@
     <span>Continue with Google</span>
   </button>
 
-  <form>
+  <form [formGroup]="registerFormData" (ngSubmit)="registerUser()">
     <label class="input">
       <span>Name</span>
-      <input type="text">
+      <input formControlName="name" type="text">
     </label>
 
     <label class="input">
       <span>Email Address</span>
-      <input type="email">
+      <input formControlName="email" type="email">
     </label>
 
     <label class="input">
       <span>Password</span>
-      <input type="password" autocomplete="">
+      <input formControlName="password" type="password" autocomplete="">
     </label>
 
     <button class="signInButton">Register</button>

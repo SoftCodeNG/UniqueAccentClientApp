@@ -1,6 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {DragScrollComponent} from 'ngx-drag-scroll';
-import * as mdb from 'mdb-ui-kit'; // lib
+import {Store} from '@ngxs/store';
+import {SetHeaderVisibility} from '../../store/app-store/app.action'; // lib
 
 
 @Component({
@@ -9,18 +9,10 @@ import * as mdb from 'mdb-ui-kit'; // lib
   styleUrls: ['./landing-page.component.scss']
 })
 export class LandingPageComponent implements OnInit {
-  @ViewChild('nav', {read: DragScrollComponent}) ds: DragScrollComponent;
 
-  constructor() { }
+  constructor(private store: Store) { }
 
   ngOnInit(): void {
-  }
-
-  moveLeft(): void {
-    this.ds.moveLeft();
-  }
-
-  moveRight(): void {
-    this.ds.moveRight();
+    this.store.dispatch(new SetHeaderVisibility('visible'));
   }
 }

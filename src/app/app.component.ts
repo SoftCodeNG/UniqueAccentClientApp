@@ -1,8 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {NavigationEnd, Router} from '@angular/router';
-import {AppState} from '../store/app-store/app.state';
-import {Select} from '@ngxs/store';
+import {Select, Store} from '@ngxs/store';
 import {Observable} from 'rxjs';
+import {AppState} from './store/app-store/app.state';
+import {SetHeaderVisibility} from './store/app-store/app.action';
 
 @Component({
   selector: 'app-root',
@@ -14,11 +15,15 @@ export class AppComponent implements OnInit{
 
   @Select(AppState.getHeaderState) headerState$: Observable<string>;
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private store: Store
+  ) {}
 
   ngOnInit(): void {
     this.alwaysGotoTop();
     this.getCurrentState();
+    this.store.dispatch(new SetHeaderVisibility('visible'));
   }
 
   alwaysGotoTop(): void {
