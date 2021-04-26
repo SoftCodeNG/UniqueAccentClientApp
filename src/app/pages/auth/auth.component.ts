@@ -1,6 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Store} from '@ngxs/store';
-import {SetHeaderVisibility} from '../../../store/app-store/app.action';
+import {SetHeaderVisibility} from '../../store/app-store/app.action';
 
 @Component({
   selector: 'app-auth',

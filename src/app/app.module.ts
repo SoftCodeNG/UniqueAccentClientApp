@@ -27,9 +27,10 @@ import {MatCardModule} from '@angular/material/card';
 import { LinksComponent } from './pages/links/links.component';
 import {NgxsModule} from '@ngxs/store';
 import {environment} from '../environments/environment';
-import {AppState} from '../store/app-store/app.state';
 import {NgxsReduxDevtoolsPluginModule} from '@ngxs/devtools-plugin';
 import {NgxsStoragePluginModule} from '@ngxs/storage-plugin';
+import {HttpClientModule} from '@angular/common/http';
+import {AppState} from './store/app-store/app.state';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import {NgxsStoragePluginModule} from '@ngxs/storage-plugin';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     SharedModule,
     MatIconModule,
     MatExpansionModule,
