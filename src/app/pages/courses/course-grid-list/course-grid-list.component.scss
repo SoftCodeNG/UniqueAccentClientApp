@@ -1,5 +1,4 @@
 .container {
-  height: 800px;
   width: 80%;
   margin: 30px 10%;
   
@@ -33,6 +32,10 @@
       img {
         margin: 0 5px;
       }
+    }
+
+    @media (max-width: 650px) {
+      display: grid;
     }
   }
 
@@ -80,12 +83,32 @@
           height: 10px;
         }
       }
+
+      @media (max-width: 585px) {
+        margin-right: 200px;
+      }
+    }
+
+    @media (max-width: 780px) {
+      width: 600px;
+    }
+
+    @media (max-width: 640px) {
+      width: 520px;
     }
     
   }
 
   .grid-list-col3 > .card {
     width: 32%;
+
+    @media (max-width: 900px) {
+      width: 42%;
+    }
+
+    @media (max-width: 585px) {
+      width: 55%;
+    }
   }
 
 }
