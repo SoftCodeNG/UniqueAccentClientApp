@@ -26,6 +26,12 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatCardModule} from '@angular/material/card';
 import { LinksComponent } from './pages/links/links.component';
 import { AboutComponent } from './pages/about/about.component';
+import {NgxsModule} from '@ngxs/store';
+import {environment} from '../environments/environment';
+import {NgxsReduxDevtoolsPluginModule} from '@ngxs/devtools-plugin';
+import {NgxsStoragePluginModule} from '@ngxs/storage-plugin';
+import {HttpClientModule} from '@angular/common/http';
+import {AppState} from './store/app-store/app.state';
 
 @NgModule({
   declarations: [
@@ -51,12 +57,18 @@ import { AboutComponent } from './pages/about/about.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     SharedModule,
     MatIconModule,
     MatExpansionModule,
     DragScrollModule,
     MatTabsModule,
-    MatCardModule
+    MatCardModule,
+    NgxsModule.forRoot([AppState], {
+      developmentMode: !environment.production
+    }),
+    NgxsReduxDevtoolsPluginModule.forRoot(),
+    NgxsStoragePluginModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
