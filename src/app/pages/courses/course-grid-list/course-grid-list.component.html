@@ -7,125 +7,39 @@
       <img src="/assets/courses/grid.svg" alt="grid">
     </div>
   </section>
-  
+<!--  createdAt: "2021-04-26T20:52:09.481168Z"-->
+<!--description: "SPEAKING IS DIFFERENT FROM COMMUNICATION, You can Speak without communicating and \nthis is what many people do not understand. A lot of People think that speaking with good \ndiction is about faking an accent or rolling your tongue, NO! It is never about rolling your tongue\nor faking an accent, It is about accurate and effective communication such that anyone from \nany part of the world can understand you clearly. This is what a lot of people do not know. As \na Public speaker, A radio/TV presenter, A voice over artiste, Customer service representative"-->
+<!--duration: 7200-->
+<!--id: 1-->
+<!--isPublished: false-->
+<!--lessons: 0-->
+<!--price: "50000.000"-->
+<!--purchases: 0-->
+<!--slug: ""-->
+<!--thumbnail: "https://uniqueaccent.com.ng/assets/courses/course2.jpg"-->
+<!--title: "Accent Polishing Course"-->
+<!--updatedAt: "2021-04-26T20:52:09.899137Z"-->
+<!--video: "https://res.cloudi-->
   <section>
     <div class="grid-list  grid-list-col3">
-      <div class="card">
-        <img src="/assets/courses/course3.jpeg" alt="course image">
-        <h5><strong>Public Speaking Guide</strong></h5>
-        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed quibusdam debitis quisquam, esse dolor dicta
-          c</p>
+      <div class="card" *ngFor="let course of allCourses">
+        <img [src]="course.thumbnail" alt="course image">
+        <h5><strong>{{course.title}}</strong></h5>
+        <div>{{course.description.substr(0, 100)}}</div>
           <div class="course-details">
             <div class="lesson">
               <img src="/assets/courses/calendar-range-fill.svg" alt="lessons">
-              <span>12</span>
+              <span>{{course.lessons}}</span>
             </div>
             <div class="duration">
               <img src="/assets/courses/alarm.svg" alt="lessons">
-              <span>1hr 30mins</span>
+              <span>
+                {{course.duration}}
+<!--                {{course.duration - (60 * (course.duration / 60))}}mins-->
+              </span>
             </div>
             <div class="duration">
-              <span>N10,000</span>
-            </div>
-          </div>
-      </div>
-
-      <div class="card">
-        <img src="/assets/courses/course3.jpeg" alt="course image">
-        <h5><strong>Public Speaking Guide</strong></h5>
-        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed quibusdam debitis quisquam, esse dolor dicta
-          c</p>
-          <div class="course-details">
-            <div class="lesson">
-              <img src="/assets/courses/calendar-range-fill.svg" alt="lessons">
-              <span>12</span>
-            </div>
-            <div class="duration">
-              <img src="/assets/courses/alarm.svg" alt="lessons">
-              <span>1hr 30mins</span>
-            </div>
-            <div class="duration">
-              <span>N10,000</span>
-            </div>
-          </div>
-      </div>
-
-      <div class="card">
-        <img src="/assets/courses/course3.jpeg" alt="course image">
-        <h5><strong>Public Speaking Guide</strong></h5>
-        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed quibusdam debitis quisquam, esse dolor dicta
-          c</p>
-          <div class="course-details">
-            <div class="lesson">
-              <img src="/assets/courses/calendar-range-fill.svg" alt="lessons">
-              <span>12</span>
-            </div>
-            <div class="duration">
-              <img src="/assets/courses/alarm.svg" alt="lessons">
-              <span>1hr 30mins</span>
-            </div>
-            <div class="duration">
-              <span>N10,000</span>
-            </div>
-          </div>
-      </div>
-
-      <div class="card">
-        <img src="/assets/courses/course3.jpeg" alt="course image">
-        <h5><strong>Public Speaking Guide</strong></h5>
-        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed quibusdam debitis quisquam, esse dolor dicta
-          c</p>
-          <div class="course-details">
-            <div class="lesson">
-              <img src="/assets/courses/calendar-range-fill.svg" alt="lessons">
-              <span>12</span>
-            </div>
-            <div class="duration">
-              <img src="/assets/courses/alarm.svg" alt="lessons">
-              <span>1hr 30mins</span>
-            </div>
-            <div class="duration">
-              <span>N10,000</span>
-            </div>
-          </div>
-      </div>
-
-      <div class="card">
-        <img src="/assets/courses/course3.jpeg" alt="course image">
-        <h5><strong>Public Speaking Guide</strong></h5>
-        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed quibusdam debitis quisquam, esse dolor dicta
-          c</p>
-          <div class="course-details">
-            <div class="lesson">
-              <img src="/assets/courses/calendar-range-fill.svg" alt="lessons">
-              <span>12</span>
-            </div>
-            <div class="duration">
-              <img src="/assets/courses/alarm.svg" alt="lessons">
-              <span>1hr 30mins</span>
-            </div>
-            <div class="duration">
-              <span>N10,000</span>
-            </div>
-          </div>
-      </div>
-
-      <div class="card">
-        <img src="/assets/courses/course3.jpeg" alt="course image">
-        <h5><strong>Public Speaking Guide</strong></h5>
-        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed quibusdam debitis quisquam, esse dolor dicta
-          c</p>
-          <div class="course-details">
-            <div class="lesson">
-              <img src="/assets/courses/calendar-range-fill.svg" alt="lessons">
-              <span>12</span>
-            </div>
-            <div class="duration">
-              <img src="/assets/courses/alarm.svg" alt="lessons">
-              <span>1hr 30mins</span>
-            </div>
-            <div class="duration">
-              <span>N10,000</span>
+              <span>{{course.price | currency:'₦'}}</span>
             </div>
           </div>
       </div>

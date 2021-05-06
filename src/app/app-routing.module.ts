@@ -3,15 +3,15 @@ import { RouterModule, Routes } from '@angular/router';
 import {LandingPageComponent} from './pages/landing-page/landing-page.component';
 import {CoursesComponent} from './pages/courses/courses.component';
 import {ServicesComponent} from './pages/services/services.component';
-import {AboutCourseComponent} from './pages/courses/about-course/about-course.component'
+import {AboutCourseComponent} from './pages/courses/about-course/about-course.component';
 import {CourseDetailsComponent} from './pages/courses/course-details/course-details.component';
 import {CourseDetails2Component} from './pages/courses/course-details2/course-details2.component';
 import {CourseDetails3Component} from './pages/courses/course-details3/course-details3.component';
 import {CourseDetails4Component} from './pages/courses/course-details4/course-details4.component';
 import {CourseListComponent} from './pages/courses/course-list/course-list.component';
 import { CourseGridListComponent  } from './pages/courses/course-grid-list/course-grid-list.component';
-import { CourseNotFoundComponent } from "./pages/courses/course-not-found/course-not-found.component";
-import { CourseSectionComponent } from "./pages/courses/course-section/course-section.component";
+import { CourseNotFoundComponent } from './pages/courses/course-not-found/course-not-found.component';
+import { CourseSectionComponent } from './pages/courses/course-section/course-section.component';
 import {ServiceDetailsComponent} from './pages/services/service-details/service-details.component';
 import {ServiceDetails2Component} from './pages/services/service-details2/service-details2.component';
 import {ServiceDetails3Component} from './pages/services/service-details3/service-details3.component';
