@@ -1,0 +1,92 @@
+.container {
+  height: 500px;
+  width: 80%;
+  margin: 30px 10%;
+
+  @media (max-width: 450px) {
+    margin-left: 10px;
+  }
+  
+  .head {
+    display: flex;
+    justify-content: space-between;
+    height: 30px;
+
+    @media (max-width: 450px) {
+      display: grid;
+    }
+
+    .head-utils {
+      display: flex;
+
+      @media (max-width: 340px) {
+        width: 159px;
+      }
+  
+      input {
+        border-radius: 20px;
+        width: 240px;
+        border: 1px solid black;
+        height: 27px;
+        margin: 4px 8px;
+        padding: 2px;
+        background-image: url('/assets/courses/search.svg');
+        background-size: 20px 30px;
+        background-repeat: no-repeat;
+        background-position: right;
+        text-indent: 20px;
+      }
+
+      input:focus {
+        background-image: none;
+        text-indent:0px
+      }
+
+    img {
+      margin: 0 5px;
+    }
+    }
+  }
+
+ .main {
+    width: 100%;
+
+    @media (max-width: 650px) {
+      padding-right: 150px;
+    }
+
+    @media (max-width: 450px) {
+      padding-right: 350px;
+    }
+
+    .details {
+      margin: 50px 30%;
+
+      img {
+        height: 300px;
+
+        @media (max-width: 450px) {
+          padding-right: 400px;
+        }
+
+        @media (max-width: 340px) {
+          width: 200px;
+          padding-right: 0;
+        }
+      }
+
+      h2 {
+        text-align: center;
+        margin-top: 30px;
+
+        @media (max-width: 650px) {
+          width: 300px;
+        }
+
+        @media (max-width: 340px) {
+          width: 250px;
+        }
+      }
+    }
+  }
+}
