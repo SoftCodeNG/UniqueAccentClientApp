@@ -80,6 +80,10 @@ const routes: Routes = [
     component: CourseNotFoundComponent
   },
   {
+    path: 'courses/about-course',
+    component: AboutCourseComponent
+  },
+  {
     path: 'services/service-details',
     component: ServiceDetailsComponent
   },
