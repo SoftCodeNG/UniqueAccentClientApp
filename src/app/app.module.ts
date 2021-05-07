@@ -25,6 +25,7 @@ import { ServiceDetails7Component } from './pages/services/service-details7/serv
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatCardModule} from '@angular/material/card';
 import { LinksComponent } from './pages/links/links.component';
+import { AboutComponent } from './pages/about/about.component';
 import {NgxsModule} from '@ngxs/store';
 import {environment} from '../environments/environment';
 import {NgxsReduxDevtoolsPluginModule} from '@ngxs/devtools-plugin';
@@ -60,6 +61,7 @@ import { CourseNotFoundComponent } from './pages/courses/course-not-found/course
     AboutCourseComponent,
     CourseSectionComponent,
     CourseNotFoundComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,99 +1,56 @@
 <div class="contain">
   <section id="topDiv">
-    <h1>Public Speaking Guide</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint inventore quidem sequi aliquid qui recusandae alias
-      totam debitis velit eum. Possimus odio cupiditate accusantium inventore repudiandae officiis veniam fuga
-      repellendus voluptates ratione cum voluptatum, soluta exercitationem impedit est doloribus nulla voluptatibus
-      provident autem perspiciatis nobis amet rerum reiciendis voluptas. Debitis!</p>
+    <h1>{{courseDetails.title}}</h1>
+    <div>{{courseDetails.description}}</div>
 
-      <div class="btn-btn">
-        <button>Buy Course</button>
-       <button>Continue Learning</button>
-      </div>
+    <div class="btn-btn">
+      <button>Buy Course</button>
+      <button>Continue Learning</button>
+    </div>
   </section>
-
+<!--createdAt: "2021-04-26T20:52:09.481168Z"-->
+<!--description: "SPEAKING IS DIFFERENT FROM COMMUNICATION, You can Speak without communicating and \nthis is what many people do not understand. A lot of People think that speaking with good \ndiction is about faking an accent or rolling your tongue, NO! It is never about rolling your tongue\nor faking an accent, It is about accurate and effective communication such that anyone from \nany part of the world can understand you clearly. This is what a lot of people do not know. As \na Public speaker, A radio/TV presenter, A voice over artiste, Customer service representative"-->
+<!--duration: 7200-->
+<!--id: 36-->
+<!--isPublished: false-->
+<!--lessons: 28-->
+<!--price: "50000.000"-->
+<!--purchases: 0-->
+<!--slug: "accent-polishing-course1619136362.08034"-->
+<!--thumbnail: "https://uniqueaccent.com.ng/assets/courses/course2.jpg"-->
+<!--title: "Accent Polishing Course"-->
+<!--updatedAt: "2021-05-02T13:56:47.893628Z"-->
+<!--video: "https://r-->
   <section>
-      <div class="bottomDiv">
-          <div class="table">
-              <div class="table-row">
-                    <div class="thumbnail">
-                      <h5>Thumbnail</h5>
-                    </div>
-                    <div class="title">
-                      <h5>Title</h5>
-                    </div>
-                    <div class="duration">
-                    <h5>Duration</h5>
-                    </div>
-                </div>  
-              <div class="table-row">
-                    <div class="thumbnail">
-                      <img src="/assets/courses/course3.jpeg" alt="">
-                    </div>
-                    <div class="title">
-                      <h4><strong>Public Speaking Guide</strong></h4>
-                      <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed quibusdam debitis quisquam, esse dolor dicta
-                        c   orrupti nisi laudantium nostrum iste fugiat aliquam reprehenderit natus minima! Enim inventore deleniti nobis
-                        explicabo incidunt esse beatae
-                      </p>
-                    </div>  
-                    <div class="duration">
-                    <span>15hrs 30mins</span>
-                    </div>
-              </div>
-              <div class="table-row">
-                <div class="thumbnail">
-                  <img src="/assets/courses/course3.jpeg" alt="">
-                </div>
-                <div class="title">
-                  <h4><strong>Public Speaking Guide</strong></h4>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed quibusdam debitis quisquam, esse dolor dicta
-                    c   orrupti nisi laudantium nostrum iste fugiat aliquam reprehenderit natus minima! Enim inventore deleniti nobis
-                    explicabo incidunt esse beatae
-                  </p>
-                </div>  
-                <div class="duration">
-                <span>15hrs 30mins</span>
-                </div>
-              </div>
-              <div class="table-row">
-                <div class="thumbnail">
-                  <img src="/assets/courses/course3.jpeg" alt="">
-                </div>
-                <div class="title">
-                  <h4><strong>Public Speaking Guide</strong></h4>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed quibusdam debitis quisquam, esse dolor dicta
-                    c   orrupti nisi laudantium nostrum iste fugiat aliquam reprehenderit natus minima! Enim inventore deleniti nobis
-                    explicabo incidunt esse beatae
-                  </p>
-                </div>  
-                <div class="duration">
-                <span>15hrs 30mins</span>
-                </div>
-              </div>
-              <div class="table-row">
-                <div class="thumbnail">
-                  <img src="/assets/courses/course3.jpeg" alt="">
-                </div>
-                <div class="title">
-                  <h4><strong>Public Speaking Guide</strong></h4>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed quibusdam debitis quisquam, esse dolor dicta
-                    c   orrupti nisi laudantium nostrum iste fugiat aliquam reprehenderit natus minima! Enim inventore deleniti nobis
-                    explicabo incidunt esse beatae
-                  </p>
-                </div>  
-                <div class="duration">
-                <span>15hrs 30mins</span>
-                </div>
-              </div>
-           </div>
-           <div class="video-contain">
-            <img src="/assets/courses/course4.jpeg" alt="video image">
-           </div>
+    <div class="bottomDiv">
+      <div class="table">
+        <div class="table-row">
+          <div class="thumbnail">
+            <h5>Thumbnail</h5>
+          </div>
+          <div class="title">
+            <h5>Title</h5>
+          </div>
+          <div class="duration">
+            <h5>Duration</h5>
+          </div>
+        </div>
+        <div class="table-row" >
+          <div class="thumbnail">
+            <img [src]="courseDetails.thumbnail" alt="">
+          </div>
+          <div class="title">
+            <h4><strong>{{courseDetails.title}}</strong></h4>
+            <div>{{courseDetails.description}}</div>
+          </div>
+          <div class="duration">
+            <span>{{courseDetails.duration}}</span>
+          </div>
+        </div>
       </div>
+      <div class="video-contain">
+        <img [src]="courseDetails.thumbnail" alt="video image">
+      </div>
+    </div>
   </section>
 </div>
