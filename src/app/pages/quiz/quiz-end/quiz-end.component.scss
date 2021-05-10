@@ -1,0 +1,70 @@
+.contain {
+  width: 70%;
+  margin: 70px 15%;
+
+  .notice {
+    text-align: center;
+    margin-bottom: 70px;
+
+    h1 {
+      font-family: philospher;
+      margin-bottom: 55px;
+    }
+
+    div {
+      font-size: 20px;
+    }
+  }
+  
+  div {
+    text-align: center;
+  }
+
+  .buttons {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px auto;
+    width: 750px;
+    justify-content: space-between;
+  }
+
+  button {
+    width: 60px;
+    height: 50px;
+    margin: 6px;
+    border-radius: 5px
+
+  }
+
+  .answered {
+   background: #096A00;
+  }
+
+  .unanswered {
+    background: #CFCFCF;
+  }
+
+  .answering {
+    background: #FF6600;
+  }
+
+
+  .details-btn {
+    display: flex;
+    justify-content: center;
+    margin: 80px auto;
+
+    .submit-btn {
+      width: 200px;
+      background: #FF6600;
+      box-shadow: 0px 0px 20px #C4C4C4;
+      border-radius: 10px;
+    }
+
+    .btn-font {
+      font-family: Philosopher;
+      font-size: 24px;
+    }
+
+  }
+}

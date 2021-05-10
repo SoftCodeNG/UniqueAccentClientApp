@@ -36,6 +36,11 @@ import { CourseGridListComponent } from './pages/courses/course-grid-list/course
 import { AboutCourseComponent } from './pages/courses/about-course/about-course.component';
 import { CourseSectionComponent } from './pages/courses/course-section/course-section.component';
 import { CourseNotFoundComponent } from './pages/courses/course-not-found/course-not-found.component';
+import { EnrollQuizComponent } from './pages/quiz/enroll-quiz/enroll-quiz.component';
+import { QuizSectionComponent } from './pages/quiz/quiz-section/quiz-section.component';
+import { Quiz1Component } from './pages/quiz/quiz1/quiz1.component';
+import { Quiz2Component } from './pages/quiz/quiz2/quiz2.component';
+import { QuizEndComponent } from './pages/quiz/quiz-end/quiz-end.component';
 
 @NgModule({
   declarations: [
@@ -60,6 +65,11 @@ import { CourseNotFoundComponent } from './pages/courses/course-not-found/course
     AboutCourseComponent,
     CourseSectionComponent,
     CourseNotFoundComponent,
+    EnrollQuizComponent,
+    QuizSectionComponent,
+    Quiz1Component,
+    Quiz2Component,
+    QuizEndComponent,
   ],
   imports: [
     BrowserModule,
