@@ -52,23 +52,11 @@
       </div>
     </div>
   </div>
-  <div class="list" *ngFor="let course-section of lessonDetails">
-    <ul>
+  <div class="list">
+    <ul *ngFor="let lessonDetails of lessonDetails">
       <li class="section-list">
-        <h4><strong>1. {{courseDetails.title}}</strong></h4>
-        <div>{{courseDetails.duration}}</div>
-      </li>
-      <li class="section-list">
-        <h4><strong>1. {{lessonDetails.title}}</strong></h4>
+        <h4><strong>{{lessonDetails.title}}</strong></h4>
         <div>{{lessonDetails.duration}}</div>
-      </li>
-      <li class="section-list">
-        <h4><strong>1. Introduction To Phonics</strong></h4>
-        <p>37 mins</p>
-      </li>
-      <li class="section-list">
-        <h4><strong>1. Introduction To Phonics</strong></h4>
-        <p>37 mins</p>
       </li>
     </ul>
   </div>
