@@ -37,7 +37,7 @@ const routes: Routes = [
   },
    {
     path: 'courses',
-    component: CoursesComponent
+    loadChildren: () => import('./pages/courses/courses.module').then(m => m.CoursesModule)
   },
   {
     path: 'services',
@@ -79,10 +79,10 @@ const routes: Routes = [
     path: 'courses/course-not-found',
     component: CourseNotFoundComponent
   },
-  {
-    path: 'courses/about-course',
-    component: AboutCourseComponent
-  },
+  // {
+  //   path: 'courses/about-course',
+  //   component: AboutCourseComponent
+  // },
   {
     path: 'services/service-details',
     component: ServiceDetailsComponent

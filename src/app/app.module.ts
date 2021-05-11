@@ -32,9 +32,6 @@ import {NgxsReduxDevtoolsPluginModule} from '@ngxs/devtools-plugin';
 import {NgxsStoragePluginModule} from '@ngxs/storage-plugin';
 import {HttpClientModule} from '@angular/common/http';
 import {AppState} from './store/app-store/app.state';
-import { CourseListComponent } from './pages/courses/course-list/course-list.component';
-import { CourseGridListComponent } from './pages/courses/course-grid-list/course-grid-list.component';
-import { AboutCourseComponent } from './pages/courses/about-course/about-course.component';
 import { CourseSectionComponent } from './pages/courses/course-section/course-section.component';
 import { CourseNotFoundComponent } from './pages/courses/course-not-found/course-not-found.component';
 
@@ -56,9 +53,6 @@ import { CourseNotFoundComponent } from './pages/courses/course-not-found/course
     ServiceDetails6Component,
     ServiceDetails7Component,
     LinksComponent,
-    CourseListComponent,
-    CourseGridListComponent,
-    AboutCourseComponent,
     CourseSectionComponent,
     CourseNotFoundComponent,
     AboutComponent,
