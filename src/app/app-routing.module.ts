@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import {LandingPageComponent} from './pages/landing-page/landing-page.component';
 import {CoursesComponent} from './pages/courses/courses.component';
 import {ServicesComponent} from './pages/services/services.component';
-import {AboutCourseComponent} from './pages/courses/about-course/about-course.component'
+import {AboutCourseComponent} from './pages/courses/about-course/about-course.component';
 import {CourseDetailsComponent} from './pages/courses/course-details/course-details.component';
 import {CourseDetails2Component} from './pages/courses/course-details2/course-details2.component';
 import {CourseDetails3Component} from './pages/courses/course-details3/course-details3.component';
@@ -25,6 +25,7 @@ import {ServiceDetails5Component} from './pages/services/service-details5/servic
 import {ServiceDetails6Component} from './pages/services/service-details6/service-details6.component';
 import {ServiceDetails7Component} from './pages/services/service-details7/service-details7.component';
 import {LinksComponent} from './pages/links/links.component';
+import {AboutComponent} from './pages/about/about.component';
 
 const routes: Routes = [
   {
@@ -41,7 +42,7 @@ const routes: Routes = [
   },
    {
     path: 'courses',
-    component: CoursesComponent
+    loadChildren: () => import('./pages/courses/courses.module').then(m => m.CoursesModule)
   },
   {
     path: 'services',
@@ -83,6 +84,10 @@ const routes: Routes = [
     path: 'courses/course-not-found',
     component: CourseNotFoundComponent
   },
+  // {
+  //   path: 'courses/about-course',
+  //   component: AboutCourseComponent
+  // },
   {
     path: 'enroll-quiz',
     component: EnrollQuizComponent
@@ -130,6 +135,10 @@ const routes: Routes = [
    {
     path: 'services/service-details7',
     component: ServiceDetails7Component
+  },
+  {
+    path: 'about',
+    component: AboutComponent
   },
 ];
 

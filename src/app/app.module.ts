@@ -25,15 +25,13 @@ import { ServiceDetails7Component } from './pages/services/service-details7/serv
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatCardModule} from '@angular/material/card';
 import { LinksComponent } from './pages/links/links.component';
+import { AboutComponent } from './pages/about/about.component';
 import {NgxsModule} from '@ngxs/store';
 import {environment} from '../environments/environment';
 import {NgxsReduxDevtoolsPluginModule} from '@ngxs/devtools-plugin';
 import {NgxsStoragePluginModule} from '@ngxs/storage-plugin';
 import {HttpClientModule} from '@angular/common/http';
 import {AppState} from './store/app-store/app.state';
-import { CourseListComponent } from './pages/courses/course-list/course-list.component';
-import { CourseGridListComponent } from './pages/courses/course-grid-list/course-grid-list.component';
-import { AboutCourseComponent } from './pages/courses/about-course/about-course.component';
 import { CourseSectionComponent } from './pages/courses/course-section/course-section.component';
 import { CourseNotFoundComponent } from './pages/courses/course-not-found/course-not-found.component';
 import { EnrollQuizComponent } from './pages/quiz/enroll-quiz/enroll-quiz.component';
@@ -60,16 +58,17 @@ import { QuizEndComponent } from './pages/quiz/quiz-end/quiz-end.component';
     ServiceDetails6Component,
     ServiceDetails7Component,
     LinksComponent,
-    CourseListComponent,
-    CourseGridListComponent,
-    AboutCourseComponent,
     CourseSectionComponent,
     CourseNotFoundComponent,
+<<<<<<< HEAD
     EnrollQuizComponent,
     QuizSectionComponent,
     Quiz1Component,
     Quiz2Component,
     QuizEndComponent,
+=======
+    AboutComponent,
+>>>>>>> e5f91030c0654cf94f1a584d28b78d823621bf01
   ],
   imports: [
     BrowserModule,
