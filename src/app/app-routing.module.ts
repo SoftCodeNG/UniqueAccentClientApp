@@ -10,8 +10,13 @@ import {CourseDetails3Component} from './pages/courses/course-details3/course-de
 import {CourseDetails4Component} from './pages/courses/course-details4/course-details4.component';
 import {CourseListComponent} from './pages/courses/course-list/course-list.component';
 import { CourseGridListComponent  } from './pages/courses/course-grid-list/course-grid-list.component';
-import { CourseNotFoundComponent } from './pages/courses/course-not-found/course-not-found.component';
-import { CourseSectionComponent } from './pages/courses/course-section/course-section.component';
+import { CourseNotFoundComponent } from "./pages/courses/course-not-found/course-not-found.component";
+import { CourseSectionComponent } from "./pages/courses/course-section/course-section.component";
+import { EnrollQuizComponent } from "./pages/quiz/enroll-quiz/enroll-quiz.component";
+import { QuizEndComponent } from "./pages/quiz/quiz-end/quiz-end.component";
+import { QuizSectionComponent } from "./pages/quiz/quiz-section/quiz-section.component";
+import { Quiz1Component } from "./pages/quiz/quiz1/quiz1.component";
+import { Quiz2Component } from "./pages/quiz/quiz2/quiz2.component";
 import {ServiceDetailsComponent} from './pages/services/service-details/service-details.component';
 import {ServiceDetails2Component} from './pages/services/service-details2/service-details2.component';
 import {ServiceDetails3Component} from './pages/services/service-details3/service-details3.component';
@@ -83,6 +88,26 @@ const routes: Routes = [
   //   path: 'courses/about-course',
   //   component: AboutCourseComponent
   // },
+  {
+    path: 'enroll-quiz',
+    component: EnrollQuizComponent
+  },
+  {
+    path: 'end-quiz',
+    component: QuizEndComponent
+  },
+  {
+    path: 'start-quiz',
+    component: QuizSectionComponent
+  },
+  {
+    path: 'quiz1',
+    component: Quiz1Component
+  },
+  {
+    path: 'quiz2',
+    component: Quiz2Component
+  },
   {
     path: 'services/service-details',
     component: ServiceDetailsComponent
