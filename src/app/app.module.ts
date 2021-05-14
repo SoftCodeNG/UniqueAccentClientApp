@@ -34,6 +34,11 @@ import {HttpClientModule} from '@angular/common/http';
 import {AppState} from './store/app-store/app.state';
 import { CourseSectionComponent } from './pages/courses/course-section/course-section.component';
 import { CourseNotFoundComponent } from './pages/courses/course-not-found/course-not-found.component';
+import { EnrollQuizComponent } from './pages/quiz/enroll-quiz/enroll-quiz.component';
+import { QuizSectionComponent } from './pages/quiz/quiz-section/quiz-section.component';
+import { Quiz1Component } from './pages/quiz/quiz1/quiz1.component';
+import { Quiz2Component } from './pages/quiz/quiz2/quiz2.component';
+import { QuizEndComponent } from './pages/quiz/quiz-end/quiz-end.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +60,15 @@ import { CourseNotFoundComponent } from './pages/courses/course-not-found/course
     LinksComponent,
     CourseSectionComponent,
     CourseNotFoundComponent,
+<<<<<<< HEAD
+    EnrollQuizComponent,
+    QuizSectionComponent,
+    Quiz1Component,
+    Quiz2Component,
+    QuizEndComponent,
+=======
     AboutComponent,
+>>>>>>> e5f91030c0654cf94f1a584d28b78d823621bf01
   ],
   imports: [
     BrowserModule,
