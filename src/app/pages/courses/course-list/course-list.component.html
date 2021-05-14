@@ -1,0 +1,68 @@
+<div class="container">
+  <section class="head">
+    <div class="head-title">
+      <h3><strong>Public Speaking Guide</strong></h3>
+    </div>
+    <div class="head-utils">
+      <input type="text" id="search" />
+      <img src="/assets/courses/card-list.svg" alt="flex" />
+      <img src="/assets/courses/grid.svg" alt="grid" />
+    </div>
+  </section>
+<!--  createdAt: "2021-04-26T20:52:09.481168Z"-->
+<!--description: "SPEAKING IS DIFFERENT FROM COMMUNICATION, You can Speak without communicating and \nthis is what many people do not understand. A lot of People think that speaking with good \ndiction is about faking an accent or rolling your tongue, NO! It is never about rolling your tongue\nor faking an accent, It is about accurate and effective communication such that anyone from \nany part of the world can understand you clearly. This is what a lot of people do not know. As \na Public speaker, A radio/TV presenter, A voice over artiste, Customer service representative"-->
+<!--duration: 7200-->
+<!--id: 1-->
+<!--isPublished: false-->
+<!--lessons: 0-->
+<!--price: "50000.000"-->
+<!--purchases: 0-->
+<!--slug: ""-->
+<!--thumbnail: "https://uniqueaccent.com.ng/assets/courses/course2.jpg"-->
+<!--title: "Accent Polishing Course"-->
+<!--updatedAt: "2021-04-26T20:52:09.899137Z"-->
+<!--video: "https://res.cloudi-->
+  <section class="table">
+    <div class="table-row">
+      <div class="head-row">
+        <div class="thumbnail">
+          <h5>Thumbnail</h5>
+        </div>
+        <div class="tit">
+          <h5>Title</h5>
+        </div>
+        <div class="lessons">
+          <h5>Lessons</h5>
+        </div>
+        <div class="duration">
+          <h5>Duration</h5>
+        </div>
+        <div class="price">
+          <h5>Price</h5>
+        </div>
+      </div>
+      </div>
+    <div class="table-row" *ngFor="let course of allCourses">
+      <div class="img-title">
+        <div class="thumbnail">
+          <img [src]="course.thumbnail" alt="" />
+        </div>
+        <div class="title">
+          <h4><strong>{{course.title}}</strong></h4>
+          <div>{{course.description.substr(0, 100)}}</div>
+        </div>
+      </div>
+      <div class="course-details">
+        <div class="lessons">
+          <div>{{course.lessons}}</div>
+        </div>
+        <div class="duration">
+          <div>{{course.duration}}</div>
+        </div>
+        <div class="price">
+          <div>{{course.price  | currency:'₦'}}</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
