@@ -60,15 +60,13 @@ import { QuizEndComponent } from './pages/quiz/quiz-end/quiz-end.component';
     LinksComponent,
     CourseSectionComponent,
     CourseNotFoundComponent,
-<<<<<<< HEAD
     EnrollQuizComponent,
     QuizSectionComponent,
     Quiz1Component,
     Quiz2Component,
     QuizEndComponent,
-=======
     AboutComponent,
->>>>>>> e5f91030c0654cf94f1a584d28b78d823621bf01
+
   ],
   imports: [
     BrowserModule,
