@@ -22,7 +22,7 @@
 <!--video: "https://res.cloudi-->
   <section>
     <div class="grid-list  grid-list-col3">
-      <div class="card" *ngFor="let course of allCourses">
+      <div [routerLink]="'/courses/' + course.slug" class="card" *ngFor="let course of allCourses">
         <img [src]="course.thumbnail" alt="course image">
         <h5><strong>{{course.title}}</strong></h5>
         <div>{{course.description.substr(0, 100)}}</div>
