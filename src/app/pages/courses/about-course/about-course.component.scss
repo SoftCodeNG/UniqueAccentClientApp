@@ -48,7 +48,7 @@
 
     .table {
       margin-top: 20px;
-      width: 70%;
+      width: 1000px;
   
       .table-row {
         display: flex;
@@ -116,8 +116,8 @@
       }
     }
 
-    @media (max-width: 860px) {
-      display: grid;
+    @media (max-width: 1000px) {
+      flex-direction: column-reverse;
     }
   }
 }

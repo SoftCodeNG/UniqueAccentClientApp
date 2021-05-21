@@ -65,11 +65,8 @@ import { QuizEndComponent } from './pages/quiz/quiz-end/quiz-end.component';
     Quiz1Component,
     Quiz2Component,
     QuizEndComponent,
-    AboutComponent,
-<<<<<<< HEAD
+    AboutComponent
 
-=======
->>>>>>> 11e3d664cb4c7c4af6670a7e61caa7c13ad30da9
   ],
   imports: [
     BrowserModule,

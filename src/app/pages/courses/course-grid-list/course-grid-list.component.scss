@@ -14,7 +14,7 @@
         border-radius: 20px;
         width: 240px;
         border: 1px solid black;
-        height: 27px;
+        height: 30px;
         margin: 4px 8px;
         padding: 2px;
         background-image: url('/assets/courses/search.svg');
@@ -24,13 +24,8 @@
         text-indent: 20px;
       }
 
-      input:focus {
-        background-image: none;
-        text-indent:0px
-      }
-
-      img {
-        margin: 0 5px;
+      span {
+        margin: 6px 6px;
       }
     }
 
@@ -52,19 +47,27 @@
       overflow: hidden; 
       background: #fdf9f9;
       padding: 10px;
-      margin-bottom: 10px;
+      margin-bottom: 70px;
+
+      &:focus {
+        box-shadow: 1px 10px 15px grey;
+      }
 
       img {
-        width: 200px;
+        width: 215px;
         height: 200px;
       }
 
-      p {
+      strong {
+        font-family: 'Philosopher';
+      }
+
+      .desc {
         font-size: 13px;
-        width: 200px;
+        width: 215px;
         height: 80px;
         line-height: 15px;
-        margin-bottom: 0;
+        margin-bottom: 2px;
       }
 
       .course-details {
@@ -82,6 +85,10 @@
           width: 10px;
           height: 10px;
         }
+      }
+
+      .card:hover {
+        box-shadow: 1px 10px 15px grey;
       }
 
       @media (max-width: 585px) {
