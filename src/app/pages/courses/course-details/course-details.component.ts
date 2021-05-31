@@ -12,7 +12,7 @@ export class CourseDetailsComponent implements OnInit {
   constructor(private coursesService: CoursesService) { }
 
   ngOnInit(): void {
-    // this.getCourseDetails('accent-polishing-course1619136362.08034');
+    this.getCourseDetails('accent-polishing-course1619136362.08034');
   }
 
   getCourseDetails(slug: string): void {
