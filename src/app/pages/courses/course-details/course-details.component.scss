@@ -22,7 +22,7 @@
 
     .btn-btn {
       display: flex;
-      
+
       button {
       height: 50%;
       display: inline-block;
@@ -49,26 +49,26 @@
     .table {
       margin-top: 20px;
       width: 70%;
-  
+
       .table-row {
         display: flex;
         justify-content: space-between;
         margin: 15px;
-  
+
         .thumbnail > h5 {
           padding-left: 0;
         }
-  
+
         img {
           width: 110px;
           height: 110px;
           padding: 0;
         }
-  
+
         .title {
           width: 500px;
           margin-left: 20px;
-  
+
           h5 {
             padding-left:  8px;
           }
@@ -82,25 +82,25 @@
                 overflow: hidden;
             }
           }
-          
+
           h4, p {
             padding:  0;
             line-height: 20px;
           }
         }
-  
+
         .duration {
           width:  110px;
-  
+
           h5 {
             padding-left: 0;
           }
-        
+
         }
         span {
           padding: 0;
         }
-  
+
         h5 {
           font-weight: bolder;
         }
@@ -111,7 +111,7 @@
       width: 500px;
       margin-top: 45px;
 
-      img {
+      video {
         width: 100%;
       }
     }

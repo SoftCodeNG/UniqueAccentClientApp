@@ -4,6 +4,7 @@ import { CoursesRoutingModule } from './courses-routing.module';
 import {CourseListComponent} from './course-list/course-list.component';
 import {CourseGridListComponent} from './course-grid-list/course-grid-list.component';
 import {CourseDetailsComponent} from './course-details/course-details.component';
+import {Angular4PaystackModule} from "angular4-paystack";
 
 @NgModule({
   declarations: [
@@ -11,9 +12,10 @@ import {CourseDetailsComponent} from './course-details/course-details.component'
     CourseGridListComponent,
     CourseDetailsComponent,
   ],
-  imports: [
-    CommonModule,
-    CoursesRoutingModule,
-  ],
+    imports: [
+        CommonModule,
+        CoursesRoutingModule,
+        Angular4PaystackModule,
+    ],
 })
 export class CoursesModule { }
