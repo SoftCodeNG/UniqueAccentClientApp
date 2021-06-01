@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {CoursesService} from '../../../core/services/courses.service';
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-course-section',
@@ -10,10 +11,13 @@ export class CourseSectionComponent implements OnInit {
    public courseDetails: any;
    public lessonDetails: any;
 
-  constructor(private coursesService: CoursesService) { }
+  constructor(
+    private coursesService: CoursesService,
+    private activatedRoute: ActivatedRoute
+    ) { }
 
   ngOnInit(): void {
-    this.getCourseDetails('accent-polishing-course1619136362.08034');
+    this.getCourseDetails(this.activatedRoute.snapshot.params.slug);
     this.getCourseLessons(36);
   }
 

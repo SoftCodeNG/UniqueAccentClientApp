@@ -38,6 +38,7 @@ import { QuizSectionComponent } from './pages/quiz/quiz-section/quiz-section.com
 import { Quiz1Component } from './pages/quiz/quiz1/quiz1.component';
 import { Quiz2Component } from './pages/quiz/quiz2/quiz2.component';
 import { QuizEndComponent } from './pages/quiz/quiz-end/quiz-end.component';
+import {Angular4PaystackModule} from "angular4-paystack";
 
 @NgModule({
   declarations: [
@@ -76,6 +77,7 @@ import { QuizEndComponent } from './pages/quiz/quiz-end/quiz-end.component';
     DragScrollModule,
     MatTabsModule,
     MatCardModule,
+    Angular4PaystackModule.forRoot(environment.payStackPublicKey),
     NgxsModule.forRoot([AppState], {
       developmentMode: !environment.production
     }),
