@@ -9,7 +9,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 })
 export class CourseDetailsComponent implements OnInit {
    public courseDetails: any;
-   reference = 'uacl ref ' + new Date();
+   reference = 'uacl-ref-' + Date.now();
 
   constructor(
     private coursesService: CoursesService,

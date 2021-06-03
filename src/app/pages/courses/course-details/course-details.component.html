@@ -6,7 +6,7 @@
     <div class="btn-btn">
 <!--      <button>Buy Course</button>-->
       <div>
-        {{courseDetails.price}}
+        {{courseDetails.price  | currency:'₦'}}
       </div>
       <button
           angular4-paystack
@@ -46,7 +46,7 @@
             <div>{{courseDetails.description}}</div>
           </div>
           <div class="duration">
-            <span>{{courseDetails.duration}}</span>
+            <span>{{courseDetails.duration }}</span>
           </div>
         </div>
       </div>
