@@ -18,12 +18,12 @@ export class CourseSectionComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCourseDetails(this.activatedRoute.snapshot.params.slug);
-    this.getCourseLessons(36);
   }
 
   getCourseDetails(slug: string): void {
     this.coursesService.getCourseDetails(slug).subscribe(res => {
       this.courseDetails = res;
+      this.getCourseLessons(this.courseDetails.slug);
     });
   }
 

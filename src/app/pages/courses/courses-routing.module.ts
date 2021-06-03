@@ -16,7 +16,7 @@ const routes: Routes = [
     component: CourseDetailsComponent
   },
   {
-    path: '/lesson/:slug',
+    path: 'lesson/:slug',
     component: CourseSectionComponent
   }
 ];
