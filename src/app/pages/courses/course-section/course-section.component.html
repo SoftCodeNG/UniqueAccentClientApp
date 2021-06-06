@@ -1,6 +1,6 @@
 <div class="contain">
-  <div class="course-section">
-    <img src="/assets/courses/course3.jpeg" alt="">
+  <div class="course-section" *ngIf="courseDetails">
+     <video [src]="currentLesson.video" controls></video>
     <div class="course-desc">
       <h2>{{courseDetails.title}}</h2>
       <div>{{courseDetails.description}}</div>
@@ -53,11 +53,15 @@
     </div>
   </div>
   <div class="list">
-    <ul *ngFor="let lessonDetails of lessonDetails">
-      <li class="section-list">
-        <h4><strong>{{lessonDetails.title}}</strong></h4>
-        <div>{{lessonDetails.duration}}</div>
+    <ul>
+      <li class="section-list" *ngFor="let lessonsDetails of lessonList">
+        <h4><strong>{{lessonsDetails.title}}</strong></h4>
+        <div>{{lessonsDetails.duration}}</div>
       </li>
+<!--      <li class="section-list">-->
+<!--        <h4><strong>{{lessonDetails.title}}</strong></h4>-->
+<!--        <div>{{lessonDetails.duration}}</div>-->
+<!--      </li>-->
     </ul>
   </div>
 </div>

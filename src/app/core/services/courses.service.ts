@@ -16,7 +16,7 @@ export class CoursesService {
     return this.http.get<any>(`${this.baseURL}courses/getCourses`)
       .pipe(
         map(res => {
-          return res.payload;
+          return res.results;
         })
       );
   }

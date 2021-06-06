@@ -11,7 +11,6 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import {DragScrollModule} from 'ngx-drag-scroll';
 import { CoursesComponent } from './pages/courses/courses.component';
 import { ServicesComponent } from './pages/services/services.component';
-import { CourseDetailsComponent } from './pages/courses/course-details/course-details.component';
 import { CourseDetails2Component } from './pages/courses/course-details2/course-details2.component';
 import { CourseDetails3Component } from './pages/courses/course-details3/course-details3.component';
 import { CourseDetails4Component } from './pages/courses/course-details4/course-details4.component';
@@ -39,6 +38,7 @@ import { QuizSectionComponent } from './pages/quiz/quiz-section/quiz-section.com
 import { Quiz1Component } from './pages/quiz/quiz1/quiz1.component';
 import { Quiz2Component } from './pages/quiz/quiz2/quiz2.component';
 import { QuizEndComponent } from './pages/quiz/quiz-end/quiz-end.component';
+import {Angular4PaystackModule} from "angular4-paystack";
 
 @NgModule({
   declarations: [
@@ -46,7 +46,6 @@ import { QuizEndComponent } from './pages/quiz/quiz-end/quiz-end.component';
     LandingPageComponent,
     CoursesComponent,
     ServicesComponent,
-    CourseDetailsComponent,
     CourseDetails2Component,
     CourseDetails3Component,
     CourseDetails4Component,
@@ -78,6 +77,7 @@ import { QuizEndComponent } from './pages/quiz/quiz-end/quiz-end.component';
     DragScrollModule,
     MatTabsModule,
     MatCardModule,
+    Angular4PaystackModule.forRoot(environment.payStackPublicKey),
     NgxsModule.forRoot([AppState], {
       developmentMode: !environment.production
     }),
