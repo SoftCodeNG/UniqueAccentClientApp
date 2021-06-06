@@ -1,6 +1,6 @@
 <div class="contain">
   <div class="course-section" *ngIf="courseDetails">
-     <video [src]="courseDetails.video" controls></video>
+     <video [src]="currentLesson.video" controls></video>
     <div class="course-desc">
       <h2>{{courseDetails.title}}</h2>
       <div>{{courseDetails.description}}</div>
@@ -54,7 +54,7 @@
   </div>
   <div class="list">
     <ul>
-      <li class="section-list" *ngFor="let lessonsDetails of lessonDetails">
+      <li class="section-list" *ngFor="let lessonsDetails of lessonList">
         <h4><strong>{{lessonsDetails.title}}</strong></h4>
         <div>{{lessonsDetails.duration}}</div>
       </li>

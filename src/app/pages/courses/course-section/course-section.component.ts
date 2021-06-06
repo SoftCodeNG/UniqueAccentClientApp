@@ -8,8 +8,9 @@ import {ActivatedRoute} from "@angular/router";
   styleUrls: ['./course-section.component.scss']
 })
 export class CourseSectionComponent implements OnInit {
-   public courseDetails: any;
-   public lessonDetails: any;
+   courseDetails: any;
+   lessonList: any;
+   currentLesson: any;
 
   constructor(
     private coursesService: CoursesService,
@@ -29,7 +30,8 @@ export class CourseSectionComponent implements OnInit {
 
   getCourseLessons(id: number): void {
     this.coursesService.getCourseLessons(id).subscribe(res => {
-      this.lessonDetails = res;
+      this.lessonList = res;
+      this.currentLesson = res[0]
     });
   }
 }
