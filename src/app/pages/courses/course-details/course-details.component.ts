@@ -29,16 +29,20 @@ export class CourseDetailsComponent implements OnInit {
     });
   }
 
-  paymentInit() {
+  paymentInit(): void {
 
   }
 
-  paymentCancel() {
+  paymentCancel(): void {
 
   }
 
-  paymentDone($event: any) {
+  paymentDone($event: any): void {
     console.log('payment successful', $event);
+    this.router.navigate([`/courses/lesson/${this.activatedRoute.snapshot.params.slug}`]).then();
+  }
+
+  continueLearning(): void {
     this.router.navigate([`/courses/lesson/${this.activatedRoute.snapshot.params.slug}`]).then();
   }
 }
