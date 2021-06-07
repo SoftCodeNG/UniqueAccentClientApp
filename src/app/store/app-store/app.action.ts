@@ -13,3 +13,8 @@ export class SetRefreshToken {
   static readonly type = '[App] SetRefreshToken';
   constructor(public refreshToken: string) {}
 }
+
+export class SetDecodedToken {
+  static readonly type = '[App] SetDecodedToken';
+  constructor(public decodedToken: any) {}
+}

@@ -1,12 +1,12 @@
 
 <div class="course-section" *ngIf="courseDetails">
   <div class="videoSection">
-    <video #video [src]="currentLesson.video" controls [poster]="currentLesson.thumbnail"></video>
+    <video [src]="currentLesson.video" controls [poster]="currentLesson.thumbnail"></video>
     <div class="courseList">
       <div
         class="course"
         *ngFor="let lessonsDetails of lessonList"
-        (click)="currentLesson = lessonsDetails"
+        (click)="setCurrentLesson(lessonsDetails)"
         [style]="{'background': lessonsDetails === currentLesson ? '#848484' : '#cfcfcf'}"
       >
         <div class="thumbnail">
@@ -29,11 +29,11 @@
       <div>{{currentLesson.description}}</div>
     </div>
 
-    <div class="comment-section">
+    <div class="comment-section" [formGroup]="commentForm">
       <h2>Comments</h2>
-      <textarea name="comment" id="" cols="50" rows="20"></textarea>
+      <textarea formControlName="comment" name="comment" id="" cols="50" rows="20"></textarea>
       <div class="postButton">
-        <button class="btn">Post</button>
+        <button class="btn" (click)="createComment()">Post</button>
       </div>
     </div>
 
