@@ -1,12 +1,12 @@
 
 <div class="course-section" *ngIf="courseDetails">
   <div class="videoSection">
-    <video #video [src]="currentLesson.video" controls [poster]="currentLesson.thumbnail"></video>
+    <video [src]="currentLesson.video" controls [poster]="currentLesson.thumbnail"></video>
     <div class="courseList">
       <div
         class="course"
         *ngFor="let lessonsDetails of lessonList"
-        (click)="currentLesson = lessonsDetails"
+        (click)="setCurrentLesson(lessonsDetails)"
         [style]="{'background': lessonsDetails === currentLesson ? '#848484' : '#cfcfcf'}"
       >
         <div class="thumbnail">
@@ -29,40 +29,40 @@
       <div>{{currentLesson.description}}</div>
     </div>
 
-    <div class="comment-section">
+    <div class="comment-section" [formGroup]="commentForm">
       <h2>Comments</h2>
-      <textarea name="comment" id="" cols="50" rows="20"></textarea>
+      <textarea formControlName="comment" name="comment" id="" cols="50" rows="20"></textarea>
       <div class="postButton">
-        <button class="btn">Post</button>
+        <button class="btn" (click)="createComment()">Post</button>
       </div>
     </div>
 
     <div class="comment-details">
-      <div class="user">
-        <h5>Victor</h5>
-        <button>User</button>
-      </div>
-      <div class="comment">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ipsum sint qui voluptas pariatur expedita laudantium voluptates voluptate accusamus atque.</p>
-        <div class="comment-reply">
+      <ng-container *ngFor="let comment of allComment">
+        <div class="comment">
           <div class="user">
-            <h5>Maxwell</h5>
-            <button class="admin">Admin</button>
+            <div class="userName">{{comment.user.name}}</div>
+            <div class="isAdmin" *ngIf="comment.user.isAdmin || comment.user.isStaff">Admin</div>
           </div>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur provident accusantium inventore impedit? Quidem illo ea veniam!</p>
-        </div>
-        <div class="comment-reply">
-          <div class="user">
-            <h5>Samson</h5>
-            <button>User</button>
+
+          <div class="commentBox">
+            <div class="commentText">{{comment.comment}}</div>
+            <div class="comment-reply" *ngFor="let reply of comment.replies">
+              <div class="user">
+                <div class="userName">{{reply.user.name}}</div>
+                <div class="isAdmin" *ngIf="reply.user.isAdmin || reply.user.isStaff">Admin</div>
+              </div>
+              <div>{{reply.comment}}</div>
+            </div>
+            <div class="reply-action">
+              <input type="text" #reply>
+              <button class="btn" (click)="replyComment(comment.id, reply.value)">Post</button>
+            </div>
           </div>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur provident accusantium inventore impedit? Quidem illo ea veniam!</p>
         </div>
-        <div class="reply-action">
-          <input type="text">
-          <button class="btn">Post</button>
-        </div>
-      </div>
+
+      </ng-container>
+
     </div>
   </div>
 
