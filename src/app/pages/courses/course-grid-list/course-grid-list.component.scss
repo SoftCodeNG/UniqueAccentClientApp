@@ -1,7 +1,7 @@
 .container {
   width: 80%;
   margin: 30px 10%;
-  
+
   .head {
     display: flex;
     justify-content: space-between;
@@ -9,7 +9,7 @@
 
     .head-utils {
       display: flex;
-  
+
       input {
         border-radius: 20px;
         width: 240px;
@@ -48,14 +48,14 @@
     .card {
       display: grid;
       justify-items: center;
-      width: 100%; 
-      overflow: hidden; 
-      background: #fdf9f9;
-      padding: 10px;
-      margin-bottom: 10px;
+      width: 100%;
+      overflow: hidden;
+      background: #FFFFFF;
+      padding: 8px;
+      margin-bottom: 12px;
 
       img {
-        width: 200px;
+        width: 100px;
         height: 200px;
       }
 
@@ -96,7 +96,7 @@
     @media (max-width: 640px) {
       width: 520px;
     }
-    
+
   }
 
   .grid-list-col3 > .card {
