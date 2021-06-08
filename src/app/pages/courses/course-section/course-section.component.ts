@@ -17,6 +17,7 @@ export class CourseSectionComponent implements OnInit {
    currentLesson: any;
    userData: any;
    commentForm: FormGroup;
+   allComment: any[];
 
    @Select(AppState.getDecodedToken) decodedToken$: Observable<any>;
   constructor(
@@ -45,6 +46,7 @@ export class CourseSectionComponent implements OnInit {
   setCurrentLesson(data: any): void {
     this.currentLesson = data;
     this.commentForm.controls.lessonId.setValue(data.id);
+    this.getLessonComments();
   }
 
   getCourseDetails(slug: string): void {
@@ -67,19 +69,21 @@ export class CourseSectionComponent implements OnInit {
       this.coursesService.createComment(this.commentForm.value).subscribe(res => {
         console.log('Comment Posted', res);
         this.getLessonComments();
+        this.commentForm.controls.comment.reset();
       });
     }
   }
 
   replyComment(commentId, reply): void {
+    console.log(commentId, reply);
     if (commentId && reply) {
       const payload = {
         commentId,
         userId: this.userData.user_id,
         comment: reply
       };
-      this.coursesService.createComment(payload).subscribe(res => {
-        console.log('Comment Posted', res);
+      this.coursesService.replyComment(payload).subscribe(res => {
+        this.getLessonComments();
       });
     }
   }
@@ -87,6 +91,7 @@ export class CourseSectionComponent implements OnInit {
   getLessonComments(): void {
     this.coursesService.getLessonComments(this.currentLesson.id).subscribe(res => {
       console.log('List of all comment: ', res);
+      this.allComment = res;
     });
   }
 }
