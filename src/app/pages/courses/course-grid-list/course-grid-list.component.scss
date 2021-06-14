@@ -1,7 +1,7 @@
 .container {
   width: 80%;
   margin: 30px 10%;
-  
+
   .head {
     display: flex;
     justify-content: space-between;
@@ -9,12 +9,12 @@
 
     .head-utils {
       display: flex;
-  
+
       input {
         border-radius: 20px;
         width: 240px;
         border: 1px solid black;
-        height: 30px;
+        height: 27px;
         margin: 4px 8px;
         padding: 2px;
         background-image: url('/assets/courses/search.svg');
@@ -24,8 +24,13 @@
         text-indent: 20px;
       }
 
-      span {
-        margin: 6px 6px;
+      input:focus {
+        background-image: none;
+        text-indent:0px
+      }
+
+      img {
+        margin: 0 5px;
       }
     }
 
@@ -43,31 +48,23 @@
     .card {
       display: grid;
       justify-items: center;
-      width: 100%; 
-      overflow: hidden; 
-      background: #fdf9f9;
-      padding: 10px;
-      margin-bottom: 70px;
-
-      &:focus {
-        box-shadow: 1px 10px 15px grey;
-      }
+      width: 100%;
+      overflow: hidden;
+      background: #FFFFFF;
+      padding: 8px;
+      margin-bottom: 12px;
 
       img {
-        width: 215px;
+        width: 100px;
         height: 200px;
       }
 
-      strong {
-        font-family: 'Philosopher';
-      }
-
-      .desc {
+      p {
         font-size: 13px;
-        width: 215px;
+        width: 200px;
         height: 80px;
         line-height: 15px;
-        margin-bottom: 2px;
+        margin-bottom: 0;
       }
 
       .course-details {
@@ -87,10 +84,6 @@
         }
       }
 
-      .card:hover {
-        box-shadow: 1px 10px 15px grey;
-      }
-
       @media (max-width: 585px) {
         margin-right: 200px;
       }
@@ -103,7 +96,7 @@
     @media (max-width: 640px) {
       width: 520px;
     }
-    
+
   }
 
   .grid-list-col3 > .card {

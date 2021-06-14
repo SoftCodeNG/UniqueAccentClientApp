@@ -25,6 +25,18 @@ export class AuthService {
       );
   }
 
+  refreshToken(refresh: string): Observable<any> {
+    const payload = new FormData();
+    payload.append('refresh', refresh);
+
+    return this.http.post<any>(`${this.baseURL}auth/token/refresh`, payload)
+      .pipe(
+        map(res => {
+          return res;
+        })
+      );
+  }
+
   register(data: any): Observable<any> {
     const payload = new FormData();
     payload.append('name', data.name);
