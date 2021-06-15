@@ -29,7 +29,7 @@ import {NgxsModule} from '@ngxs/store';
 import {environment} from '../environments/environment';
 import {NgxsReduxDevtoolsPluginModule} from '@ngxs/devtools-plugin';
 import {NgxsStoragePluginModule} from '@ngxs/storage-plugin';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {AppState} from './store/app-store/app.state';
 import { CourseSectionComponent } from './pages/courses/course-section/course-section.component';
 import { CourseNotFoundComponent } from './pages/courses/course-not-found/course-not-found.component';
@@ -38,6 +38,9 @@ import { QuizSectionComponent } from './pages/quiz/quiz-section/quiz-section.com
 import { Quiz1Component } from './pages/quiz/quiz1/quiz1.component';
 import { Quiz2Component } from './pages/quiz/quiz2/quiz2.component';
 import { QuizEndComponent } from './pages/quiz/quiz-end/quiz-end.component';
+import {Angular4PaystackModule} from "angular4-paystack";
+import {TokenInterceptor} from "./core/interceptors/token.interseptor";
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -63,11 +66,13 @@ import { QuizEndComponent } from './pages/quiz/quiz-end/quiz-end.component';
     Quiz1Component,
     Quiz2Component,
     QuizEndComponent,
-    AboutComponent,
+    AboutComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     HttpClientModule,
     SharedModule,
@@ -76,13 +81,20 @@ import { QuizEndComponent } from './pages/quiz/quiz-end/quiz-end.component';
     DragScrollModule,
     MatTabsModule,
     MatCardModule,
+    Angular4PaystackModule.forRoot(environment.payStackPublicKey),
     NgxsModule.forRoot([AppState], {
       developmentMode: !environment.production
     }),
     NgxsReduxDevtoolsPluginModule.forRoot(),
     NgxsStoragePluginModule.forRoot(),
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

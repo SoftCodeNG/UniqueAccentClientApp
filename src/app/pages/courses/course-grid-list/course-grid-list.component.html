@@ -3,8 +3,12 @@
     <div class="head-title"><h3><strong>Public Speaking Guide</strong></h3></div>
     <div class="head-utils">
       <input type="text" id="search"/>
-      <img src="/assets/courses/card-list.svg" alt="flex">
-      <img src="/assets/courses/grid.svg" alt="grid">
+      <span>
+        <i class="fa fa-list-ul"></i>
+      </span>
+      <span>
+        <i class="fa fa-th-large"></i>
+      </span>
     </div>
   </section>
 <!--  createdAt: "2021-04-26T20:52:09.481168Z"-->
@@ -24,8 +28,11 @@
     <div class="grid-list  grid-list-col3">
       <div [routerLink]="'/courses/' + course.slug" class="card" *ngFor="let course of allCourses">
         <img [src]="course.thumbnail" alt="course image">
+        <div class="text">
+          
+        </div>
         <h5><strong>{{course.title}}</strong></h5>
-        <div>{{course.description.substr(0, 100)}}</div>
+        <div class="desc">{{course.description.substr(0, 100)}}</div>
           <div class="course-details">
             <div class="lesson">
               <img src="/assets/courses/calendar-range-fill.svg" alt="lessons">

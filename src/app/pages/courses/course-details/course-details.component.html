@@ -1,11 +1,25 @@
-<div class="contain">
+<div class="contain" *ngIf="courseDetails">
   <section id="topDiv">
     <h1>{{courseDetails.title}}</h1>
     <div>{{courseDetails.description}}</div>
 
     <div class="btn-btn">
-      <button>Buy Course</button>
-      <button>Continue Learning</button>
+<!--      <button>Buy Course</button>-->
+<!--      <div>-->
+<!--        {{courseDetails.price  | currency:'₦'}}-->
+<!--      </div>-->
+      <button
+          angular4-paystack
+          [email]="'ucheesther87@gmail.com'"
+          [amount]="2000"
+          [ref]="reference"
+          (paymentInit)="paymentInit()"
+          (onClose)="paymentCancel()"
+          (callback)="paymentDone($event)"
+        >
+          Pay with Paystack
+        </button>
+      <button (click)="continueLearning()">Continue Learning</button>
     </div>
   </section>
 
@@ -23,7 +37,7 @@
             <h5>Duration</h5>
           </div>
         </div>
-        <div class="table-row" >
+        <div class="table-row">
           <div class="thumbnail">
             <img [src]="courseDetails.thumbnail" alt="">
           </div>
@@ -32,12 +46,12 @@
             <div>{{courseDetails.description}}</div>
           </div>
           <div class="duration">
-            <span>{{courseDetails.duration}}</span>
+            <span>{{courseDetails.duration }}</span>
           </div>
         </div>
       </div>
       <div class="video-contain">
-        <img [src]="courseDetails.thumbnail" alt="video image">
+        <video [src]="courseDetails.video" controls></video>
       </div>
     </div>
   </section>

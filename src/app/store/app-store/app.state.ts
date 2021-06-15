@@ -1,11 +1,12 @@
 import { State, Selector, Action, StateContext } from '@ngxs/store';
-import {SetHeaderVisibility, SetRefreshToken, SetToken} from './app.action';
+import {SetDecodedToken, SetHeaderVisibility, SetRefreshToken, SetToken} from './app.action';
 import {Injectable} from '@angular/core';
 
 export class AppStateModel {
   headerVisibility: string;
   token: string;
   refreshToken: string;
+  decodedToken: any;
 }
 
 @Injectable()
@@ -14,7 +15,8 @@ export class AppStateModel {
   defaults: {
     headerVisibility: 'visible',
     token: '',
-    refreshToken: ''
+    refreshToken: '',
+    decodedToken: {}
   },
 })
 
@@ -34,6 +36,10 @@ export class AppState {
     return state.refreshToken;
   }
 
+  @Selector()
+  static getDecodedToken(state: AppStateModel): string {
+    return state.decodedToken;
+  }
 
   //   actions
   @Action(SetHeaderVisibility)
@@ -60,6 +66,15 @@ export class AppState {
     setState({
       ...state,
       refreshToken,
+    });
+  }
+
+  @Action(SetDecodedToken)
+  setDecodedToken({ getState, setState }: StateContext<AppStateModel>, { decodedToken }: SetDecodedToken): void {
+    const state = getState();
+    setState({
+      ...state,
+      decodedToken,
     });
   }
 

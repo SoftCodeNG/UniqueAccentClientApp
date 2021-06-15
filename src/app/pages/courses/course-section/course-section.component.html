@@ -1,74 +1,69 @@
-<div class="contain">
-  <div class="course-section">
-    <img src="/assets/courses/course3.jpeg" alt="">
-    <div class="course-desc">
-      <h2>{{courseDetails.title}}</h2>
-      <div>{{courseDetails.description}}</div>
+
+<div class="course-section" *ngIf="courseDetails">
+  <div class="videoSection">
+    <video [src]="currentLesson.video" controls [poster]="currentLesson.thumbnail"></video>
+    <div class="courseList">
+      <div
+        class="course"
+        *ngFor="let lessonsDetails of lessonList"
+        (click)="setCurrentLesson(lessonsDetails)"
+        [style]="{'background': lessonsDetails === currentLesson ? '#848484' : '#cfcfcf'}"
+      >
+        <div class="thumbnail">
+            <img [src]="lessonsDetails.thumbnail" alt="">
+          </div>
+          <div class="details">
+            <div class="title">{{lessonsDetails.title}}</div>
+            <div class="duration">
+              <i class="fa fa-play-circle"></i>
+              <span>{{lessonsDetails.duration}}min</span>
+            </div>
+          </div>
+      </div>
     </div>
-    <div class="comment-section">
-      <h2>Comments</h2>
-      <textarea name="comment" id="" cols="50" rows="20"></textarea>
-      <button class="btn">Post</button>
+  </div>
+
+  <div class="main">
+    <div class="course-desc">
+      <h1>{{currentLesson.title}}</h1>
+      <div>{{currentLesson.description}}</div>
     </div>
 
-<!--    createdAt: "2021-04-26T20:52:09.481168Z"-->
-<!--description: "SPEAKING IS DIFFERENT FROM COMMUNICATION, You can Speak without communicating and \nthis is what many people do not understand. A lot of People think that speaking with good \ndiction is about faking an accent or rolling your tongue, NO! It is never about rolling your tongue\nor faking an accent, It is about accurate and effective communication such that anyone from \nany part of the world can understand you clearly. This is what a lot of people do not know. As \na Public speaker, A radio/TV presenter, A voice over artiste, Customer service representative"-->
-<!--duration: 7200-->
-<!--id: 36-->
-<!--isPublished: false-->
-<!--lessons: 28-->
-<!--price: "50000.000"-->
-<!--purchases: 0-->
-<!--slug: "accent-polishing-course1619136362.08034"-->
-<!--thumbnail: "https://uniqueaccent.com.ng/assets/courses/course2.jpg"-->
-<!--title: "Accent Polishing Course"-->
-<!--updatedAt: "2021-05-02T13:56:47.893628Z"-->
-<!--video: "https://res.cloudinary.co-->
-    <div class="comment-details">
-      <div class="user">
-        <h5>Victor</h5>
-        <button>User</button>
-      </div>
-      <div class="comment">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ipsum sint qui voluptas pariatur expedita laudantium voluptates voluptate accusamus atque.</p>
-        <div class="comment-reply">
-          <div class="user">
-            <h5>Maxwell</h5>
-            <button class="admin">Admin</button>
-          </div>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur provident accusantium inventore impedit? Quidem illo ea veniam!</p>
-        </div>
-        <div class="comment-reply">
-          <div class="user">
-            <h5>Samson</h5>
-            <button>User</button>
-          </div>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur provident accusantium inventore impedit? Quidem illo ea veniam!</p>
-        </div>
-        <div class="reply-action">
-          <input type="text">
-          <button class="btn">Post</button>
-        </div>
+    <div class="comment-section" [formGroup]="commentForm">
+      <h2>Comments</h2>
+      <textarea formControlName="comment" name="comment" id="" cols="50" rows="20"></textarea>
+      <div class="postButton">
+        <button class="btn" (click)="createComment()">Post</button>
       </div>
     </div>
+
+    <div class="comment-details">
+      <ng-container *ngFor="let comment of allComment">
+        <div class="comment">
+          <div class="user">
+            <div class="userName">{{comment.user.name}}</div>
+            <div class="isAdmin" *ngIf="comment.user.isAdmin || comment.user.isStaff">Admin</div>
+          </div>
+
+          <div class="commentBox">
+            <div class="commentText">{{comment.comment}}</div>
+            <div class="comment-reply" *ngFor="let reply of comment.replies">
+              <div class="user">
+                <div class="userName">{{reply.user.name}}</div>
+                <div class="isAdmin" *ngIf="reply.user.isAdmin || reply.user.isStaff">Admin</div>
+              </div>
+              <div>{{reply.comment}}</div>
+            </div>
+            <div class="reply-action">
+              <input type="text" #reply>
+              <button class="btn" (click)="replyComment(comment.id, reply.value)">Post</button>
+            </div>
+          </div>
+        </div>
+
+      </ng-container>
+
+    </div>
   </div>
-  <div class="list">
-    <ul *ngFor="let lessonDetails of lessonDetails">
-      <li class="section-list">
-        <h4><strong>{{lessonDetails.title}}</strong></h4>
-        <div>{{lessonDetails.duration}}</div>
-      </li>
-    </ul>
-  </div>
+
 </div>
-<!--courseId: 36-->
-<!--createdAt: "2021-04-26T22:53:53.830753Z"-->
-<!--description: "Lesson Description goes here SPEAKING IS DIFFERENT FROM COMMUNICATION, You can Speak without communicating and \nthis is what many people do not understand. A lot of People think that speaking with good \ndiction is about faking an accent or rolling your tongue, NO! It is never about rolling your tongue\nor faking an accent, It is about accurate and effective communication such that anyone from \nany part of the world can understand you clearly. This is what a lot of people do not know. As \na Public speaker, A radio/TV presenter, A voice over artiste, Customer service representative"-->
-<!--duration: 87-->
-<!--id: 8-->
-<!--slug: "lesson-1"-->
-<!--thumbnail: "https://uniqueaccent.com.ng/assets/courses/course2.jpg"-->
-<!--title: "Lesson 1"-->
-<!--updatedAt: "2021-04-26T22:53:53.830753Z"-->
-<!--video: "https://res.cloudinary.com/eden-life-inc/video/upload/v1612616596/eden-website-v2/EDEN_LIFE__q1rgcz.mp4"-->
-<!--views:-->
