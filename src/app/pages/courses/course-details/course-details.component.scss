@@ -1,40 +1,52 @@
 .contain {
-  margin: 15px;
+  //margin: 15px;
 
   #topDiv {
-    padding: 20px;
+
+    width: 95%;
+    padding: 10px;
     display: grid;
     justify-content: space-between;
     background: #e2e2e2;
-    border-radius: 10px;
+    border-radius: 5px;
     border: none;
     box-shadow: 0 0 5px #e2e2e2;
     height: 400px;
 
     h1 {
-      font-size: 50px;
+      font-size: 40px;
       font-weight: 700;
+       margin-left: 25px;
     }
 
-    p {
-      width: 75%;
+    div {
+      font-size: 15px;
+      width:60%;
+      margin-top: 20px;
+      height: 170px;
+      margin-left: 22px;
+
     }
 
     .btn-btn {
       display: flex;
+      margin-top: 50px;
+      margin-left: 10px;
+       height: 70px;
+
+
 
       button {
-      height: 50%;
-      display: inline-block;
+      height: 50px;
       border-radius: 10px;
-      border: none;
+      //border: none;
       color: #212529;
       text-align: center;
       text-decoration: none;
       font-size: 16px;
       background-color: #FF6600;
       box-shadow: 0 0 5px #ff6600;
-      padding: 10px 35px;
+      padding: 10px 20px;
       margin: 10px;
       cursor: pointer;
       }
@@ -44,37 +56,61 @@
   .bottomDiv {
     display: flex;
     justify-content: space-between;
-    margin: 15px;
+    margin: 10px;
 
     .table {
       margin-top: 20px;
       width: 70%;
 
+
+        :hover{
+          background-color: #a0a0a0;
+        }
+
       .table-row {
         display: flex;
         justify-content: space-between;
-        margin: 15px;
+        margin: 17px;
+        width: 600px;
+        cursor: pointer;
+        padding: 10px;
+
+
 
         .thumbnail > h5 {
-          padding-left: 0;
+          width: 200px;
+            padding: 10px;
+
+
         }
 
         img {
-          width: 110px;
+          width: 200px;
           height: 110px;
-          padding: 0;
+          padding: 10px;
+
         }
 
         .title {
-          width: 500px;
-          margin-left: 20px;
+          width: 300px;
+          margin-left: 5px;
+
+
 
           h5 {
             padding-left:  8px;
+
+
           }
 
-          p {
-            width: 400px;
+          div{
+            margin-top: 10px;
+            width: 280px;
+            height: 125px;
+            margin-right: 5px;
+            line-height: 13px;
+            padding: 0px;
+            font-size: 10px;
 
             @media (max-width: 1020px) {
                 width: 300px;
@@ -85,12 +121,15 @@
 
           h4, p {
             padding:  0;
-            line-height: 20px;
+            line-height: 13px;
           }
         }
 
         .duration {
           width:  110px;
+          margin-right: 10px;
+
+
 
           h5 {
             padding-left: 0;
@@ -99,20 +138,23 @@
         }
         span {
           padding: 0;
+
         }
 
         h5 {
           font-weight: bolder;
+            align-content: center;
         }
       }
     }
 
     .video-contain {
-      width: 500px;
-      margin-top: 45px;
+      width: 320px;
+      margin-top: 95px;
+      margin-right: 33px;
 
       video {
-        width: 100%;
+        width: 300px;
       }
     }
 
@@ -120,4 +162,10 @@
       display: grid;
     }
   }
+
+
+
+
+
+
 }
