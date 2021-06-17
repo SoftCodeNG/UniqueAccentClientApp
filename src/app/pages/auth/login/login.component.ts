@@ -3,6 +3,7 @@ import {AuthService} from '../../../shared/services/auth.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Store} from '@ngxs/store';
 import {SetRefreshToken, SetToken} from '../../../store/app-store/app.action';
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private authService: AuthService,
-    private store: Store
+    private store: Store,
+    private toastr: ToastrService
   ) { }
 
   ngOnInit(): void {
@@ -31,6 +33,7 @@ export class LoginComponent implements OnInit {
         console.log('Login Successful');
         this.store.dispatch(new SetToken(res.access));
         this.store.dispatch(new SetRefreshToken(res.refresh));
+        this.toastr.success('Login successful');
       });
     }
   }
