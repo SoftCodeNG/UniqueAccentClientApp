@@ -3,7 +3,7 @@ import {AuthService} from '../../../shared/services/auth.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Store} from '@ngxs/store';
 import {SetRefreshToken, SetToken} from '../../../store/app-store/app.action';
-import {ToastrService} from "ngx-toastr";
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',

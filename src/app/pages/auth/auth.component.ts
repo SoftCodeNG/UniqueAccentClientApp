@@ -1,8 +1,8 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Select, Store} from '@ngxs/store';
 import {SetHeaderVisibility} from '../../store/app-store/app.action';
-import {AppState} from "../../store/app-store/app.state";
-import {Observable} from "rxjs";
+import {AppState} from '../../store/app-store/app.state';
+import {Observable} from 'rxjs';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import {Location} from '@angular/common';
 
