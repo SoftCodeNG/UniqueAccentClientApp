@@ -1,17 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import {CoursesService} from '../../../core/services/courses.service';
-import {ActivatedRoute} from "@angular/router";
-import {Select} from "@ngxs/store";
-import {AppState} from "../../../store/app-store/app.state";
-import {Observable} from "rxjs";
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {ActivatedRoute} from '@angular/router';
+import {Select} from '@ngxs/store';
+import {AppState} from '../../../store/app-store/app.state';
+import {Observable} from 'rxjs';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-course-section',
-  templateUrl: './course-section.component.html',
-  styleUrls: ['./course-section.component.scss']
+  templateUrl: './classroom.component.html',
+  styleUrls: ['./classroom.component.scss']
 })
-export class CourseSectionComponent implements OnInit {
+export class ClassroomComponent implements OnInit {
    courseDetails: any;
    lessonList: any;
    currentLesson: any;

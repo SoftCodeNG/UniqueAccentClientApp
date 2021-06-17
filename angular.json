@@ -32,6 +32,7 @@
             ],
             "styles": [
               "src/styles.scss",
+              "node_modules/ngx-toastr/toastr.css",
               "@fortawesome/fontawesome-free/css/all.css",
               "@fortawesome/fontawesome-free/css/brands.css",
               "@fortawesome/fontawesome-free/css/regular.css",

@@ -24,8 +24,6 @@ export class CourseDetailsComponent implements OnInit {
   getCourseDetails(slug: string): void {
     this.coursesService.getCourseDetails(slug).subscribe(res => {
       this.courseDetails = res;
-       console.log('eeeeeee', res);
-      // this.getCourseDetails(this.courseDetails.slug);
     });
   }
 
@@ -39,10 +37,10 @@ export class CourseDetailsComponent implements OnInit {
 
   paymentDone($event: any): void {
     console.log('payment successful', $event);
-    this.router.navigate([`/courses/lesson/${this.activatedRoute.snapshot.params.slug}`]).then();
+    this.router.navigate([`/courses/classroom/${this.activatedRoute.snapshot.params.slug}`]).then();
   }
 
   continueLearning(): void {
-    this.router.navigate([`/courses/lesson/${this.activatedRoute.snapshot.params.slug}`]).then();
+    this.router.navigate([`/courses/classroom/${this.activatedRoute.snapshot.params.slug}`]).then();
   }
 }
