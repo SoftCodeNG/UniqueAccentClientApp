@@ -41,6 +41,7 @@ import {Angular4PaystackModule} from 'angular4-paystack';
 import {TokenInterceptor} from './core/interceptors/token.interseptor';
 import {ReactiveFormsModule} from '@angular/forms';
 import {ToastrModule} from 'ngx-toastr';
+import {CoursesModule} from "./pages/courses/courses.module";
 
 
 @NgModule({
@@ -69,26 +70,27 @@ import {ToastrModule} from 'ngx-toastr';
     AboutComponent
 
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    ReactiveFormsModule,
-    BrowserAnimationsModule,
-    HttpClientModule,
-    SharedModule,
-    MatIconModule,
-    MatExpansionModule,
-    DragScrollModule,
-    MatTabsModule,
-    MatCardModule,
-    ToastrModule.forRoot(),
-    Angular4PaystackModule.forRoot(environment.payStackPublicKey),
-    NgxsModule.forRoot([AppState], {
-      developmentMode: !environment.production
-    }),
-    NgxsReduxDevtoolsPluginModule.forRoot(),
-    NgxsStoragePluginModule.forRoot(),
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        ReactiveFormsModule,
+        BrowserAnimationsModule,
+        HttpClientModule,
+        SharedModule,
+        MatIconModule,
+        MatExpansionModule,
+        DragScrollModule,
+        MatTabsModule,
+        MatCardModule,
+        ToastrModule.forRoot(),
+        Angular4PaystackModule.forRoot(environment.payStackPublicKey),
+        NgxsModule.forRoot([AppState], {
+            developmentMode: !environment.production
+        }),
+        NgxsReduxDevtoolsPluginModule.forRoot(),
+        NgxsStoragePluginModule.forRoot(),
+        CoursesModule,
+    ],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,

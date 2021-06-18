@@ -1,56 +1,53 @@
+.header {
+  position: fixed;
+  top: 70px;
+  left: 10%;
+  z-index: 100;
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  margin: auto;
+  padding: 12px;
+
+  .onlineCourse {
+    font-weight: 900;
+    font-size: 2em;
+  }
+
+  >:last-child {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 5px;
+    label {
+      box-shadow: 0 0 5px black;
+      border-radius: 5px;
+      padding: 5px;
+      box-sizing: border-box;
+      margin: 0 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 5px;
+
+      input {
+        border: none;
+      }
+    }
+
+    > i {
+      display: block;
+      padding: 10px;
+      box-shadow: 0 0 5px black;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  }
+}
+
 
 .main {
-  padding: 0 5vw;
-  .title {
-    font-family: 'Philosopher', sans-serif;
-    font-size: 3rem;
-    font-weight: 700;
-    margin: 30px 20px;
-  }
-
-  .courses {
-    background: white;
-    margin: 20px;
-    border-radius: 10px;
-    box-sizing: border-box;
-    box-shadow: 0 0 5px #0a0a0a;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-
-    > :first-child {
-      text-align: center;
-
-      img {
-        height: 200px;
-      }
-    }
-
-    .aboutCourse {
-      font-weight: bold;
-      font-size: 1.2em;
-
-      h1 {
-        font-weight: 600;
-      }
-    }
-
-    > :last-child {
-      text-align: center;
-
-      .readMoreButton {
-        cursor: pointer;
-        border-radius: 10px;
-        background-color: #FF6600;
-        box-shadow: 0 0 #FF6600;
-        border: none;
-        color: #212529;
-        padding: 10px 20px;
-        text-align: center;
-        text-decoration: none;
-        font-size: 16px;
-      }
-    }
-  }
+  margin-top: 70px;
 }

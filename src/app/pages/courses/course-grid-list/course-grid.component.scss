@@ -42,12 +42,9 @@
   .grid-list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
+    gap: 20px 0;
     margin-top: 50px;
-
-
-
-
 
     .card {
       margin-top: 20px;
@@ -58,30 +55,32 @@
       background: #FFFFFF;
       padding: 8px;
       cursor: pointer;
-      //margin-bottom: 12px;
+      box-shadow: 0 0 0 #FFFFFF;
+      transition: linear 200ms box-shadow;
 
        &:hover{
         box-shadow: 0 10px 10px #aaaaaa;
+        transition: linear 200ms box-shadow;
       }
 
-
-
-      img {
-        width: 350px;
-        height: 250px;
-        padding: 5px;
-        align-content: center;
-
+      .thumbnail {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        img  {
+          width: auto;
+          max-width: 100%;
+          height: auto;
+          max-height: 200px;
+          padding: 5px;
+          align-content: center;
+          margin: auto;
+        }
       }
 
-      p {
-        font-size: 13px;
-        width: 200px;
-        height: 80px;
-        line-height: 15px;
-        margin-bottom: 0;
-
-
+      h4 {
+        font-weight: 900;
+        margin: 15px 0;
       }
 
       .course-details {
@@ -89,8 +88,6 @@
         justify-content: space-between;
         font-size: 15px;
         font-weight: bold;
-
-
 
         div {
           padding-top: 15px;

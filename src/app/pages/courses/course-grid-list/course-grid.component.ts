@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import {CoursesService} from '../../../core/services/courses.service';
-import {ActivatedRoute} from "@angular/router";
 
 @Component({
-  selector: 'app-course-grid-list',
-  templateUrl: './course-grid-list.component.html',
-  styleUrls: ['./course-grid-list.component.scss']
+  selector: 'app-course-grid',
+  templateUrl: './course-grid.component.html',
+  styleUrls: ['./course-grid.component.scss']
 })
-export class CourseGridListComponent implements OnInit {
+export class CourseGridComponent implements OnInit {
  allCourses: any[];
 
   constructor(

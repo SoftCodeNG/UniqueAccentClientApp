@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CourseGridListComponent } from './course-grid-list.component';
+import { CourseGridComponent } from './course-grid.component';
 
 describe('CourseGridListComponent', () => {
-  let component: CourseGridListComponent;
-  let fixture: ComponentFixture<CourseGridListComponent>;
+  let component: CourseGridComponent;
+  let fixture: ComponentFixture<CourseGridComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CourseGridListComponent ]
+      declarations: [ CourseGridComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CourseGridListComponent);
+    fixture = TestBed.createComponent(CourseGridComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
