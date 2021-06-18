@@ -11,35 +11,35 @@
       </span>
     </div>
   </section>
-<!--  createdAt: "2021-04-26T20:52:09.481168Z"-->
-<!--description: "SPEAKING IS DIFFERENT FROM COMMUNICATION, You can Speak without communicating and \nthis is what many people do not understand. A lot of People think that speaking with good \ndiction is about faking an accent or rolling your tongue, NO! It is never about rolling your tongue\nor faking an accent, It is about accurate and effective communication such that anyone from \nany part of the world can understand you clearly. This is what a lot of people do not know. As \na Public speaker, A radio/TV presenter, A voice over artiste, Customer service representative"-->
-<!--duration: 7200-->
-<!--id: 1-->
-<!--isPublished: false-->
-<!--lessons: 0-->
-<!--price: "50000.000"-->
-<!--purchases: 0-->
-<!--slug: ""-->
-<!--thumbnail: "https://uniqueaccent.com.ng/assets/courses/course2.jpg"-->
-<!--title: "Accent Polishing Course"-->
-<!--updatedAt: "2021-04-26T20:52:09.899137Z"-->
-<!--video: "https://res.cloudi-->
+  createdAt: "2021-04-26T20:52:09.481168Z"
+description: "SPEAKING IS DIFFERENT FROM COMMUNICATION, You can Speak without communicating and \nthis is what many people do not understand. A lot of People think that speaking with good \ndiction is about faking an accent or rolling your tongue, NO! It is never about rolling your tongue\nor faking an accent, It is about accurate and effective communication such that anyone from \nany part of the world can understand you clearly. This is what a lot of people do not know. As \na Public speaker, A radio/TV presenter, A voice over artiste, Customer service representative"
+duration: 7200
+id: 1
+isPublished: false
+lessons: 0
+price: "50000.000"
+purchases: 0
+slug: ""
+thumbnail: "https://uniqueaccent.com.ng/assets/courses/course2.jpg"
+title: "Accent Polishing Course"
+updatedAt: "2021-04-26T20:52:09.899137Z"
+video: "https://res.cloudi
   <section>
     <div class="grid-list  grid-list-col3">
       <div [routerLink]="'/courses/' + course.slug" class="card" *ngFor="let course of allCourses">
         <img [src]="course.thumbnail" alt="course image">
         <div class="text">
-          
+
         </div>
         <h5><strong>{{course.title}}</strong></h5>
         <div class="desc">{{course.description.substr(0, 100)}}</div>
           <div class="course-details">
             <div class="lesson">
-              <img src="/assets/courses/calendar-range-fill.svg" alt="lessons">
+             <i class="far fa-file-video "></i>
               <span>{{course.lessons}}</span>
             </div>
             <div class="duration">
-              <img src="/assets/courses/alarm.svg" alt="lessons">
+             <i class="far fa-clock "></i>
               <span>
                 {{course.duration}}
 <!--                {{course.duration - (60 * (course.duration / 60))}}mins-->
