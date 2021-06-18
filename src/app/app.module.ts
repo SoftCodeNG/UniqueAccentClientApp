@@ -66,7 +66,8 @@ import {ToastrModule} from 'ngx-toastr';
     Quiz1Component,
     Quiz2Component,
     QuizEndComponent,
-    AboutComponent,
+    AboutComponent
+
   ],
   imports: [
     BrowserModule,
