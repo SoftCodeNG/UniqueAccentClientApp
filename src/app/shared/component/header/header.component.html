@@ -14,7 +14,8 @@
       <span routerLink="/courses" routerLinkActive="active">Courses</span>
 <!--      <span routerLinkActive="active">Training</span>-->
 <!--      <span class="upcomingTraining">Upcoming Training</span>-->
-      <span class="login" routerLink="auth/login">Login</span>
+      <span class="login" routerLink="auth/login" *ngIf="!isLoggedIn">Login</span>
+      <span class="login" (click)="logout()" *ngIf="isLoggedIn">Logout</span>
     </nav>
   </div>
 </header>

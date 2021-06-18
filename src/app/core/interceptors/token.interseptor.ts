@@ -61,11 +61,9 @@ export class TokenInterceptor implements HttpInterceptor {
 
     return this.authService.refreshToken(this.refreshToken).pipe(
       switchMap((token: any) => {
-        console.log('QQQQQQQQQQQQQQQQ: ', token);
         this.isRefreshing = false;
         this.refreshTokenSubject.next(token.access);
         if (token.access) {
-          console.log('CCCCCCCCCCC', token.access);
           this.store.dispatch(new SetToken(token.access));
         }
         return next.handle(this.addToken(request, token.access));

@@ -7,7 +7,7 @@ import {CourseDetails3Component} from './pages/courses/course-details3/course-de
 import {CourseDetails4Component} from './pages/courses/course-details4/course-details4.component';
 import {CourseListComponent} from './pages/courses/course-list/course-list.component';
 import { CourseNotFoundComponent } from './pages/courses/course-not-found/course-not-found.component';
-import { CourseSectionComponent } from './pages/courses/course-section/course-section.component';
+import { ClassroomComponent } from './pages/courses/classroom/classroom.component';
 import { EnrollQuizComponent } from './pages/quiz/enroll-quiz/enroll-quiz.component';
 import { QuizEndComponent } from './pages/quiz/quiz-end/quiz-end.component';
 import { QuizSectionComponent } from './pages/quiz/quiz-section/quiz-section.component';
@@ -61,8 +61,8 @@ const routes: Routes = [
     component: CourseListComponent
   },
   {
-    path: 'courses/course-section',
-    component: CourseSectionComponent
+    path: 'courses/classroom',
+    component: ClassroomComponent
   },
   {
     path: 'courses/course-not-found',
