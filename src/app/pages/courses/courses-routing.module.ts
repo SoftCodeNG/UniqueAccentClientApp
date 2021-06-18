@@ -1,14 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CourseGridListComponent  } from './course-grid-list/course-grid-list.component';
+import { CourseGridComponent  } from './course-grid/course-grid.component';
 import {CourseDetailsComponent} from './course-details/course-details.component';
 import {ClassroomComponent} from './classroom/classroom.component';
 import {AuthGuard} from '../../core/guards/auth-guard';
+import {CoursesComponent} from "./courses.component";
 
 const routes: Routes = [
   {
     path: '',
-    component: CourseGridListComponent
+    component: CoursesComponent
   },
   {
     path: ':slug',
