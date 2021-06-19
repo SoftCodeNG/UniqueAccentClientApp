@@ -3,7 +3,7 @@
 
   <div>
     <label>
-      <input type="search">
+      <input type="search" #search (keyup)="searchAllCourses(search.value)" (blur)="searchAllCourses(search.value)" (change)="searchAllCourses(search.value)">
       <i class="fa fa-search"></i>
     </label>
 
@@ -14,7 +14,7 @@
 
 
 <div class="main">
-  <app-course-grid *ngIf="currentView === 'grid'"></app-course-grid>
+  <app-course-grid [allCourses]="allCourses" *ngIf="currentView === 'grid'"></app-course-grid>
 
-  <app-course-list *ngIf="currentView === 'list'"></app-course-list>
+  <app-course-list [allCourses]="allCourses" *ngIf="currentView === 'list'"></app-course-list>
 </div>
