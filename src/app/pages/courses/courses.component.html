@@ -1,7 +1,7 @@
 <div class="header">
   <div class="onlineCourse">Online Courses</div>
 
-  <div>
+  <div class="search">
     <label>
       <input type="search" #search (keyup)="searchAllCourses(search.value)" (blur)="searchAllCourses(search.value)" (change)="searchAllCourses(search.value)">
       <i class="fa fa-search"></i>
@@ -9,6 +9,13 @@
 
     <i class="fa fa-th-large" (click)="currentView = 'grid'"></i>
     <i class="fa fa-list-ul" (click)="currentView = 'list'"></i>
+  </div>
+
+  <div class="mobileSearch">
+    <label>
+      <input type="search" #search (keyup)="searchAllCourses(search.value)" (blur)="searchAllCourses(search.value)" (change)="searchAllCourses(search.value)">
+      <i class="fa fa-search"></i>
+    </label>
   </div>
 </div>
 

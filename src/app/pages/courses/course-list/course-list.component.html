@@ -1,6 +1,6 @@
 <div class="container">
   <section class="table">
-    <div class="table-row" *ngFor="let course of allCourses">
+    <div [routerLink]="'/courses/' + course.slug" class="table-row" *ngFor="let course of allCourses">
       <div class="img-title">
         <div class="thumbnail">
           <img [src]="course.thumbnail" alt="" />
@@ -12,10 +12,16 @@
       </div>
       <div class="course-details">
         <div class="lessons">
-          <div>{{course.lessons}}</div>
+          <div>
+            <i class="far fa-file-video "></i>
+            {{course.lessons}}
+          </div>
         </div>
         <div class="duration">
-          <div>{{course.duration}}</div>
+          <div>
+            <i class="far fa-clock "></i>
+            {{course.duration}}
+          </div>
         </div>
         <div class="price">
           <div>{{course.price  | currency:'₦'}}</div>
