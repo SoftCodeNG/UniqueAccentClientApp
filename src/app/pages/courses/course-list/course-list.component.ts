@@ -1,6 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import {CoursesService} from '../../../core/services/courses.service';
-import {ActivatedRoute} from "@angular/router";
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-course-list',
@@ -8,21 +6,9 @@ import {ActivatedRoute} from "@angular/router";
   styleUrls: ['./course-list.component.scss']
 })
 export class CourseListComponent implements OnInit {
-  allCourses: any[];
+  @Input() allCourses: any[];
 
-  constructor(
-    private coursesService: CoursesService,
-     private activatedRoute: ActivatedRoute
-    ) { }
+  constructor() { }
 
-  ngOnInit(): void {
-    this.getAllCourses();
-  }
-
-  getAllCourses(): void {
-    this.coursesService.getAllCourses().subscribe(res => {
-      console.log(res);
-      this.allCourses = res;
-    });
-  }
+  ngOnInit(): void {}
 }

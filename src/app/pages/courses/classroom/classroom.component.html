@@ -1,5 +1,5 @@
 
-<div class="course-section" *ngIf="courseDetails">
+<div class="course-section" *ngIf="currentLesson">
   <div class="videoSection">
     <video [src]="currentLesson.video" controls [poster]="currentLesson.thumbnail"></video>
     <div class="courseList">
