@@ -1,26 +1,30 @@
 <div class="contain" *ngIf="courseDetails">
   <section id="topDiv">
-    <h1>{{courseDetails.title}}</h1>
-    <div>{{courseDetails.description}}</div>
+    <div class="info">
+      <h1>{{courseDetails.title}}</h1>
+      <div>{{courseDetails.description}}</div>
 
-    <div class="btn-btn">
-<!--      <button>Buy Course</button>-->
-<!--      <div>-->
-<!--        {{courseDetails.price  | currency:'₦'}}-->
-<!--      </div>-->
-      <button
-          angular4-paystack
-          [email]="'ucheesther87@gmail.com'"
-          [amount]="2000"
-          [ref]="reference"
-          (paymentInit)="paymentInit()"
-          (onClose)="paymentCancel()"
-          (callback)="paymentDone($event)"
-        >
-          Pay with Paystack
-        </button>
-      <button (click)="continueLearning()">Continue Learning</button>
+      <div class="btn-btn">
+  <!--      <button>Buy Course</button>-->
+  <!--      <div>-->
+  <!--        {{courseDetails.price  | currency:'₦'}}-->
+  <!--      </div>-->
+        <button
+            angular4-paystack
+            [email]="'ucheesther87@gmail.com'"
+            [amount]="2000"
+            [ref]="reference"
+            (paymentInit)="paymentInit()"
+            (onClose)="paymentCancel()"
+            (callback)="paymentDone($event)"
+          >
+            Pay with Paystack
+          </button>
+        <button (click)="continueLearning()">Continue Learning</button>
+      </div>
     </div>
+
+    <img [src]="courseDetails.thumbnail" alt="">
   </section>
 
   <section>
