@@ -1,7 +1,7 @@
 <div class="container">
   <section>
-    <div class="grid-list  grid-list-col3">
-      <div [routerLink]="'/courses/' + course.slug" class="card" *ngFor="let course of allCourses">
+    <div class="grid-list">
+      <div [routerLink]="'/courses/' + course.slug" class="gridCard" *ngFor="let course of allCourses">
         <div class="thumbnail">
           <img [src]="course.thumbnail" alt="course image">
         </div>
