@@ -16,6 +16,7 @@ export class ClassroomComponent implements OnInit {
    lessonList: any;
    currentLesson: any;
    userData: any;
+   descriptionLength = 500;
    commentForm: FormGroup;
    allComment: any[];
 
