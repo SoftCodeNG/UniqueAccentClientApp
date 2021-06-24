@@ -57,6 +57,15 @@ export class CoursesService {
       );
   }
 
+  getUserCourses(userId: number): Observable<any> {
+    return this.http.get<any>(`${this.baseURL}courses/getUserCourses/${userId}`)
+     .pipe(
+        map(res => {
+          return res.payload;
+        })
+      );
+  }
+
   createComment(data: any): Observable<any> {
     const payload = new FormData();
     payload.append('lessonId', data.lessonId);

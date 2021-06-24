@@ -42,6 +42,9 @@ import {TokenInterceptor} from './core/interceptors/token.interseptor';
 import {ReactiveFormsModule} from '@angular/forms';
 import {ToastrModule} from 'ngx-toastr';
 import {CoursesModule} from "./pages/courses/courses.module";
+import { UserProfileComponent } from './pages/user-profile/user-profile.component';
+import { SwiperModule } from 'swiper/angular';
+
 
 
 @NgModule({
@@ -67,7 +70,8 @@ import {CoursesModule} from "./pages/courses/courses.module";
     Quiz1Component,
     Quiz2Component,
     QuizEndComponent,
-    AboutComponent
+    AboutComponent,
+    UserProfileComponent
 
   ],
     imports: [
@@ -82,6 +86,7 @@ import {CoursesModule} from "./pages/courses/courses.module";
         DragScrollModule,
         MatTabsModule,
         MatCardModule,
+        SwiperModule,
         ToastrModule.forRoot(),
         Angular4PaystackModule.forRoot(environment.payStackPublicKey),
         NgxsModule.forRoot([AppState], {

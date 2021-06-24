@@ -15,7 +15,7 @@
 <!--      <span routerLinkActive="active">Training</span>-->
 <!--      <span class="upcomingTraining">Upcoming Training</span>-->
       <span class="login" routerLink="auth/login" *ngIf="!isLoggedIn">Login</span>
-      <span class="login" (click)="logout()" *ngIf="isLoggedIn">Logout</span>
+      <span class="login" routerLink="/profile" *ngIf="isLoggedIn">{{userProfile.user}}</span>
     </nav>
   </div>
 </header>

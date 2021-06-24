@@ -5,7 +5,7 @@ import {Router} from '@angular/router';
 import {Select, Store} from '@ngxs/store';
 import {AppState} from '../../store/app-store/app.state';
 import {SetToken} from '../../store/app-store/app.action';
-import {AuthService} from '../../shared/services/auth.service';
+import {AuthService} from '../services/auth.service';
 import {catchError, filter, switchMap, take} from 'rxjs/operators';
 
 
