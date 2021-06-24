@@ -20,7 +20,7 @@
         <div class="duration">
           <div>
             <i class="far fa-clock "></i>
-            {{course.duration}}
+            {{(course.duration / 60).toString().split('.')[0]}}mins {{course.duration - ((course.duration / 60).toString().split('.')[0] * 60)}}sec
           </div>
         </div>
         <div class="price">

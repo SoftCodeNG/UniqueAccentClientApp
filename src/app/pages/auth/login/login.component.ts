@@ -41,7 +41,8 @@ export class LoginComponent implements OnInit {
           isStaff: res.isStaff,
           lastLogin: res.lastLogin,
           user: res.user,
-          userId: decodedToken.user_id
+          userId: decodedToken.user_id,
+          email: decodedToken.email
         }));
         this.toastr.success('Login successful');
       });
