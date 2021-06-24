@@ -56,8 +56,8 @@ export class ClassroomComponent implements OnInit {
     });
   }
 
-  getCourseLessons(id: number): void {
-    this.coursesService.getCourseLessons(id).subscribe(res => {
+  getCourseLessons(slug: string): void {
+    this.coursesService.getCourseLessons(slug).subscribe(res => {
       this.lessonList = res;
       this.setCurrentLesson(res[0]);
     });
