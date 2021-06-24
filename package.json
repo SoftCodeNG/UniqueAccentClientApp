@@ -33,6 +33,7 @@
     "ngx-drag-scroll": "^11.0.0-beta.1",
     "ngx-toastr": "^14.0.0",
     "rxjs": "~6.6.0",
+    "swiper": "^6.7.1",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.3"
   },

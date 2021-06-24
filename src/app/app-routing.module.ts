@@ -22,6 +22,8 @@ import {ServiceDetails6Component} from './pages/services/service-details6/servic
 import {ServiceDetails7Component} from './pages/services/service-details7/service-details7.component';
 import {LinksComponent} from './pages/links/links.component';
 import {AboutComponent} from './pages/about/about.component';
+import {UserProfileComponent} from './pages/user-profile/user-profile.component';
+import {AuthGuard} from './core/guards/auth-guard';
 
 const routes: Routes = [
   {
@@ -31,6 +33,11 @@ const routes: Routes = [
   {
     path: 'auth',
     loadChildren: () => import('./pages/auth/auth.module').then(m => m.AuthModule)
+  },
+  {
+    path: 'profile',
+    component: UserProfileComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'links',
@@ -44,34 +51,6 @@ const routes: Routes = [
     path: 'services',
     component: ServicesComponent
   },
-  {
-    path: 'courses/course-details2',
-    component: CourseDetails2Component
-  },
-  {
-    path: 'courses/course-details3',
-    component: CourseDetails3Component
-  },
-  {
-    path: 'courses/course-details4',
-    component: CourseDetails4Component
-  },
-  {
-    path: 'courses/course-list',
-    component: CourseListComponent
-  },
-  {
-    path: 'courses/classroom',
-    component: ClassroomComponent
-  },
-  {
-    path: 'courses/course-not-found',
-    component: CourseNotFoundComponent
-  },
-  // {
-  //   path: 'courses/course-details',
-  //   component: AboutCourseComponent
-  // },
   {
     path: 'enroll-quiz',
     component: EnrollQuizComponent
