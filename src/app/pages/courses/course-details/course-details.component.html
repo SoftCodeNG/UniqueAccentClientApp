@@ -22,13 +22,9 @@
           (click)="descriptionLength = 500">
           ... Read less <i class="fa fa-angle-up"></i>
         </span>
-
-
       </div>
-
       <div class="btn-btn">
   <!--      <button>Buy Course</button>-->
-
         <button
           angular4-paystack
           [email]="userProfile.email"
@@ -43,11 +39,9 @@
         <button (click)="continueLearning()">Continue Learning</button>
       </div>
     </div>
-
     <img *ngIf="descriptionLength <= 500" [src]="courseDetails.thumbnail" alt="">
     <img class="mobilThumbnail" *ngIf="descriptionLength > 500" [src]="courseDetails.thumbnail" alt="">
   </section>
-
   <section>
     <div class="bottomDiv">
       <section class="lessonTable">
