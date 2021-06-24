@@ -15,8 +15,10 @@ import {ToastrService} from "ngx-toastr";
 export class HeaderComponent implements OnInit {
   showMenu = false;
   isLoggedIn = false;
+  userProfile: any;
 
   @Select(AppState.getToken) token$: Observable<string>;
+  @Select(AppState.getUserProfile) userProfile$: Observable<string>;
   constructor(
     private router: Router,
     private store: Store,
@@ -25,6 +27,9 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.token$.subscribe(token => {
+      this.userProfile$.subscribe(res => {
+        this.userProfile = res;
+      });
       if (token) {
         const helper = new JwtHelperService();
         const isExpired = helper.isTokenExpired(token);

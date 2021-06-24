@@ -63,7 +63,9 @@
       <div class="data">
         <div>
           <i class="far fa-clock "></i>
-          <span>{{lessonsDetails.duration}}</span>
+          <span>
+            {{(lessonsDetails.duration / 60).toString().split('.')[0]}}mins {{lessonsDetails.duration - ((lessonsDetails.duration / 60).toString().split('.')[0] * 60)}}sec
+          </span>
         </div>
         <div></div>
       </div>
