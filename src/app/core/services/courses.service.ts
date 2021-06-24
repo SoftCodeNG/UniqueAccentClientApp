@@ -39,7 +39,7 @@ export class CoursesService {
       );
   }
 
-  getCourseLessons(id: number): Observable<any> {
+  getCourseLessons(id: string): Observable<any> {
     return this.http.get<any>(`${this.baseURL}courses/getCourseLessons/${id}`)
      .pipe(
         map(res => {
