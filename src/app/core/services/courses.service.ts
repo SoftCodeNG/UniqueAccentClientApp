@@ -21,6 +21,15 @@ export class CoursesService {
       );
   }
 
+  searchAllCourses(value: string): Observable<any> {
+    return this.http.get<any>(`${this.baseURL}courses/searchCourses/${value}`)
+      .pipe(
+        map(res => {
+          return res.results;
+        })
+      );
+  }
+
   getCourseDetails(slug: string): Observable<any> {
     return this.http.get<any>(`${this.baseURL}courses/getCourseDetails/${slug}`)
      .pipe(

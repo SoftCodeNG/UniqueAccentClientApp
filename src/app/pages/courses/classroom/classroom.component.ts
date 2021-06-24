@@ -19,7 +19,7 @@ export class ClassroomComponent implements OnInit {
    commentForm: FormGroup;
    allComment: any[];
 
-   @Select(AppState.getDecodedToken) decodedToken$: Observable<any>;
+   @Select(AppState.getUserProfile) userProfile$: Observable<any>;
   constructor(
     private coursesService: CoursesService,
     private activatedRoute: ActivatedRoute,
@@ -27,7 +27,7 @@ export class ClassroomComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
-    this.decodedToken$.subscribe(res => {
+    this.userProfile$.subscribe(res => {
       this.userData = res;
       console.log(this.userData);
       this.setCommentForm();
@@ -38,7 +38,7 @@ export class ClassroomComponent implements OnInit {
   setCommentForm(): void {
     this.commentForm = this.fb.group({
       lessonId: [this.currentLesson?.id, Validators.required],
-      userId: [this.userData.user_id, Validators.required],
+      userId: [this.userData.userId, Validators.required],
       comment: ['', Validators.required],
     });
   }
