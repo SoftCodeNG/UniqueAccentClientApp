@@ -5,7 +5,7 @@ import {Select} from '@ngxs/store';
 import {AppState} from '../../../store/app-store/app.state';
 import {Observable} from 'rxjs';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {ToastrService} from "ngx-toastr";
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-course-section',
@@ -34,6 +34,18 @@ export class ClassroomComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
+    screen.orientation.addEventListener('change', (screenOrientation) => {
+      if (screenOrientation.isTrusted === true) {
+        const orientation = screen.orientation.type;
+        const video = document.getElementById('video') as HTMLVideoElement;
+
+        if (orientation === 'landscape-primary' || orientation === 'landscape-secondary') {
+          video.requestFullscreen().then();
+        } else if (orientation === 'portrait-secondary' || orientation === 'portrait-primary') {
+          window.document.exitFullscreen().then();
+        }
+      }
+    });
     this.userProfile$.subscribe(res => {
       this.userData = res;
       console.log(this.userData);
