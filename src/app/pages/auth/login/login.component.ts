@@ -5,7 +5,7 @@ import {Store} from '@ngxs/store';
 import {SetRefreshToken, SetToken, SetUserCourses, SetUserProfile} from '../../../store/app-store/app.action';
 import {ToastrService} from 'ngx-toastr';
 import {JwtHelperService} from '@auth0/angular-jwt';
-import {CoursesService} from '../../../core/services/courses.service';
+import {CourseService} from '../../../core/services/course.service';
 
 @Component({
   selector: 'app-login',
@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private authService: AuthService,
-    private coursesService: CoursesService,
+    private coursesService: CourseService,
     private store: Store,
     private toastr: ToastrService
   ) { }

@@ -1,8 +1,22 @@
 .main {
   padding: 5vw;
 
+  .welcome {
+    * {
+      font-family: "Philosopher", sans-serif;
+      font-weight: 900;
+    }
+  }
+
   .courses {
+    margin-top: 50px;
+    h2 {
+      font-family: "Philosopher", sans-serif;
+      font-weight: 900;
+    }
     .grid-list {
+      display: grid;
+      align-items: center;
 
     .gridCard {
       margin: 20px;
@@ -14,12 +28,12 @@
       padding: 8px;
       cursor: pointer;
       box-shadow: 0 0 0 #FFFFFF;
-      transition: linear 200ms box-shadow, linear 200ms background;;
+      transition: box-shadow linear 200ms, background linear 200ms;
 
       &:hover {
         box-shadow: 0 10px 10px #aaaaaa;
         background: white;
-        transition: linear 200ms box-shadow, linear 200ms background;
+        transition: box-shadow linear 200ms, background linear 200ms;
       }
 
       .thumbnail {
@@ -64,9 +78,4 @@
   }
   }
 
-}
-
-
-.swiper-slide {
-  width: 400px!important;
 }

@@ -7,7 +7,7 @@ import {map} from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class CoursesService {
+export class CourseService {
   baseURL = environment.baseURL;
 
   constructor(private http: HttpClient) { }
@@ -32,6 +32,19 @@ export class CoursesService {
 
   getCourseDetails(slug: string): Observable<any> {
     return this.http.get<any>(`${this.baseURL}courses/getCourseDetails/${slug}`)
+     .pipe(
+        map(res => {
+          return res.payload;
+        })
+      );
+  }
+
+  grantUserCourseAccess(userId, courseId): Observable<any> {
+    const payload = new FormData();
+    payload.append('userId', userId);
+    payload.append('courseId', courseId);
+    payload.append('isPurchased', 'true');
+    return this.http.post<any>(`${this.baseURL}courses/grantUserCourseAccess`, payload)
      .pipe(
         map(res => {
           return res.payload;

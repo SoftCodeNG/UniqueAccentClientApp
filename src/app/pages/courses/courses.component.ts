@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {CoursesService} from "../../core/services/courses.service";
+import {CourseService} from "../../core/services/course.service";
 
 @Component({
   selector: 'app-courses',
@@ -11,7 +11,7 @@ export class CoursesComponent implements OnInit {
   allCourses: any[];
 
   constructor(
-    private coursesService: CoursesService,
+    private coursesService: CourseService,
   ) {
   }
 

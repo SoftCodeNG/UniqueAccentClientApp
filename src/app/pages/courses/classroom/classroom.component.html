@@ -1,5 +1,5 @@
 
-<div class="course-section" *ngIf="currentLesson">
+<div class="course-section" *ngIf="currentLesson && courseIsPurchased">
   <div class="videoSection">
     <video [src]="currentLesson.video" controls [poster]="currentLesson.thumbnail"></video>
     <div class="courseList">
@@ -57,8 +57,8 @@
               <div>{{reply.comment}}</div>
             </div>
             <div class="reply-action">
-              <input type="text" #reply>
-              <button class="btn" (click)="replyComment(comment.id, reply.value)">Post</button>
+              <input type="text" #reply (keyup.enter)="replyComment(comment.id, reply.value)">
+              <button class="btn" (click)="replyComment(comment.id, reply.value)">Reply</button>
             </div>
           </div>
         </div>
@@ -68,4 +68,9 @@
     </div>
   </div>
 
+</div>
+
+
+<div *ngIf="currentLesson && (courseIsPurchased === false)">
+  {{redirectToCourseDetail()}}
 </div>

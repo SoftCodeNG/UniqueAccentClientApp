@@ -27,9 +27,8 @@
       </div>
 
       <div class="btn-btn">
-  <!--      <button>Buy Course</button>-->
-
         <button
+          *ngIf="courseIsPurchased === false"
           angular4-paystack
           [email]="userProfile.email"
           [amount]="courseDetails.price * 100"
@@ -38,9 +37,9 @@
           (onClose)="paymentCancel()"
           (callback)="paymentDone($event)"
         >
-          Pay with Paystack
+          Buy Course
         </button>
-        <button (click)="continueLearning()">Continue Learning</button>
+        <button *ngIf="courseIsPurchased === true" (click)="continueLearning()">Continue Learning</button>
       </div>
     </div>
 
