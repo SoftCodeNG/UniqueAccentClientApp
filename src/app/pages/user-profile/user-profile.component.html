@@ -1,12 +1,13 @@
 <div class="main">
-  <div>
+  <div class="welcome">
     <h1>Hi {{userProfile.user}}</h1>
+    <h3>{{greetingMessage}}</h3>
   </div>
   <div class="courses">
     <h2>Your Courses</h2>
     <swiper
       #swiperRef
-      [slidesPerView]="4"
+      [slidesPerView]="deviceWidth > 1500 ? 4 : deviceWidth > 1000 ? 3 : deviceWidth > 500 ? 2 : 1"
       [centeredSlides]="false"
       [spaceBetween]="30"
       [pagination]="{
@@ -37,8 +38,6 @@
       </div>
       </ng-template>
     </swiper>
-    <div class="grid-list">
 
-    </div>
   </div>
 </div>

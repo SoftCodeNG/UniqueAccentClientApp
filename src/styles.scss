@@ -54,3 +54,25 @@ body {
 button {
   border: none;
 }
+
+.swiper-slide {
+  display: grid;
+  align-items: center!important;
+}
+
+.swiper-button-prev, .swiper-button-next {
+  padding: 30px;
+  box-sizing: border-box;
+  transition: background linear 500ms;
+  border-radius: 20px;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.9);
+    transition: background linear 500ms;
+  }
+}
+
+.swiper-button-prev.swiper-button-disabled, .swiper-button-next.swiper-button-disabled {
+  padding: 30px;
+  box-sizing: border-box;
+}
