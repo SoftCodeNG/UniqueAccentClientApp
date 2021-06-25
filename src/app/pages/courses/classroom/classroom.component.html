@@ -26,9 +26,27 @@
   </div>
 
   <div class="main">
+
+
     <div class="course-desc">
       <h1>{{currentLesson.title}}</h1>
-      <div>{{currentLesson.description}}</div>
+      <div>{{currentLesson.description}}
+           <span>{{currentLesson.description.substr(0, descriptionLength)}}</span>
+        <ng-container *ngIf="currentLesson.description.length > 500">
+          <span
+            *ngIf="descriptionLength <= 500"
+            style="cursor: pointer; font-weight: 900"
+            (click)="descriptionLength = currentLesson.description.length">
+            ... Read more <i class="fa fa-angle-down"></i>
+          </span>
+        </ng-container>
+        <span
+          *ngIf="descriptionLength > 500"
+          style="cursor: pointer; font-weight: 900"
+          (click)="descriptionLength = 500">
+          ... Read less <i class="fa fa-angle-up"></i>
+        </span>
+      </div>
     </div>
 
     <div class="comment-section" [formGroup]="commentForm">
