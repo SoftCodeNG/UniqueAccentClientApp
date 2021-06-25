@@ -14,7 +14,12 @@ export class SetRefreshToken {
   constructor(public refreshToken: string) {}
 }
 
-export class SetDecodedToken {
-  static readonly type = '[App] SetDecodedToken';
-  constructor(public decodedToken: any) {}
+export class SetUserProfile {
+  static readonly type = '[App] SetUserProfile';
+  constructor(public userProfile: any) {}
+}
+
+export class SetUserCourses {
+  static readonly type = '[App] SetUserCourses';
+  constructor(public userCourses: any) {}
 }

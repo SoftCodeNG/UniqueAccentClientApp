@@ -1,24 +1,30 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {CourseListComponent} from './course-list/course-list.component';
-import { CourseGridListComponent  } from './course-grid-list/course-grid-list.component';
-
+import { CourseGridComponent  } from './course-grid/course-grid.component';
 import {CourseDetailsComponent} from './course-details/course-details.component';
-import {CourseSectionComponent} from "./course-section/course-section.component";
+import {ClassroomComponent} from './classroom/classroom.component';
+import {AuthGuard} from '../../core/guards/auth-guard';
+import {CoursesComponent} from "./courses.component";
+import {CourseNotFoundComponent} from "./course-not-found/course-not-found.component";
 
 const routes: Routes = [
   {
     path: '',
-    component: CourseGridListComponent
+    component: CoursesComponent
   },
   {
     path: ':slug',
     component: CourseDetailsComponent
   },
   {
-    path: 'lesson/:slug',
-    component: CourseSectionComponent
-  }
+    path: 'classroom/:slug',
+    component: ClassroomComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: '**',
+    component: CourseNotFoundComponent
+  },
 ];
 
 @NgModule({

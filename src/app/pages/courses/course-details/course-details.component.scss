@@ -1,171 +1,179 @@
 .contain {
-  //margin: 15px;
-
   #topDiv {
-
-    width: 95%;
-    padding: 10px;
-    display: grid;
+    width: 100%;
+    padding: 10px 5vw;
+    display: flex;
+    gap: 20px;
+    align-items: center;
     justify-content: space-between;
     background: #e2e2e2;
-    border-radius: 5px;
     border: none;
     box-shadow: 0 0 5px #e2e2e2;
-    height: 400px;
+    height: auto;
+    min-height: 400px;
+    box-sizing: border-box;
 
-    h1 {
-      font-size: 40px;
-      font-weight: 700;
-       margin-left: 25px;
+    @media (max-width: 700px) {
+      flex-wrap: wrap-reverse;
+      justify-content: center;
     }
 
-    div {
-      font-size: 15px;
-      width:60%;
-      margin-top: 20px;
-      height: 170px;
-      margin-left: 22px;
+    .info {
+      width: 100%;
 
+      h1 {
+        font-size: 40px;
+        font-weight: 700;
+      }
+
+      .fee {
+        font-weight: 900;
+        font-family: "Philosopher", sans-serif;
+        font-size: 1.5em;
+      }
+
+      div {
+        font-size: 15px;
+        margin-top: 20px;
+        //height: 170px;
+      }
+
+      .btn-btn {
+        display: flex;
+        margin-top: 50px;
+        gap: 10px;
+        height: 70px;
+        //justify-content: space-around;
+
+        @media (max-width: 700px) {
+          flex-wrap: wrap-reverse;
+          justify-content: center;
+          button {
+            width: 100%;
+            max-width: 300px;
+          }
+        }
+
+        button {
+          border-radius: 10px;
+          font-family: "Philosopher", sans-serif;
+          color: #212529;
+          text-align: center;
+          text-decoration: none;
+          font-size: 20px;
+          font-weight: 900;
+          background-color: #FF6600;
+          box-shadow: 0 0 5px #000000;
+          padding: 10px 50px;
+          cursor: pointer;
+        }
+      }
     }
 
-    .btn-btn {
-      display: flex;
-      margin-top: 50px;
-      margin-left: 10px;
-       height: 70px;
+    img {
+      min-width: 300px;
+      width: auto;
+      max-width: 40%;
+      height: auto;
+      max-height: 100%;
 
+      &.mobilThumbnail {
+        display: none;
 
-
-      button {
-      height: 50px;
-      border-radius: 10px;
-      //border: none;
-      color: #212529;
-      text-align: center;
-      text-decoration: none;
-      font-size: 16px;
-      background-color: #FF6600;
-      box-shadow: 0 0 5px #ff6600;
-      padding: 10px 20px;
-      margin: 10px;
-      cursor: pointer;
+        @media (max-width: 700px) {
+          display: inline-block;
+        }
       }
     }
   }
 
   .bottomDiv {
+    padding: 10px 5vw;
     display: flex;
+    gap: 20px;
+    align-items: center;
     justify-content: space-between;
-    margin: 10px;
-
-    .table {
-      margin-top: 20px;
-      width: 70%;
 
 
-        :hover{
-          background-color: #a0a0a0;
-        }
+    @media (max-width: 1100px) {
+      flex-wrap: wrap-reverse;
+      justify-content: center;
 
+      .video-contain {
+        max-width: 60% !important;
+      }
+    }
+
+    .lessonTable {
+      width: 100%;
+      box-sizing: border-box;
       .table-row {
-        display: flex;
-        justify-content: space-between;
-        margin: 17px;
-        width: 600px;
-        cursor: pointer;
+        display: grid;
+        grid-template-columns: 150px auto 150px;
+        gap: 20px;
+        width: 100%;
+        align-items: center;
+        margin: 10px 0;
+        background: #f1f1f1;
         padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 0 0 #FFFFFF;
+        transition: linear 200ms box-shadow, linear 200ms background;
 
 
-
-        .thumbnail > h5 {
-          width: 200px;
-            padding: 10px;
-
-
+        @media (max-width: 1090px) {
+          display: grid;
+          margin: 25px auto;
         }
 
-        img {
-          width: 200px;
-          height: 110px;
-          padding: 10px;
+        @media (max-width: 700px) {
+          display: flex;
+          gap: 10px;
+          align-items: flex-start;
+          margin: 25px auto;
 
-        }
-
-        .title {
-          width: 300px;
-          margin-left: 5px;
-
-
-
-          h5 {
-            padding-left:  8px;
-
-
+          .thumbnail {
+            width: auto;
+            min-width: 70px !important;
           }
-
-          div{
-            margin-top: 10px;
-            width: 280px;
-            height: 125px;
-            margin-right: 5px;
-            line-height: 13px;
-            padding: 0px;
-            font-size: 10px;
-
-            @media (max-width: 1020px) {
-                width: 300px;
-                height: 100px;
-                overflow: hidden;
-            }
+          .text {
+            height: 50px;
+            overflow: hidden;
           }
-
-          h4, p {
-            padding:  0;
-            line-height: 13px;
+          .data {
+            display: none !important;
           }
         }
 
-        .duration {
-          width:  110px;
-          margin-right: 10px;
+        .thumbnail {
+          width: auto;
+          max-width: 200px;
 
-
-
-          h5 {
-            padding-left: 0;
+          img {
+            width: auto;
+            max-width: 100%;
+            height: auto;
+            max-height: 200px;
           }
-
-        }
-        span {
-          padding: 0;
-
         }
 
-        h5 {
-          font-weight: bolder;
-            align-content: center;
+        .description {
+          .title {
+            font-family: "Philosopher", sans-serif;
+            font-size: 1.6em;
+          }
         }
       }
     }
 
     .video-contain {
-      width: 320px;
-      margin-top: 95px;
-      margin-right: 33px;
+      min-width: 300px;
+      width: auto;
+      max-width: 40%;
 
       video {
-        width: 300px;
+        width: 100%;
       }
     }
-
-    @media (max-width: 860px) {
-      display: grid;
-    }
   }
-
-
-
-
-
-
 }

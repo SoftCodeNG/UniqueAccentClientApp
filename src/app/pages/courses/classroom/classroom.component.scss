@@ -8,9 +8,11 @@
     display: grid;
     grid-template-columns: auto 400px;
     background: #cfcfcf;
+
     video {
       width: 100%;
       height: 500px;
+      aspect-ratio: 16/9;
     }
 
     .courseList {
@@ -18,7 +20,7 @@
       justify-content: flex-end;
       overflow: hidden;
       overflow-y: auto;
-      height: 100%;
+      height: 500px;
 
       .course {
         background: #cfcfcf;
@@ -63,6 +65,29 @@
         }
       }
     }
+
+    @media (max-width: 900px) {
+      grid-template-columns: auto;
+      grid-template-rows: auto auto;
+      height: auto;
+
+      video {
+        height: unset;
+      }
+
+      .courseList {
+        height: unset;
+        max-height: 300px;
+        padding: 0 5vw;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .courseList {
+        padding: 0;
+      }
+    }
+
   }
 
 
@@ -176,6 +201,26 @@
       }
 
 
+    }
+
+    @media (max-width: 700px) {
+      .comment-section {
+        textarea {
+          width: 100%;
+        }
+      }
+
+      .comment-details {
+        width: 100%;
+
+        .comment-reply {
+          width: 100% !important;
+        }
+        .reply-action {
+          width: 100% !important;
+          display: flex;
+        }
+      }
     }
   }
 

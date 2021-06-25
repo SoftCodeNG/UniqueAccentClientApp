@@ -5,7 +5,7 @@ import {Router} from '@angular/router';
 import {Select, Store} from '@ngxs/store';
 import {AppState} from '../../store/app-store/app.state';
 import {SetToken} from '../../store/app-store/app.action';
-import {AuthService} from '../../shared/services/auth.service';
+import {AuthService} from '../services/auth.service';
 import {catchError, filter, switchMap, take} from 'rxjs/operators';
 
 
@@ -61,11 +61,9 @@ export class TokenInterceptor implements HttpInterceptor {
 
     return this.authService.refreshToken(this.refreshToken).pipe(
       switchMap((token: any) => {
-        console.log('QQQQQQQQQQQQQQQQ: ', token);
         this.isRefreshing = false;
         this.refreshTokenSubject.next(token.access);
         if (token.access) {
-          console.log('CCCCCCCCCCC', token.access);
           this.store.dispatch(new SetToken(token.access));
         }
         return next.handle(this.addToken(request, token.access));

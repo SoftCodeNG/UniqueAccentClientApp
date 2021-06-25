@@ -31,16 +31,21 @@ import {NgxsReduxDevtoolsPluginModule} from '@ngxs/devtools-plugin';
 import {NgxsStoragePluginModule} from '@ngxs/storage-plugin';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {AppState} from './store/app-store/app.state';
-import { CourseSectionComponent } from './pages/courses/course-section/course-section.component';
 import { CourseNotFoundComponent } from './pages/courses/course-not-found/course-not-found.component';
 import { EnrollQuizComponent } from './pages/quiz/enroll-quiz/enroll-quiz.component';
 import { QuizSectionComponent } from './pages/quiz/quiz-section/quiz-section.component';
 import { Quiz1Component } from './pages/quiz/quiz1/quiz1.component';
 import { Quiz2Component } from './pages/quiz/quiz2/quiz2.component';
 import { QuizEndComponent } from './pages/quiz/quiz-end/quiz-end.component';
-import {Angular4PaystackModule} from "angular4-paystack";
-import {TokenInterceptor} from "./core/interceptors/token.interseptor";
-import {ReactiveFormsModule} from "@angular/forms";
+import {Angular4PaystackModule} from 'angular4-paystack';
+import {TokenInterceptor} from './core/interceptors/token.interseptor';
+import {ReactiveFormsModule} from '@angular/forms';
+import {ToastrModule} from 'ngx-toastr';
+import {CoursesModule} from "./pages/courses/courses.module";
+import { UserProfileComponent } from './pages/user-profile/user-profile.component';
+import { SwiperModule } from 'swiper/angular';
+
+
 
 @NgModule({
   declarations: [
@@ -59,35 +64,38 @@ import {ReactiveFormsModule} from "@angular/forms";
     ServiceDetails6Component,
     ServiceDetails7Component,
     LinksComponent,
-    CourseSectionComponent,
     CourseNotFoundComponent,
     EnrollQuizComponent,
     QuizSectionComponent,
     Quiz1Component,
     Quiz2Component,
     QuizEndComponent,
-    AboutComponent
+    AboutComponent,
+    UserProfileComponent
 
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    ReactiveFormsModule,
-    BrowserAnimationsModule,
-    HttpClientModule,
-    SharedModule,
-    MatIconModule,
-    MatExpansionModule,
-    DragScrollModule,
-    MatTabsModule,
-    MatCardModule,
-    Angular4PaystackModule.forRoot(environment.payStackPublicKey),
-    NgxsModule.forRoot([AppState], {
-      developmentMode: !environment.production
-    }),
-    NgxsReduxDevtoolsPluginModule.forRoot(),
-    NgxsStoragePluginModule.forRoot(),
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        ReactiveFormsModule,
+        BrowserAnimationsModule,
+        HttpClientModule,
+        SharedModule,
+        MatIconModule,
+        MatExpansionModule,
+        DragScrollModule,
+        MatTabsModule,
+        MatCardModule,
+        SwiperModule,
+        ToastrModule.forRoot(),
+        Angular4PaystackModule.forRoot(environment.payStackPublicKey),
+        NgxsModule.forRoot([AppState], {
+            developmentMode: !environment.production
+        }),
+        NgxsReduxDevtoolsPluginModule.forRoot(),
+        NgxsStoragePluginModule.forRoot(),
+        CoursesModule,
+    ],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,

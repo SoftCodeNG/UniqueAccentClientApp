@@ -1,55 +1,75 @@
 <div class="contain" *ngIf="courseDetails">
   <section id="topDiv">
-    <h1>{{courseDetails.title}}</h1>
-    <div>{{courseDetails.description}}</div>
+    <div class="info">
+      <h1>{{courseDetails.title}}</h1>
+        <div class="fee">
+          <span>Fee: </span>
+          {{courseDetails.price  | currency:'₦'}}
+        </div>
+      <div>
+        <span>{{courseDetails.description.substr(0, descriptionLength)}}</span>
+        <ng-container *ngIf="courseDetails.description.length > 500">
+          <span
+          *ngIf="descriptionLength <= 500"
+          style="cursor: pointer; font-weight: 900"
+          (click)="descriptionLength = courseDetails.description.length">
+          ... Read more <i class="fa fa-angle-down"></i>
+        </span>
+        </ng-container>
+        <span
+          *ngIf="descriptionLength > 500"
+          style="cursor: pointer; font-weight: 900"
+          (click)="descriptionLength = 500">
+          Read less <i class="fa fa-angle-up"></i>
+        </span>
 
-    <div class="btn-btn">
-<!--      <button>Buy Course</button>-->
-<!--      <div>-->
-<!--        {{courseDetails.price  | currency:'₦'}}-->
-<!--      </div>-->
-      <button
+
+      </div>
+
+      <div class="btn-btn">
+        <button
+          *ngIf="courseIsPurchased === false"
           angular4-paystack
-          [email]="'ucheesther87@gmail.com'"
-          [amount]="2000"
+          [email]="userProfile.email"
+          [amount]="courseDetails.price * 100"
           [ref]="reference"
           (paymentInit)="paymentInit()"
           (onClose)="paymentCancel()"
           (callback)="paymentDone($event)"
         >
-          Pay with Paystack
+          Buy Course
         </button>
-      <button (click)="continueLearning()">Continue Learning</button>
+        <button *ngIf="courseIsPurchased === true" (click)="continueLearning()">Continue Learning</button>
+      </div>
     </div>
+
+    <img *ngIf="descriptionLength <= 500" [src]="courseDetails.thumbnail" alt="">
+    <img class="mobilThumbnail" *ngIf="descriptionLength > 500" [src]="courseDetails.thumbnail" alt="">
   </section>
 
   <section>
     <div class="bottomDiv">
-      <div class="table">
-        <div class="table-row">
-          <div class="thumbnail">
-            <h5>Thumbnail</h5>
-          </div>
-          <div class="title">
-            <h5>Title</h5>
-          </div>
-          <div class="duration">
-            <h5>Duration</h5>
-          </div>
-        </div>
-        <div class="table-row">
-          <div class="thumbnail">
-            <img [src]="courseDetails.thumbnail" alt="">
-          </div>
-          <div class="title">
-            <h4><strong>{{courseDetails.title}}</strong></h4>
-            <div>{{courseDetails.description}}</div>
-          </div>
-          <div class="duration">
-            <span>{{courseDetails.duration }}</span>
-          </div>
-        </div>
+      <section class="lessonTable">
+        <h2 style="font-weight: 900">Lessons</h2>
+    <div class="table-row" *ngFor="let lessonsDetails of lessonList">
+      <div class="thumbnail">
+        <img [src]="lessonsDetails.thumbnail" alt="">
       </div>
+      <div class="description">
+        <div class="title">{{lessonsDetails.title}}</div>
+        <div class="text">{{lessonsDetails.description.substr(0, 100)}}{{lessonsDetails.description.length > 100 ? '...' : ''}}</div>
+      </div>
+      <div class="data">
+        <div>
+          <i class="far fa-clock "></i>
+          <span>
+            {{(lessonsDetails.duration / 60).toString().split('.')[0]}}mins {{lessonsDetails.duration - ((lessonsDetails.duration / 60).toString().split('.')[0] * 60)}}sec
+          </span>
+        </div>
+        <div></div>
+      </div>
+    </div>
+  </section>
       <div class="video-contain">
         <video [src]="courseDetails.video" controls></video>
       </div>

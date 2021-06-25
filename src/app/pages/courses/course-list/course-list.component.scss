@@ -1,64 +1,30 @@
 .container {
-  width: 80%;
-  margin: 30px 10%;
-
-  .head {
-    display: flex;
-    justify-content: space-between;
-    height: 30px;
-
-    .head-utils {
-      display: flex;
-
-      @media (max-width: 560px) {
-        width: 200px;
-      }
-
-      input {
-        border-radius: 20px;
-        width: 240px;
-        border: 1px solid black;
-        height: 27px;
-        margin: 4px 8px;
-        padding: 2px;
-        background-image: url("/assets/courses/search.svg");
-        background-size: 18px 40px;
-        background-repeat: no-repeat;
-        background-position: right;
-        text-indent: 20px;
-      }
-
-      input:focus {
-        background-image: none;
-        text-indent: 0px;
-      }
-
-      img {
-        margin: 0 5px;
-        width: 60px;
-        height: 35px;
-      }
-    }
-    @media (max-width: 560px) {
-      display: grid;
-    }
-  }
+  width: 100%;
+  display: flex;
+  justify-content: center;
 
   .table {
-    display: grid;
-    margin-top: 20px;
-
     .table-row {
       display: flex;
+      width: 100%;
       margin: 10px 0;
+      cursor: pointer;
+      background: #f1f1f1;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0 0 0 #FFFFFF;
+      transition: linear 200ms box-shadow, linear 200ms background;;
 
-      @media (max-width: 1220px) {
-        width: 80%;
+      &:hover{
+        box-shadow: 0 0 10px 5px #aaaaaa;
+        background: white;
+        transition: linear 200ms box-shadow, linear 200ms background;
       }
 
-      @media (max-width: 950px) {
+      @media (max-width: 1090px) {
         display: grid;
-        margin-bottom: 50px;
+        width: fit-content!important;
+        margin: 25px auto;
       }
 
       .head-row {
@@ -90,7 +56,7 @@
               margin-left: 45px;
              }
           }
-        }        
+        }
       }
 
       .tit {
@@ -103,32 +69,32 @@
         .thumbnail > h5 {
           padding-left: 0;
         }
-  
+
         img {
           width: 110px;
           height: 110px;
           padding: 0;
         }
-  
+
         .title {
           width: 500px;
           margin-left: 55px;
-            
+
           h4,
           p {
             padding: 0;
             margin-bottom: 0;
           }
-  
+
           h5 {
             padding-left: 8px;
           }
-  
+
           @media (max-width: 1220px) {
             width: 380px;
             margin-left: 20px;
           }
-        
+
           @media (max-width: 560px) {
             width: 200px;
             height: 120px;
@@ -138,6 +104,8 @@
       }
       .course-details {
         display: flex;
+        gap: 20px;
+        align-items: center;
         margin-left: 120px;
 
         @media (max-width: 1220px) {
@@ -152,32 +120,6 @@
           margin-left: 0;
         }
 
-        .lessons > div {
-          margin-right: 20px;
-          margin-top: 20px;
-        }
-
-        .duration {
-          width: 110px;
-          margin-left: 60px;
-          margin-right: 20px;
-          margin-top: 20px;
-
-          h5 {
-            padding-left: 0;
-          }
-        }
-
-        .price {
-          margin-top: 20px;
-
-
-
-
-          h5 {
-            padding-right: 20px;
-          }
-        }
       }
 
       div {

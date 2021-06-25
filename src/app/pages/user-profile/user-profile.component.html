@@ -1,0 +1,43 @@
+<div class="main">
+  <div class="welcome">
+    <h1>Hi {{userProfile.user}}</h1>
+    <h3>{{greetingMessage}}</h3>
+  </div>
+  <div class="courses">
+    <h2>Your Courses</h2>
+    <swiper
+      #swiperRef
+      [slidesPerView]="deviceWidth > 1500 ? 4 : deviceWidth > 1000 ? 3 : deviceWidth > 500 ? 2 : 1"
+      [centeredSlides]="false"
+      [spaceBetween]="30"
+      [pagination]="{
+        type: 'bullets'
+      }"
+      [navigation]="true"
+      class="grid-list"
+    >
+      <ng-template swiperSlide  *ngFor="let course of userCourses">
+        <div [routerLink]="'/classroom/' + course.slug" class="gridCard">
+        <div class="thumbnail">
+          <img [src]="course.thumbnail" alt="course image">
+        </div>
+        <h4>{{course.title}}</h4>
+        <div class="desc">{{course.description.substr(0, 100).trim()}}{{course.description.length > 100 ? '...' : ''}}</div>
+          <div class="course-details">
+            <div class="lesson">
+             <i class="far fa-file-video "></i>
+              <span>{{course.lessons}}</span>
+            </div>
+            <div class="duration">
+             <i class="far fa-clock "></i>
+              <span>
+                {{(course.duration / 60).toString().split('.')[0]}}mins {{course.duration - ((course.duration / 60).toString().split('.')[0] * 60)}}sec
+              </span>
+            </div>
+          </div>
+      </div>
+      </ng-template>
+    </swiper>
+
+  </div>
+</div>

@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import {NavigationEnd, Router} from '@angular/router';
+import {JwtHelperService} from '@auth0/angular-jwt';
+import {Select, Store} from '@ngxs/store';
+import {AppState} from '../../../store/app-store/app.state';
+import {Observable} from 'rxjs';
+import {SetRefreshToken, SetToken} from "../../../store/app-store/app.action";
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-header',
@@ -8,10 +14,30 @@ import {NavigationEnd, Router} from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
   showMenu = false;
+  isLoggedIn = false;
+  userProfile: any;
 
-  constructor(private router: Router) { }
+  @Select(AppState.getToken) token$: Observable<string>;
+  @Select(AppState.getUserProfile) userProfile$: Observable<string>;
+  constructor(
+    private router: Router,
+    private store: Store,
+    private toastr: ToastrService
+  ) { }
 
   ngOnInit(): void {
+    this.token$.subscribe(token => {
+      this.userProfile$.subscribe(res => {
+        this.userProfile = res;
+      });
+      if (token) {
+        const helper = new JwtHelperService();
+        const isExpired = helper.isTokenExpired(token);
+        if (!isExpired) {
+          this.isLoggedIn = true;
+        }
+      }
+    });
     this.router.events.subscribe((evt) => {
       if (!(evt instanceof NavigationEnd)) {
         return;
@@ -37,5 +63,13 @@ export class HeaderComponent implements OnInit {
       navBar.classList.add('show');
       this.showMenu = true;
     }
+  }
+
+  logout(): void {
+    this.router.navigate(['/auth/login']).then(() => {
+      this.store.dispatch(new SetToken(null));
+      this.store.dispatch(new SetRefreshToken(null));
+      this.toastr.success('Login successful');
+    });
   }
 }

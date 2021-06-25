@@ -1,0 +1,28 @@
+<div class="container">
+  <section>
+    <div class="grid-list">
+      <div [routerLink]="'/courses/' + course.slug" class="gridCard" *ngFor="let course of allCourses">
+        <div class="thumbnail">
+          <img [src]="course.thumbnail" alt="course image">
+        </div>
+        <h4>{{course.title}}</h4>
+        <div class="desc">{{course.description.substr(0, 100).trim()}}{{course.description.length > 100 ? '...' : ''}}</div>
+          <div class="course-details">
+            <div class="lesson">
+             <i class="far fa-file-video "></i>
+              <span>{{course.lessons}}</span>
+            </div>
+            <div class="duration">
+             <i class="far fa-clock "></i>
+              <span>
+                {{(course.duration / 60).toString().split('.')[0]}}mins {{course.duration - ((course.duration / 60).toString().split('.')[0] * 60)}}sec
+              </span>
+            </div>
+            <div class="duration">
+              <span>{{course.price | currency:'₦'}}</span>
+            </div>
+          </div>
+      </div>
+    </div>
+  </section>
+</div>

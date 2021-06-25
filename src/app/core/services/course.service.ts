@@ -7,13 +7,22 @@ import {map} from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class CoursesService {
+export class CourseService {
   baseURL = environment.baseURL;
 
   constructor(private http: HttpClient) { }
 
   getAllCourses(): Observable<any> {
     return this.http.get<any>(`${this.baseURL}courses/getCourses`)
+      .pipe(
+        map(res => {
+          return res.results;
+        })
+      );
+  }
+
+  searchAllCourses(value: string): Observable<any> {
+    return this.http.get<any>(`${this.baseURL}courses/searchCourses/${value}`)
       .pipe(
         map(res => {
           return res.results;
@@ -30,7 +39,20 @@ export class CoursesService {
       );
   }
 
-  getCourseLessons(id: number): Observable<any> {
+  grantUserCourseAccess(userId, courseId): Observable<any> {
+    const payload = new FormData();
+    payload.append('userId', userId);
+    payload.append('courseId', courseId);
+    payload.append('isPurchased', 'true');
+    return this.http.post<any>(`${this.baseURL}courses/grantUserCourseAccess`, payload)
+     .pipe(
+        map(res => {
+          return res.payload;
+        })
+      );
+  }
+
+  getCourseLessons(id: string): Observable<any> {
     return this.http.get<any>(`${this.baseURL}courses/getCourseLessons/${id}`)
      .pipe(
         map(res => {
@@ -41,6 +63,15 @@ export class CoursesService {
 
   getLessonDetails(slug: string): Observable<any> {
     return this.http.get<any>(`${this.baseURL}courses/getLessonDetail/${slug}`)
+     .pipe(
+        map(res => {
+          return res.payload;
+        })
+      );
+  }
+
+  getUserCourses(userId: number): Observable<any> {
+    return this.http.get<any>(`${this.baseURL}courses/getUserCourses/${userId}`)
      .pipe(
         map(res => {
           return res.payload;

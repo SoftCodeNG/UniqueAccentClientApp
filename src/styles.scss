@@ -19,7 +19,7 @@ $UniqueAccent-theme: mat-light-theme((
 @import "~@fortawesome/fontawesome-free/css/regular.css";
 @import "~@fortawesome/fontawesome-free/css/solid.css";
 @import "~@fortawesome/fontawesome-free/css/fontawesome.css";
-
+@import '~swiper/swiper-bundle';
 
 html, body {
   font-family: 'Bellota', cursive;
@@ -41,7 +41,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  min-height: 100vh;
+}
 
 .mat-tab-label {
   opacity: 1!important;
@@ -49,4 +53,26 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 button {
   border: none;
+}
+
+.swiper-slide {
+  display: grid;
+  align-items: center!important;
+}
+
+.swiper-button-prev, .swiper-button-next {
+  padding: 30px;
+  box-sizing: border-box;
+  transition: background linear 500ms;
+  border-radius: 20px;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.9);
+    transition: background linear 500ms;
+  }
+}
+
+.swiper-button-prev.swiper-button-disabled, .swiper-button-next.swiper-button-disabled {
+  padding: 30px;
+  box-sizing: border-box;
 }
