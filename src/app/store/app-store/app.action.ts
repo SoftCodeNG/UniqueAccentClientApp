@@ -23,3 +23,8 @@ export class SetUserCourses {
   static readonly type = '[App] SetUserCourses';
   constructor(public userCourses: any) {}
 }
+
+export class SetCourseList {
+  static readonly type = '[App] SetCourseList';
+  constructor(public courseList: any) {}
+}
