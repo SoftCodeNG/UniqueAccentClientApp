@@ -5,7 +5,7 @@ import {
   SetRefreshToken,
   SetToken,
   SetUserCourses,
-  SetCourseList
+  SetCourseList, SetItemView
 } from './app.action';
 import {Injectable} from '@angular/core';
 
@@ -16,6 +16,7 @@ export class AppStateModel {
   userProfile: any;
   userCourses: any;
   courseList: any;
+  itemView: string;
 }
 
 @Injectable()
@@ -27,7 +28,8 @@ export class AppStateModel {
     refreshToken: '',
     userProfile: {},
     userCourses: {},
-    courseList: []
+    courseList: [],
+    itemView: 'grid'
   },
 })
 
@@ -60,6 +62,11 @@ export class AppState {
   @Selector()
   static getCourseList(state: AppStateModel): any {
     return state.courseList;
+  }
+
+  @Selector()
+  static getItemView(state: AppStateModel): any {
+    return state.itemView;
   }
 
   //   actions
@@ -114,6 +121,15 @@ export class AppState {
     setState({
       ...state,
       courseList,
+    });
+  }
+
+  @Action(SetItemView)
+  setItemView({ getState, setState }: StateContext<AppStateModel>, { itemView }: SetItemView): void {
+    const state = getState();
+    setState({
+      ...state,
+      itemView,
     });
   }
 

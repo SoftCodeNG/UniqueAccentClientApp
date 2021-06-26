@@ -13,19 +13,28 @@ export class CourseService {
   constructor(private http: HttpClient) { }
 
   getAllCourses(): Observable<any> {
-    return this.http.get<any>(`${this.baseURL}courses/getPublishedCourses`)
+    return this.http.get<any>(`${this.baseURL}courses/getCourses`)
       .pipe(
         map(res => {
-          return res.results;
+          return res;
+        })
+      );
+  }
+
+  navigateCourses(direction: string): Observable<any> {
+    return this.http.get<any>(direction)
+      .pipe(
+        map(res => {
+          return res;
         })
       );
   }
 
   searchAllCourses(value: string): Observable<any> {
-    return this.http.get<any>(`${this.baseURL}courses/searchCourses/${value}`)
+    return this.http.get<any>(`${this.baseURL}courses/searchPublishedCourses/${value}`)
       .pipe(
         map(res => {
-          return res.results;
+          return res;
         })
       );
   }

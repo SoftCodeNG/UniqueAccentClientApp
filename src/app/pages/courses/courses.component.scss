@@ -93,3 +93,31 @@
     margin-top: 180px;
   }
 }
+
+.buttons{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+
+    button{
+      padding: 5px 15px;
+      margin:  30px 20px;
+      background-color: #000000;
+      font-weight: bold;
+      font-size: 1.2em;
+      border-radius: 10px;
+      text-align: center;
+      color: white;
+
+      &:disabled {
+        background: #353535;
+        cursor: default;
+        color: black;
+      }
+
+      i{
+        margin: 3px;
+      }
+    }
+
+  }

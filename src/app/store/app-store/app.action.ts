@@ -28,3 +28,8 @@ export class SetCourseList {
   static readonly type = '[App] SetCourseList';
   constructor(public courseList: any) {}
 }
+
+export class SetItemView {
+  static readonly type = '[App] SetItemView';
+  constructor(public itemView: string) {}
+}
