@@ -13,7 +13,7 @@ export class CourseService {
   constructor(private http: HttpClient) { }
 
   getAllCourses(): Observable<any> {
-    return this.http.get<any>(`${this.baseURL}courses/getCourses`)
+    return this.http.get<any>(`${this.baseURL}courses/getPublishedCourses`)
       .pipe(
         map(res => {
           return res.results;
