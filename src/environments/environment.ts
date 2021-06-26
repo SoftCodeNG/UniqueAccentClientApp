@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  baseURL: 'https://unique-accent-api.herokuapp.com/',
+  baseURL: 'http://127.0.0.1:8000/',
   payStackPublicKey: 'pk_test_6ee572a93403e696327affc2df515f4ce40baff0'
 };
 
