@@ -7,7 +7,7 @@
         </div>
         <div class="title">
           <h4><strong>{{course.title}}</strong></h4>
-          <div>{{course.description.substr(0, 100)}}</div>
+         <div class="desc">{{course.description.substr(0, 100).trim()}}{{course.description.length > 100 ? '...' : ''}}</div>
         </div>
       </div>
       <div class="course-details">
@@ -28,5 +28,10 @@
         </div>
       </div>
     </div>
+      <div class="buttons">
+
+        <button ><i class="fas fa-chevron-left"></i>Prev</button>
+        <button>Next<i class="fas fa-chevron-right"></i></button>
+      </div>
   </section>
 </div>

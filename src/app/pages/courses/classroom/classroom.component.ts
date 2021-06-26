@@ -69,6 +69,7 @@ export class ClassroomComponent implements OnInit {
   }
 
   setCurrentLesson(data: any): void {
+    this.currentLesson = null;
     this.currentLesson = data;
     this.commentForm.controls.lessonId.setValue(data.id);
     this.getLessonComments();

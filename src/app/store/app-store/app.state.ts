@@ -1,5 +1,12 @@
 import { State, Selector, Action, StateContext } from '@ngxs/store';
-import {SetUserProfile, SetHeaderVisibility, SetRefreshToken, SetToken, SetUserCourses} from './app.action';
+import {
+  SetUserProfile,
+  SetHeaderVisibility,
+  SetRefreshToken,
+  SetToken,
+  SetUserCourses,
+  SetCourseList
+} from './app.action';
 import {Injectable} from '@angular/core';
 
 export class AppStateModel {
@@ -8,6 +15,7 @@ export class AppStateModel {
   refreshToken: string;
   userProfile: any;
   userCourses: any;
+  courseList: any;
 }
 
 @Injectable()
@@ -18,7 +26,8 @@ export class AppStateModel {
     token: '',
     refreshToken: '',
     userProfile: {},
-    userCourses: {}
+    userCourses: {},
+    courseList: []
   },
 })
 
@@ -46,6 +55,11 @@ export class AppState {
   @Selector()
   static getUserCourses(state: AppStateModel): any {
     return state.userCourses;
+  }
+
+  @Selector()
+  static getCourseList(state: AppStateModel): any {
+    return state.courseList;
   }
 
   //   actions
@@ -91,6 +105,15 @@ export class AppState {
     setState({
       ...state,
       userCourses,
+    });
+  }
+
+  @Action(SetCourseList)
+  setCourseList({ getState, setState }: StateContext<AppStateModel>, { courseList }: SetCourseList): void {
+    const state = getState();
+    setState({
+      ...state,
+      courseList,
     });
   }
 
