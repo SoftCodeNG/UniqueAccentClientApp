@@ -68,6 +68,16 @@ header {
           background: gray;
           transition: background-color linear 200ms;
         }
+
+         i{
+           color: #ff6600;
+
+           &:hover {
+                   transform: scale(1.5);
+                   color: red;
+                  animation: ease-out;
+           }
+          }
         &.upcomingTraining {
           background: #FF6600;
           box-shadow: 0 0 10px #FF6600;
@@ -131,6 +141,7 @@ header {
             padding: 10px 15px;
             margin: 5px;
           }
+
         }
       }
 
