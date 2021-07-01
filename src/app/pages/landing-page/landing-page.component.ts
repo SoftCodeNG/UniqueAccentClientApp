@@ -1,6 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {Store} from '@ngxs/store';
-import {SetHeaderVisibility} from '../../store/app-store/app.action'; // lib
+import {SetHeaderVisibility} from '../../store/app-store/app.action';
+import {CourseService} from "../../core/services/course.service";
 
 
 // @ts-ignore
@@ -10,18 +11,22 @@ import {SetHeaderVisibility} from '../../store/app-store/app.action'; // lib
   styleUrls: ['./landing-page.component.scss']
 })
 export class LandingPageComponent implements OnInit {
-  private courseService: any;
-  private courseDetails: any;
+  public courseDetails: any;
 
-  constructor(private store: Store) {
+  constructor(
+    private store: Store,
+    private courseService: CourseService
+  ) {
   }
 
   ngOnInit(): void {
     this.store.dispatch(new SetHeaderVisibility('visible'));
   }
-  // getCoursesDetails(slug: string): void{
-  //   this.courseService.getCourseDteail(slug).subscribe(res => {
-  //   this.courseDetails = res; };
-  // })
+
+  getCoursesForHomepage(slug: string): void {
+    this.courseService.getCoursesForHomepage(slug).subscribe(res => {
+      this.courseDetails = res;
+    });
+  }
 
 }
