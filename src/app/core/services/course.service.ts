@@ -122,12 +122,12 @@ export class CourseService {
         })
       );
   }
-  getCoursesForHomepage(slug: string): Observable<any>{
-    return this.http.get<any>(`${this.baseURL}courses/getCoursesForHomepage/${slug}`)
+  getCoursesForHomepage(): Observable<any>{
+    return this.http.get<any>(`${this.baseURL}courses/getCoursesForHomepage`)
       .pipe(
         map(
           res => {
-            return res.payload;
+            return res.results;
           }
         )
       )
