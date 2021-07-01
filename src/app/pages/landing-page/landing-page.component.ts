@@ -15,4 +15,5 @@ export class LandingPageComponent implements OnInit {
   ngOnInit(): void {
     this.store.dispatch(new SetHeaderVisibility('visible'));
   }
+
 }
