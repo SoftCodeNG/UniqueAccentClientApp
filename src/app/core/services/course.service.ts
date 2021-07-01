@@ -3,8 +3,6 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {environment} from 'src/environments/environment';
 import {map} from 'rxjs/operators';
-// import {isObservable} from "rxjs/internal-compatibility";
-// import {any} from "codelyzer/util/function";
 
 @Injectable({
   providedIn: 'root'
@@ -124,14 +122,14 @@ export class CourseService {
         })
       );
   }
-  // getCourseDetails(slug: string): Observable<any>{
-  //   return this.http.get<any>(`${this.baseURL}courses/getCoursesForHomepage/${slug}`)
-  //     .pipe(
-  //       map(
-  //         res => {
-  //           return res.payload;
-  //         }
-  //       )
-  //     )
-  // };
+  getCoursesForHomepage(slug: string): Observable<any>{
+    return this.http.get<any>(`${this.baseURL}courses/getCoursesForHomepage/${slug}`)
+      .pipe(
+        map(
+          res => {
+            return res.payload;
+          }
+        )
+      )
+  };
 }
