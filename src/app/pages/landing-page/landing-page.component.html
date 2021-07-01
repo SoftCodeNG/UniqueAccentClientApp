@@ -528,18 +528,11 @@
 <!--      <img class="coach" src="../../../assets/courses/catherine.png" alt=""/>-->
 <!--    </div>-->
     <div class="row courses">
-<!--      <div class="col-md-4">-->
-<!--        <img routerLink="/courses/course-details" src="../../../assets/courses/course1.jpeg" alt="">-->
-<!--      </div>-->
-      <div class="col-md-4">
-        <img routerLink="/courses/course-details2" src="../../../assets/courses/course2.jpg" alt="">
+
+      <div class="col-md-4" *ngFor="let course of coursesForHomePage">
+        <img [routerLink]="'/courses/' + course.slug" [src]="course.thumbnail" alt="">
       </div>
-      <div class="col-md-4">
-        <img routerLink="/courses/course-details3" src="../../../assets/courses/course3.jpeg" alt="">
-      </div>
-      <div class="col-md-4">
-        <img routerLink="/courses/course-details" src="../../../assets/courses/course4.jpeg" alt="">
-      </div>
+
     </div>
   </div>
 

@@ -11,7 +11,7 @@ import {CourseService} from "../../core/services/course.service";
   styleUrls: ['./landing-page.component.scss']
 })
 export class LandingPageComponent implements OnInit {
-  public courseDetails: any;
+  coursesForHomePage: any;
 
   constructor(
     private store: Store,
@@ -21,11 +21,12 @@ export class LandingPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.store.dispatch(new SetHeaderVisibility('visible'));
+    this.getCoursesForHomepage();
   }
 
-  getCoursesForHomepage(slug: string): void {
-    this.courseService.getCoursesForHomepage(slug).subscribe(res => {
-      this.courseDetails = res;
+  getCoursesForHomepage(): void {
+    this.courseService.getCoursesForHomepage().subscribe(res => {
+      this.coursesForHomePage = res;
     });
   }
 
