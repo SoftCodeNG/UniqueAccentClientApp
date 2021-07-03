@@ -44,6 +44,7 @@ import {ToastrModule} from 'ngx-toastr';
 import {CoursesModule} from "./pages/courses/courses.module";
 import { UserProfileComponent } from './pages/user-profile/user-profile.component';
 import { SwiperModule } from 'swiper/angular';
+import {GoogleLoginProvider, SocialAuthServiceConfig} from "angularx-social-login";
 
 
 
@@ -101,6 +102,20 @@ import { SwiperModule } from 'swiper/angular';
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,
       multi: true
+    },
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: true,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider(
+              '541468338282-57tph5v1ksr34adsjmms1s9gbl28e8iq.apps.googleusercontent.com'
+            )
+          }
+        ]
+      } as SocialAuthServiceConfig,
     }
   ],
   bootstrap: [AppComponent]

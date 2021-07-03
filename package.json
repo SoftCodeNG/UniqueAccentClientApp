@@ -28,6 +28,7 @@
     "@ngxs/storage-plugin": "^3.7.1",
     "@ngxs/store": "^3.7.1",
     "angular4-paystack": "^3.0.0",
+    "angularx-social-login": "^4.0.1",
     "bootstrap": "^5.0.0-beta2",
     "mdb-ui-kit": "^3.4.0",
     "ngx-drag-scroll": "^11.0.0-beta.1",

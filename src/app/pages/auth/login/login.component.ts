@@ -14,6 +14,7 @@ import {JwtHelperService} from '@auth0/angular-jwt';
 import {CourseService} from '../../../core/services/course.service';
 import {AppState} from '../../../store/app-store/app.state';
 import {Observable} from 'rxjs';
+import {GoogleLoginProvider, SocialAuthService} from 'angularx-social-login';
 
 @Component({
   selector: 'app-login',
@@ -28,6 +29,7 @@ export class LoginComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private authService: AuthService,
+    private socialAuthService: SocialAuthService,
     private coursesService: CourseService,
     private store: Store,
     private toastr: ToastrService
@@ -67,5 +69,9 @@ export class LoginComponent implements OnInit {
     this.coursesService.getUserCourses(userId).subscribe(res => {
       this.store.dispatch(new SetUserCourses(res));
     });
+  }
+
+  loginWithGoogle(): void {
+    this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID).then();
   }
 }
