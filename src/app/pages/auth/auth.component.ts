@@ -5,6 +5,7 @@ import {AppState} from '../../store/app-store/app.state';
 import {Observable} from 'rxjs';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import {Location} from '@angular/common';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-auth',
@@ -14,9 +15,10 @@ import {Location} from '@angular/common';
 export class AuthComponent implements OnInit, OnDestroy {
 
   @Select(AppState.getToken) token$: Observable<string>;
+  @Select(AppState.getReturningURL) returningURL$: Observable<string>;
   constructor(
     private store: Store,
-    private location: Location
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -24,7 +26,14 @@ export class AuthComponent implements OnInit, OnDestroy {
       const helper = new JwtHelperService();
       const isExpired = helper.isTokenExpired(token);
       if (!isExpired) {
-        this.location.back();
+        this.returningURL$.subscribe(res => {
+          if (res) {
+            this.router.navigate([res]).then();
+          } else {
+            this.router.navigate(['/profile']).then();
+          }
+        });
+
       }
     });
     setTimeout(() => {

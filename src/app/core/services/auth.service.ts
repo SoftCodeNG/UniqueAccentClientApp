@@ -48,7 +48,7 @@ export class AuthService {
     return this.http.post<any>(`${this.baseURL}accounts/register`, payload)
       .pipe(
         map(res => {
-          return res.payload;
+          return res;
         })
       );
   }

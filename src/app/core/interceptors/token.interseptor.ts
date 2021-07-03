@@ -4,9 +4,10 @@ import {BehaviorSubject, Observable, throwError} from 'rxjs';
 import {Router} from '@angular/router';
 import {Select, Store} from '@ngxs/store';
 import {AppState} from '../../store/app-store/app.state';
-import {SetToken} from '../../store/app-store/app.action';
+import {SetIsNetworkRequestOngoing, SetToken} from '../../store/app-store/app.action';
 import {AuthService} from '../services/auth.service';
 import {catchError, filter, switchMap, take} from 'rxjs/operators';
+import {ToastrService} from 'ngx-toastr';
 
 
 @Injectable()
@@ -21,7 +22,8 @@ export class TokenInterceptor implements HttpInterceptor {
   constructor(
     private router: Router,
     private store: Store,
-    public authService: AuthService
+    public authService: AuthService,
+    private toastr: ToastrService,
   ) {
     this.refreshToken$.subscribe(res => {
       this.refreshToken = res;
@@ -29,6 +31,7 @@ export class TokenInterceptor implements HttpInterceptor {
   }
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    this.store.dispatch(new SetIsNetworkRequestOngoing(true));
 
     this.token$.subscribe(res => {
       this.token = res;
@@ -38,10 +41,20 @@ export class TokenInterceptor implements HttpInterceptor {
     });
 
     return next.handle(request).pipe(catchError(error => {
-      if (error instanceof HttpErrorResponse && error.status === 401) {
-        return this.handle401Error(request, next);
+      if (!request.url.includes('auth/token')) {
+        if (error instanceof HttpErrorResponse && error.status === 401) {
+          this.store.dispatch(new SetIsNetworkRequestOngoing(false));
+          return this.handle401Error(request, next);
+        } else {
+          this.store.dispatch(new SetIsNetworkRequestOngoing(false));
+          return throwError(error);
+        }
       } else {
-        return throwError(error);
+        if (!request.url.includes('auth/token/refresh')) {
+          this.toastr.error('You entered a wrong  email or password', 'Access Denied');
+        }
+        this.store.dispatch(new SetIsNetworkRequestOngoing(false));
+        return next.handle(request);
       }
     }));
   }

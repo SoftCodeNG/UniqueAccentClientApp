@@ -28,7 +28,7 @@
 
       <div class="btn-btn">
         <button
-          *ngIf="courseIsPurchased === false"
+          *ngIf="courseIsPurchased === false && userProfile"
           angular4-paystack
           [email]="userProfile.email"
           [amount]="courseDetails.price * 100"
@@ -39,7 +39,9 @@
         >
           Buy Course
         </button>
-        <button *ngIf="courseIsPurchased === true" (click)="continueLearning()">Continue Learning</button>
+
+        <button *ngIf="!userProfile" (click)="redirect()">Buy Course</button>
+        <button *ngIf="courseIsPurchased === true && userProfile" (click)="continueLearning()">Continue Learning</button>
       </div>
     </div>
 

@@ -5,7 +5,7 @@ import {Select, Store} from '@ngxs/store';
 import {AppState} from '../../../store/app-store/app.state';
 import {Observable} from 'rxjs';
 import {ToastrService} from "ngx-toastr";
-import {SetUserCourses} from "../../../store/app-store/app.action";
+import {SetReturningURL, SetUserCourses} from "../../../store/app-store/app.action";
 
 @Component({
   selector: 'app-about-course',
@@ -88,5 +88,10 @@ export class CourseDetailsComponent implements OnInit {
     this.coursesService.getCourseLessons(slug).subscribe(res => {
       this.lessonList = res;
     });
+  }
+
+  redirect(): void {
+    this.store.dispatch(new SetReturningURL(this.router.url));
+    this.router.navigate(['/auth/login']).then();
   }
 }
