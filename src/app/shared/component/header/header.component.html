@@ -16,7 +16,7 @@
 <!--      <span class="upcomingTraining">Upcoming Training</span>-->
       <span class="login" routerLink="auth/login" *ngIf="!isLoggedIn">Login</span>
       <span class="login" routerLink="/profile" *ngIf="isLoggedIn">{{userProfile.user}}</span>
-      <span (click)="logout()"><i class="fas fa-power-off"></i></span>
+      <span (click)="logout()" *ngIf="isLoggedIn"><i class="fas fa-power-off"></i></span>
     </nav>
   </div>
 </header>

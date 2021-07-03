@@ -4,7 +4,7 @@ import {JwtHelperService} from '@auth0/angular-jwt';
 import {Select, Store} from '@ngxs/store';
 import {AppState} from '../../../store/app-store/app.state';
 import {Observable} from 'rxjs';
-import {SetRefreshToken, SetToken} from "../../../store/app-store/app.action";
+import {SetRefreshToken, SetToken, SetUserCourses} from "../../../store/app-store/app.action";
 import {ToastrService} from "ngx-toastr";
 
 @Component({
@@ -69,6 +69,7 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['/auth/login']).then(() => {
       this.store.dispatch(new SetToken(null));
       this.store.dispatch(new SetRefreshToken(null));
+      this.store.dispatch(new SetUserCourses(null));
       this.toastr.success('Login successful');
     });
   }
