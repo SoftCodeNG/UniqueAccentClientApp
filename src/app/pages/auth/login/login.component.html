@@ -30,10 +30,11 @@
     <span>or</span>
   </div>
 
-  <button class="continueWithGoogle" (click)="loginWithGoogle()">
+  <button class="continueWithGoogle" (click)="loginWithGoogleButton()">
     <img src="../../../../assets/auth/googleLogo.svg" alt=""/>
     <span>Continue with Google</span>
   </button>
+  <button style="display: none" id="google-signin-btn"></button>
 
   <div class="register">Not yet a member? <span routerLink="../register">Register as a new member</span></div>
 </div>

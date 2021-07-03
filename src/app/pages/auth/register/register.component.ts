@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {AuthService} from '../../../core/services/auth.service';
+import {AuthenticationService} from '../../../core/services/authentication.service';
 import {Select} from '@ngxs/store';
 import {AppState} from '../../../store/app-store/app.state';
 import {Observable} from 'rxjs';
@@ -19,7 +19,7 @@ export class RegisterComponent implements OnInit {
   @Select(AppState.getIsNetworkRequestOngoing) isLoading$: Observable<boolean>;
   constructor(
     private fb: FormBuilder,
-    private authService: AuthService,
+    private authService: AuthenticationService,
     private toastr: ToastrService
   ) { }
 

@@ -5,7 +5,7 @@ import {Router} from '@angular/router';
 import {Select, Store} from '@ngxs/store';
 import {AppState} from '../../store/app-store/app.state';
 import {SetIsNetworkRequestOngoing, SetToken} from '../../store/app-store/app.action';
-import {AuthService} from '../services/auth.service';
+import {AuthenticationService} from '../services/authentication.service';
 import {catchError, filter, switchMap, take} from 'rxjs/operators';
 import {ToastrService} from 'ngx-toastr';
 
@@ -22,7 +22,7 @@ export class TokenInterceptor implements HttpInterceptor {
   constructor(
     private router: Router,
     private store: Store,
-    public authService: AuthService,
+    public authService: AuthenticationService,
     private toastr: ToastrService,
   ) {
     this.refreshToken$.subscribe(res => {

@@ -5,7 +5,7 @@ import {Select, Store} from '@ngxs/store';
 import {AppState} from '../../store/app-store/app.state';
 import {Observable} from 'rxjs';
 import {ToastrService} from 'ngx-toastr';
-import {AuthService} from '../services/auth.service';
+import {AuthenticationService} from '../services/authentication.service';
 import {SetToken} from '../../store/app-store/app.action';
 
 @Injectable({
@@ -20,7 +20,7 @@ export class AuthGuard implements CanActivate {
     private router: Router,
     private store: Store,
     private toastr: ToastrService,
-    private authService: AuthService,
+    private authService: AuthenticationService,
   ) {
     this.refresh$.subscribe(res => {
       this.refresh = res;
