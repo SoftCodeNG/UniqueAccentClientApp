@@ -10,8 +10,8 @@ import {
   SetToken,
   SetUserCourses,
   SetUserProfile
-} from "../../../store/app-store/app.action";
-import {ToastrService} from "ngx-toastr";
+} from '../../../store/app-store/app.action';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-header',

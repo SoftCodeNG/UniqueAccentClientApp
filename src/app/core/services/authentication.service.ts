@@ -7,7 +7,7 @@ import {environment} from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService {
+export class AuthenticationService {
   private baseURL = environment.baseURL;
 
   constructor(
@@ -46,6 +46,19 @@ export class AuthService {
     payload.append('password', data.password);
 
     return this.http.post<any>(`${this.baseURL}accounts/register`, payload)
+      .pipe(
+        map(res => {
+          return res;
+        })
+      );
+  }
+
+  loginWithGoogle(data: any): Observable<any> {
+    const payload = new FormData();
+    payload.append('token', data.token);
+    payload.append('name', data.name);
+
+    return this.http.post<any>(`${this.baseURL}accounts/loginWithGoogle`, payload)
       .pipe(
         map(res => {
           return res;
