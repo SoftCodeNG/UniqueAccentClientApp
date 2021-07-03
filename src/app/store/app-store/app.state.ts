@@ -5,7 +5,7 @@ import {
   SetRefreshToken,
   SetToken,
   SetUserCourses,
-  SetCourseList, SetItemView
+  SetCourseList, SetItemView, SetIsNetworkRequestOngoing, SetReturningURL
 } from './app.action';
 import {Injectable} from '@angular/core';
 
@@ -17,6 +17,8 @@ export class AppStateModel {
   userCourses: any;
   courseList: any;
   itemView: string;
+  isNetworkRequestOngoing: boolean;
+  returningURL: string;
 }
 
 @Injectable()
@@ -29,7 +31,9 @@ export class AppStateModel {
     userProfile: {},
     userCourses: {},
     courseList: [],
-    itemView: 'grid'
+    itemView: 'grid',
+    isNetworkRequestOngoing: false,
+    returningURL: '',
   },
 })
 
@@ -67,6 +71,16 @@ export class AppState {
   @Selector()
   static getItemView(state: AppStateModel): any {
     return state.itemView;
+  }
+
+  @Selector()
+  static getIsNetworkRequestOngoing(state: AppStateModel): boolean {
+    return state.isNetworkRequestOngoing;
+  }
+
+  @Selector()
+  static getReturningURL(state: AppStateModel): string {
+    return state.returningURL;
   }
 
   //   actions
@@ -130,6 +144,25 @@ export class AppState {
     setState({
       ...state,
       itemView,
+    });
+  }
+
+  @Action(SetIsNetworkRequestOngoing)
+  setIsNetworkRequestOngoing({ getState, setState }: StateContext<AppStateModel>, { isNetworkRequestOngoing }: SetIsNetworkRequestOngoing): void {
+    const state = getState();
+    setState({
+      ...state,
+      isNetworkRequestOngoing,
+    });
+  }
+
+
+  @Action(SetReturningURL)
+  setReturningURL({ getState, setState }: StateContext<AppStateModel>, { returningURL }: SetReturningURL): void {
+    const state = getState();
+    setState({
+      ...state,
+      returningURL,
     });
   }
 

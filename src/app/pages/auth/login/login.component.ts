@@ -1,11 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../../../core/services/auth.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {Store} from '@ngxs/store';
-import {SetRefreshToken, SetToken, SetUserCourses, SetUserProfile} from '../../../store/app-store/app.action';
+import {Select, Store} from '@ngxs/store';
+import {
+  SetIsNetworkRequestOngoing,
+  SetRefreshToken,
+  SetToken,
+  SetUserCourses,
+  SetUserProfile
+} from '../../../store/app-store/app.action';
 import {ToastrService} from 'ngx-toastr';
 import {JwtHelperService} from '@auth0/angular-jwt';
 import {CourseService} from '../../../core/services/course.service';
+import {AppState} from '../../../store/app-store/app.state';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +22,9 @@ import {CourseService} from '../../../core/services/course.service';
 })
 export class LoginComponent implements OnInit {
   loginFormData: FormGroup;
+  showPassword = false;
 
+  @Select(AppState.getIsNetworkRequestOngoing) isLoading$: Observable<boolean>;
   constructor(
     private fb: FormBuilder,
     private authService: AuthService,
@@ -24,6 +34,7 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.store.dispatch(new SetIsNetworkRequestOngoing(false));
     this.loginFormData = this.fb.group({
       email: ['', Validators.compose([Validators.email, Validators.required])],
       password: ['', Validators.required]

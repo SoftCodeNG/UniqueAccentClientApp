@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {AuthService} from "../../../core/services/auth.service";
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {AuthService} from '../../../core/services/auth.service';
+import {Select} from '@ngxs/store';
+import {AppState} from '../../../store/app-store/app.state';
+import {Observable} from 'rxjs';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-register',
@@ -9,10 +13,14 @@ import {AuthService} from "../../../core/services/auth.service";
 })
 export class RegisterComponent implements OnInit {
   registerFormData: FormGroup;
+  showPassword = false;
+  isLoading = false;
 
+  @Select(AppState.getIsNetworkRequestOngoing) isLoading$: Observable<boolean>;
   constructor(
     private fb: FormBuilder,
     private authService: AuthService,
+    private toastr: ToastrService
   ) { }
 
   ngOnInit(): void {
@@ -25,8 +33,14 @@ export class RegisterComponent implements OnInit {
 
   registerUser(): void {
     if (this.registerFormData.valid) {
+      this.isLoading = true;
       this.authService.register(this.registerFormData.value).subscribe(res => {
-        console.log('Login Successful');
+        this.isLoading = false;
+        if (res.email) {
+          this.toastr.error('Email address already registered');
+        } else {
+          this.toastr.success('Registration Successful');
+        }
       });
     }
   }
