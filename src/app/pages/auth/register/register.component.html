@@ -34,9 +34,10 @@
     <span>or</span>
   </div>
 
-  <button class="continueWithGoogle">
+  <button class="continueWithGoogle" (click)="loginWithGoogleButton()">
     <img src="../../../../assets/auth/googleLogo.svg" alt=""/>
     <span>Continue with Google</span>
   </button>
+  <button style="display: none" id="google-signin-btn"></button>
   <div class="register">Already a member? <span routerLink="../login">Login</span></div>
 </div>
