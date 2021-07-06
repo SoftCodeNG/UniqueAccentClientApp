@@ -65,4 +65,29 @@ export class AuthenticationService {
         })
       );
   }
+
+  requestPasswordChange(data: any): Observable<any> {
+    const payload = new FormData();
+    payload.append('email', data.email);
+
+    return this.http.post<any>(`${this.baseURL}accounts/forgetPassword`, payload)
+      .pipe(
+        map(res => {
+          return res;
+        })
+      );
+  }
+
+  resetPassword(data: any): Observable<any> {
+    const payload = new FormData();
+    payload.append('token', data.token);
+    payload.append('password', data.password);
+
+    return this.http.post<any>(`${this.baseURL}accounts/resetPassword`, payload)
+      .pipe(
+        map(res => {
+          return res;
+        })
+      );
+  }
 }

@@ -153,15 +153,9 @@
     text-align: center;
     font-weight: 900;
     display: block;
-    cursor: pointer;
     span {
       color: #0087ff;
+      cursor: pointer;
     }
-  }
-  .forgotPassword {
-    color: #000000;
-    font-weight: 900;
-    text-decoration: underline;
-    cursor: pointer;
   }
 }
