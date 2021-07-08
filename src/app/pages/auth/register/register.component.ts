@@ -42,15 +42,35 @@ export class RegisterComponent implements OnInit {
       this.isLoading = true;
       this.authenticationService.register(this.registerFormData.value).subscribe(res => {
         this.isLoading = false;
-        if (res.email) {
-          this.toastr.error('Email address already registered');
-        } else {
+        if (res.name) {
           this.toastr.success('Registration Successful');
+          this.loginUser({email: res.email, password: this.registerFormData.value.password});
+        } else {
+          this.toastr.error('Email address already registered');
         }
       });
     }
   }
 
+  loginUser(data: any): void {
+    this.authenticationService.login(data).subscribe(res => {
+      const jwt = new JwtHelperService();
+      const decodedToken = jwt.decodeToken(res.access);
+      console.log('Login Successful', decodedToken);
+      this.store.dispatch(new SetToken(res.access));
+      this.store.dispatch(new SetRefreshToken(res.refresh));
+      this.store.dispatch(new SetUserProfile({
+        isAdmin: res.isAdmin,
+        isStaff: res.isStaff,
+        lastLogin: res.lastLogin,
+        user: res.user,
+        userId: decodedToken.user_id,
+        email: decodedToken.email
+      }));
+      this.getUserCourses(decodedToken.user_id);
+      this.toastr.success('Login successful');
+    });
+  }
   getUserCourses(userId: number): void {
     this.coursesService.getUserCourses(userId).subscribe(res => {
       this.store.dispatch(new SetUserCourses(res));
