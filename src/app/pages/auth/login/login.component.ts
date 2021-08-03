@@ -113,7 +113,7 @@ export class LoginComponent implements OnInit {
               // console.log('Email: ', googleUser.getAuthResponse());
               // console.log('Email: ', googleUser.mc.access_token);
               this.loginWithGoogle({
-                token: googleUser.mc.access_token,
+                token: googleUser.Zb.access_token,
                 name: profile.getName(),
               });
             }
