@@ -32,8 +32,8 @@ import {NgxsStoragePluginModule} from '@ngxs/storage-plugin';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {AppState} from './store/app-store/app.state';
 import { CourseNotFoundComponent } from './pages/courses/course-not-found/course-not-found.component';
-import { EnrollQuizComponent } from './pages/quiz/enroll-quiz/enroll-quiz.component';
-import { QuizSectionComponent } from './pages/quiz/quiz-section/quiz-section.component';
+import { QuizComponent } from './pages/quiz/quiz.component';
+import { QuizInstructionComponent } from './pages/quiz/quiz-instruction/quiz-instruction.component';
 import { Quiz1Component } from './pages/quiz/quiz1/quiz1.component';
 import { Quiz2Component } from './pages/quiz/quiz2/quiz2.component';
 import { QuizEndComponent } from './pages/quiz/quiz-end/quiz-end.component';
@@ -65,8 +65,8 @@ import { SwiperModule } from 'swiper/angular';
     ServiceDetails7Component,
     LinksComponent,
     CourseNotFoundComponent,
-    EnrollQuizComponent,
-    QuizSectionComponent,
+    QuizComponent,
+    QuizInstructionComponent,
     Quiz1Component,
     Quiz2Component,
     QuizEndComponent,
