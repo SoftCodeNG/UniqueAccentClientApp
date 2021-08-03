@@ -1,33 +1,43 @@
 <div class="login">
   <img routerLink="/" class="logo" src="../../../../assets/UACLLogo.png" alt=""/>
   <div class="intoText">Join Unique Accent</div>
-  <button class="continueWithGoogle">
-    <img src="../../../../assets/auth/googleLogo.svg" alt=""/>
-    <span>Continue with Google</span>
-  </button>
 
   <form [formGroup]="registerFormData" (ngSubmit)="registerUser()">
     <label class="input">
       <span>Name</span>
-      <input formControlName="name" type="text">
+      <input formControlName="name" type="text" placeholder="Enter your name">
     </label>
 
     <label class="input">
       <span>Email Address</span>
-      <input formControlName="email" type="email">
+      <input formControlName="email" type="email" placeholder="Enter your email">
     </label>
 
     <label class="input">
       <span>Password</span>
-      <input formControlName="password" type="password" autocomplete="">
+      <span class="passwordInput">
+        <input formControlName="password" [type]="showPassword ? 'text' : 'password'" autocomplete="" placeholder="Enter your password">
+        <i *ngIf="!showPassword" (click)="showPassword = true" class="fa fa-eye"></i>
+        <i *ngIf="showPassword" (click)="showPassword = false" class="fa fa-eye-slash"></i>
+      </span>
     </label>
 
-    <button class="signInButton">Register</button>
+    <button class="signInButton">
+      <span *ngIf="isLoading === false">Register</span>
+      <img *ngIf="isLoading === true" src="assets/loadingIcon.svg" alt="">
+    </button>
   </form>
-  <div class="registerMobile" routerLink="../login">Already a member? Login</div>
 
 
+  <div class="or">
+    <hr>
+    <span>or</span>
+  </div>
 
-
+  <button class="continueWithGoogle" (click)="loginWithGoogleButton()">
+    <img src="../../../../assets/auth/googleLogo.svg" alt=""/>
+    <span>Continue with Google</span>
+  </button>
+  <button style="display: none" id="google-signin-btn"></button>
+  <div class="register">Already a member? <span routerLink="../login">Login</span></div>
 </div>
-<div class="register" routerLink="../login">Already a member? Login</div>

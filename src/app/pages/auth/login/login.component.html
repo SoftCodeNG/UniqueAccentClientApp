@@ -1,29 +1,40 @@
 <div class="login">
   <img routerLink="/" class="logo" src="../../../../assets/UACLLogo.png" alt=""/>
   <div class="intoText">Log in to Unique Accent</div>
-  <button class="continueWithGoogle">
-    <img src="../../../../assets/auth/googleLogo.svg" alt=""/>
-    <span>Continue with Google</span>
-  </button>
 
   <form [formGroup]="loginFormData" (ngSubmit)="loginUser()">
     <label class="input">
       <span>Email Address</span>
-      <input formControlName="email" type="email">
+      <input formControlName="email" type="email" placeholder="Enter your email">
     </label>
 
     <label class="input">
       <span>Password</span>
-      <input formControlName="password" type="password" autocomplete="">
+      <span class="passwordInput">
+        <input formControlName="password" [type]="showPassword ? 'text' : 'password'" autocomplete="" placeholder="Enter your password">
+        <i *ngIf="!showPassword" (click)="showPassword = true" class="fa fa-eye"></i>
+        <i *ngIf="showPassword" (click)="showPassword = false" class="fa fa-eye-slash"></i>
+      </span>
     </label>
+    <div class="forgotPassword" routerLink="../forgot-password">Forgot Password?</div>
 
-    <button class="signInButton">Login</button>
+
+    <button class="signInButton">
+      <span *ngIf="(isLoading$ | async) === false">Login</span>
+      <img *ngIf="(isLoading$ | async) === true" src="assets/loadingIcon.svg" alt="">
+    </button>
   </form>
-  <div class="registerMobile" routerLink="../register">Not yet a member? Register as a new member</div>
-  <div class="forgotPassword" routerLink="../forgot-password">Forgot Password?</div>
 
+  <div class="or">
+    <hr>
+    <span>or</span>
+  </div>
 
+  <button class="continueWithGoogle" (click)="loginWithGoogleButton()">
+    <img src="../../../../assets/auth/googleLogo.svg" alt=""/>
+    <span>Continue with Google</span>
+  </button>
+  <button style="display: none" id="google-signin-btn"></button>
 
-
+  <div class="register">Not yet a member? <span routerLink="../register">Register as a new member</span></div>
 </div>
-<div class="register" routerLink="../register">Not yet a member? Register as a new member</div>

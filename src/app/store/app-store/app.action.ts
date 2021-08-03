@@ -33,3 +33,13 @@ export class SetItemView {
   static readonly type = '[App] SetItemView';
   constructor(public itemView: string) {}
 }
+
+export class SetIsNetworkRequestOngoing {
+  static readonly type = '[App] SetIsNetworkRequestOngoing';
+  constructor(public isNetworkRequestOngoing: boolean) {}
+}
+
+export class SetReturningURL {
+  static readonly type = '[App] SetReturningURL';
+  constructor(public returningURL: string) {}
+}

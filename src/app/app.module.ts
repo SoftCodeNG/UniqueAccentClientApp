@@ -41,7 +41,7 @@ import {Angular4PaystackModule} from 'angular4-paystack';
 import {TokenInterceptor} from './core/interceptors/token.interseptor';
 import {ReactiveFormsModule} from '@angular/forms';
 import {ToastrModule} from 'ngx-toastr';
-import {CoursesModule} from "./pages/courses/courses.module";
+import {CoursesModule} from './pages/courses/courses.module';
 import { UserProfileComponent } from './pages/user-profile/user-profile.component';
 import { SwiperModule } from 'swiper/angular';
 
