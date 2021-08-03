@@ -5,7 +5,7 @@
   <form [formGroup]="registerFormData" (ngSubmit)="registerUser()">
     <label class="input">
       <span>Name</span>
-      <input formControlName="name" type="text" placeholder="Enter your name">
+      <input formControlName="name" maxlength="20" type="text" placeholder="Enter your name">
     </label>
 
     <label class="input">
