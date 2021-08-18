@@ -102,7 +102,8 @@ export class LoginComponent implements OnInit {
         Gapi.load('auth2', () => {
           const element = document.getElementById('google-signin-btn');
           Gapi.auth2.init({
-              client_id: '541468338282-57tph5v1ksr34adsjmms1s9gbl28e8iq.apps.googleusercontent.com', // this is the button "id"
+              client_id: '412715676812-jslbb1s1njlha6t5fib38je3s2gt86ec.apps.googleusercontent.com', // this is the button "id"
+
           }).attachClickHandler(element, {}, () => {
             console.log('Sing in successful');
             Gapi.signin2.render('google-signin-btn', {
@@ -116,6 +117,14 @@ export class LoginComponent implements OnInit {
                 token: googleUser.Zb.access_token,
                 name: profile.getName(),
               });
+
+
+              // const getAuthResponse = googleUser.getAuthResponse();
+              // console.log('QQQQQQQQQQQ', getAuthResponse.id_token)
+              // this.loginWithGoogle({
+              //   token: getAuthResponse.id_token,
+              //   name: profile.getName(),
+              // });
             }
           });
           }, () => {
