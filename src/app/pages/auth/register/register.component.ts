@@ -30,7 +30,7 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {
     this.registerFormData = this.fb.group({
-      name: ['', Validators.required],
+      name: ['', Validators.compose([Validators.required, Validators.maxLength(20)])],
       email: ['', Validators.compose([Validators.email, Validators.required])],
       password: ['', Validators.required]
     });
@@ -42,11 +42,13 @@ export class RegisterComponent implements OnInit {
       this.isLoading = true;
       this.authenticationService.register(this.registerFormData.value).subscribe(res => {
         this.isLoading = false;
-        if (res.name) {
+        if (res.name && res.email) {
           this.toastr.success('Registration Successful');
           this.loginUser({email: res.email, password: this.registerFormData.value.password});
-        } else {
+        } else if (res.email) {
           this.toastr.error('Email address already registered');
+        } else if (res.name) {
+          this.toastr.error('Name should be less than 20 characters');
         }
       });
     }
