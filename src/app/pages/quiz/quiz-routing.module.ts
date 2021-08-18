@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import {RouterModule, Routes} from "@angular/router";
 import {QuizComponent} from "./quiz.component";
 import {QuizInstructionComponent} from "./quiz-instruction/quiz-instruction.component";
+import {Quiz1Component} from "./quiz1/quiz1.component";
+import {QuizEndComponent} from "./quiz-end/quiz-end.component";
 
 const routes: Routes = [
 {
@@ -11,6 +13,14 @@ const routes: Routes = [
   {
     path: 'instruction/:slug',
     component: QuizInstructionComponent
+  },
+  {
+    path: 'quiz1',
+    component: Quiz1Component
+  },
+  {
+    path: 'quiz-end',
+    component: QuizEndComponent
   },
 ]
 
