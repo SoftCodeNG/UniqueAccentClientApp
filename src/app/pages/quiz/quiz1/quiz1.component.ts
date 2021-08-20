@@ -7,10 +7,9 @@ import {QuizService} from "../../../core/quiz.service";
   styleUrls: ['./quiz1.component.scss']
 })
 export class Quiz1Component implements OnInit {
-  recordedFile: any
 
   constructor(
-    private quizService: QuizService
+    public quizService: QuizService
   ) { }
 
   ngOnInit(): void {
@@ -21,17 +20,26 @@ export class Quiz1Component implements OnInit {
     audioPlayer.src = audio
   }
 
-  startRecording() {
+
+  handleSuccess(stream) {
+    const context = new AudioContext();
+    const source = context.createMediaStreamSource(stream);
+    const processor = context.createScriptProcessor(1024, 1, 1);
+
+    source.connect(processor);
+    processor.connect(context.destination);
+
+    processor.onaudioprocess = function(e) {
+      // Do something with the data, e.g. convert it to WAV
+      console.log(context.baseLatency);
+      console.log(context.outputLatency);
+    };
+
+
     const audioPlayer = document.getElementById('audioPlayer') as HTMLAudioElement
     const downloadLink = document.getElementById('download') as HTMLAnchorElement;
     const stopButton = document.getElementById('stop');
 
-    let record: any
-
-
-    const uploadAudioAnswer = this.uploadAudioAnswer(record, downloadLink)
-
-    const handleSuccess = function(stream) {
       const options = {mimeType: 'audio/webm'};
       const recordedChunks = [];
       // @ts-ignore
@@ -39,29 +47,31 @@ export class Quiz1Component implements OnInit {
 
       mediaRecorder.addEventListener('dataavailable', function(e) {
         if (e.data.size > 0) recordedChunks.push(e.data);
-        record = recordedChunks;
+        console.log(e)
       });
 
-      mediaRecorder.addEventListener('stop', () => uploadAudioAnswer);
+      mediaRecorder.addEventListener('stop', () => {
+        let recordedFile = new File([new Blob(recordedChunks)], 'recordedAudio.mp3', {lastModified: 1534584790000, type: 'audio/mp3'})
+        downloadLink.href = URL.createObjectURL(new Blob(recordedChunks));
+        downloadLink.download = 'iLoveUche.mp3';
+        console.log('file created', recordedFile)
+
+        this.quizService.uploadMedia(recordedFile).subscribe(res => {
+          console.log(res)
+        })
+      });
 
 
       stopButton.addEventListener('click', function() {
+        console.log('clicking stop')
         mediaRecorder.stop();
       });
 
       mediaRecorder.start();
     };
+
+  startRecording() {
     navigator.mediaDevices.getUserMedia({ audio: true, video: false })
-      .then(handleSuccess);
-  }
-
-  uploadAudioAnswer(recordedChunks, downloadLink): any {
-    this.recordedFile = new Blob(recordedChunks)
-        downloadLink.href = URL.createObjectURL(new Blob(recordedChunks));
-        downloadLink.download = 'iLoveUche.mp3';
-
-        this.quizService.uploadMedia(this.recordedFile).subscribe(res => {
-          console.log(res)
-        })
+      .then((rec) => this.handleSuccess(rec));
   }
 }
