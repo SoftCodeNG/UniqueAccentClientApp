@@ -7,6 +7,8 @@ import {QuizService} from "../../../core/quiz.service";
   styleUrls: ['./quiz1.component.scss']
 })
 export class Quiz1Component implements OnInit {
+  isRecording = false;
+  isRecorded = false;
 
   constructor(
     public quizService: QuizService
@@ -15,13 +17,8 @@ export class Quiz1Component implements OnInit {
   ngOnInit(): void {
   }
 
-  afterRecording(audio: any) {
-    const audioPlayer = document.getElementById('audioPlayer') as HTMLAudioElement
-    audioPlayer.src = audio
-  }
-
-
   handleSuccess(stream) {
+    this.isRecording = true;
     const context = new AudioContext();
     const source = context.createMediaStreamSource(stream);
     const processor = context.createScriptProcessor(1024, 1, 1);
@@ -29,15 +26,7 @@ export class Quiz1Component implements OnInit {
     source.connect(processor);
     processor.connect(context.destination);
 
-    processor.onaudioprocess = function(e) {
-      // Do something with the data, e.g. convert it to WAV
-      console.log(context.baseLatency);
-      console.log(context.outputLatency);
-    };
-
-
     const audioPlayer = document.getElementById('audioPlayer') as HTMLAudioElement
-    const downloadLink = document.getElementById('download') as HTMLAnchorElement;
     const stopButton = document.getElementById('stop');
 
       const options = {mimeType: 'audio/webm'};
@@ -47,17 +36,28 @@ export class Quiz1Component implements OnInit {
 
       mediaRecorder.addEventListener('dataavailable', function(e) {
         if (e.data.size > 0) recordedChunks.push(e.data);
-        console.log(e)
+        // console.log(e)
       });
 
       mediaRecorder.addEventListener('stop', () => {
-        let recordedFile = new File([new Blob(recordedChunks)], 'recordedAudio.mp3', {lastModified: 1534584790000, type: 'audio/mp3'})
-        downloadLink.href = URL.createObjectURL(new Blob(recordedChunks));
-        downloadLink.download = 'iLoveUche.mp3';
-        console.log('file created', recordedFile)
+        let recordedFile = <any>new File([new Blob(recordedChunks)], 'recordedAudio.mp3', {lastModified: 1534584790000, type: 'audio/mp3'})
+        // Make file available to be played
+        const reader = new FileReader()
+        reader.readAsDataURL(recordedFile);
+        reader.addEventListener("load", function () {
+          const audioPlayer = document.getElementById('audioPlayer') as HTMLAudioElement
+          if (typeof reader.result === "string") {
+            audioPlayer.src = reader.result
+          }
+        }, false);
+        this.isRecording = false;
+        this.isRecorded = true;
 
-        this.quizService.uploadMedia(recordedFile).subscribe(res => {
-          console.log(res)
+        const nextButton = document.getElementById('next') as HTMLButtonElement;
+        nextButton.addEventListener('click', () => {
+          this.quizService.uploadMedia(recordedFile).subscribe(res => {
+            console.log(res)
+          })
         })
       });
 
