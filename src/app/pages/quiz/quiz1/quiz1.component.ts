@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {QuizService} from "../../../core/quiz.service";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-quiz1',
@@ -7,12 +8,18 @@ import {QuizService} from "../../../core/quiz.service";
   styleUrls: ['./quiz1.component.scss']
 })
 export class Quiz1Component implements OnInit {
+  public quizDetails: any;
+  allQuestions: any[];
+  currentQuestion: any;
 
   constructor(
-    public quizService: QuizService
-  ) { }
+    public quizService: QuizService,
+    private activatedRoute: ActivatedRoute,
+  ) {
+  }
 
   ngOnInit(): void {
+    this.getQuizDetails(this.activatedRoute.snapshot.params.slug);
   }
 
   afterRecording(audio: any) {
@@ -29,7 +36,7 @@ export class Quiz1Component implements OnInit {
     source.connect(processor);
     processor.connect(context.destination);
 
-    processor.onaudioprocess = function(e) {
+    processor.onaudioprocess = function (e) {
       // Do something with the data, e.g. convert it to WAV
       console.log(context.baseLatency);
       console.log(context.outputLatency);
@@ -40,38 +47,50 @@ export class Quiz1Component implements OnInit {
     const downloadLink = document.getElementById('download') as HTMLAnchorElement;
     const stopButton = document.getElementById('stop');
 
-      const options = {mimeType: 'audio/webm'};
-      const recordedChunks = [];
-      // @ts-ignore
-      const mediaRecorder = new MediaRecorder(stream, options);
+    const options = {mimeType: 'audio/webm'};
+    const recordedChunks = [];
+    // @ts-ignore
+    const mediaRecorder = new MediaRecorder(stream, options);
 
-      mediaRecorder.addEventListener('dataavailable', function(e) {
-        if (e.data.size > 0) recordedChunks.push(e.data);
-        console.log(e)
-      });
+    mediaRecorder.addEventListener('dataavailable', function (e) {
+      if (e.data.size > 0) recordedChunks.push(e.data);
+      console.log(e)
+    });
 
-      mediaRecorder.addEventListener('stop', () => {
-        let recordedFile = new File([new Blob(recordedChunks)], 'recordedAudio.mp3', {lastModified: 1534584790000, type: 'audio/mp3'})
-        downloadLink.href = URL.createObjectURL(new Blob(recordedChunks));
-        downloadLink.download = 'iLoveUche.mp3';
-        console.log('file created', recordedFile)
+    mediaRecorder.addEventListener('stop', () => {
+      let recordedFile = new File([new Blob(recordedChunks)], 'recordedAudio.mp3', {
+        lastModified: 1534584790000,
+        type: 'audio/mp3'
+      })
+      downloadLink.href = URL.createObjectURL(new Blob(recordedChunks));
+      downloadLink.download = 'iLoveUche.mp3';
+      console.log('file created', recordedFile)
 
-        this.quizService.uploadMedia(recordedFile).subscribe(res => {
-          console.log(res)
-        })
-      });
+      this.quizService.uploadMedia(recordedFile).subscribe(res => {
+        console.log(res)
+      })
+    });
 
 
-      stopButton.addEventListener('click', function() {
-        console.log('clicking stop')
-        mediaRecorder.stop();
-      });
+    stopButton.addEventListener('click', function () {
+      console.log('clicking stop')
+      mediaRecorder.stop();
+    });
 
-      mediaRecorder.start();
-    };
+    mediaRecorder.start();
+  };
 
   startRecording() {
-    navigator.mediaDevices.getUserMedia({ audio: true, video: false })
+    navigator.mediaDevices.getUserMedia({audio: true, video: false})
       .then((rec) => this.handleSuccess(rec));
+  }
+
+  getQuizDetails(slug: string): void {
+    this.quizService.getQuizDetails(slug).subscribe(res => {
+      this.quizDetails = res;
+      this.allQuestions = res.quizQuestions;
+      this.currentQuestion = this.allQuestions[0]
+      console.log(res);
+    });
   }
 }

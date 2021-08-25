@@ -15,7 +15,7 @@ const routes: Routes = [
     component: QuizInstructionComponent
   },
   {
-    path: 'quiz1',
+    path: 'questions/:slug',
     component: Quiz1Component
   },
   {

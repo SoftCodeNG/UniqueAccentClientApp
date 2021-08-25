@@ -37,7 +37,7 @@ export class QuizService {
     const payload = new FormData();
     payload.append('file', file);
     return this.http.post<any>(`${this.baseURL}media/uploadMedia`, payload)
-     .pipe(
+      .pipe(
         map(res => {
           return res.payload;
         })

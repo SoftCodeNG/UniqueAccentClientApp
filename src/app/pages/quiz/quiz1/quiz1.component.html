@@ -1,33 +1,39 @@
 <div class="contain">
   <div class="buttons">
-    <button class="answered">1</button>
-    <button class="answered">2</button>
-    <button class="answered">3</button>
-    <button class="unanswered">4</button>
-    <button class="answering">5</button>
-    <button class="unanswered">6</button>
-    <button class="unanswered">7</button>
-    <button class="unanswered">8</button>
-    <button class="unanswered">9</button>
-    <button class="unanswered">10</button>
-    <button class="unanswered">11</button>
-    <button class="unanswered">12</button>
-    <button class="unanswered">13</button>
-    <button class="unanswered">14</button>
-    <button class="unanswered">15</button>
-    <button class="unanswered">16</button>
-    <button class="unanswered">17</button>
-    <button class="unanswered">18</button>
-    <button class="unanswered">19</button>
-    <button routerLink="/quiz/quiz-end">20</button>
+
+
+
+
+    <button
+      *ngFor="let question of allQuestions"
+      [class.answering]="question === currentQuestion"
+      [class.unanswered]="question !== currentQuestion"
+      (click)="currentQuestion = question">
+      {{question.questionNo}}
+    </button>
+<!--    <button class="answered">2</button>-->
+<!--    <button class="answered">3</button>-->
+<!--    <button class="unanswered">4</button>-->
+<!--    <button class="answering">5</button>-->
+<!--    <button class="unanswered">6</button>-->
+<!--    <button class="unanswered">7</button>-->
+<!--    <button class="unanswered">8</button>-->
+<!--    <button class="unanswered">9</button>-->
+<!--    <button class="unanswered">10</button>-->
+<!--    <button class="unanswered">11</button>-->
+<!--    <button class="unanswered">12</button>-->
+<!--    <button class="unanswered">13</button>-->
+<!--    <button class="unanswered">14</button>-->
+<!--    <button class="unanswered">15</button>-->
+<!--    <button class="unanswered">16</button>-->
+<!--    <button class="unanswered">17</button>-->
+<!--    <button class="unanswered">18</button>-->
+<!--    <button class="unanswered">19</button>-->
+<!--    <button routerLink="/quiz/quiz-end">20</button>-->
   </div>
-  <div class="text">
+  <div class="text" *ngIf="currentQuestion">
     <p>
-      Over the years, I have addressed thousands of audiences from different
-      walks of life and one thing I have realized is that the fear of Public
-      Speaking is only a thing of the mind and the result of negative or
-      pessimistic thinking. People focus more Over the years, I have addressed
-      thousands of audiences from different walks of life
+      {{currentQuestion.question}}
     </p>
   </div>
   <div class="speaker">
