@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {HomePageService} from '../../core/services/home-page.service';
+
 
 @Component({
   selector: 'app-services',
@@ -6,10 +8,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./services.component.scss']
 })
 export class ServicesComponent implements OnInit {
+  services: any;
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(
+      private homePageService: HomePageService
+  ) {
   }
 
+  ngOnInit(): void {
+     this.getAllServices();
+  }
+ getAllServices(): void {
+    this.homePageService.getAllServices().subscribe(res => {
+      this.services = res;
+      console.log('Adeola is here: ', this.services);
+    });
+  }
 }

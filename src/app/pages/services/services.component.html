@@ -2,17 +2,14 @@
   <h1 class="title">Services</h1>
 
 
-  <div class="services row">
+  <div class="services row" *ngFor="let service of services" >
     <div class="col-md-3">
-      <img src="../../../assets/services/dictionTraining.jpeg" alt="">
+     <img [src]="service.thumbnail" alt=""/>
     </div>
     <div class="aboutServices col-md-7">
-      <h1>Diction and Elocution</h1>
+      <h1>{{service.title}}</h1>
       <div>
-        Speaking is undoubtedly one of the best ways to communicate. Ironically, some people speak but only few can
-        communicate effectively. The ability to speak and communicate eloquently and effectively in English makes you
-        understood anywhere in the world, makes your voice heard even in the midst of noise. It makes you stand out,
-        boosts.....
+        {{service.description}}
       </div>
     </div>
     <div class="col-md-2">
@@ -20,112 +17,112 @@
     </div>
   </div>
 
-  <div class="services row">
-    <div class="col-md-3">
-      <img src="../../../assets/services/publicSpeaking.jpeg" alt="">
-    </div>
-    <div class="aboutServices col-md-7">
-      <h1>Public Speaking</h1>
-      <div>
-        So many ideas have been buried in the grave because of the fear of public speaking. Our public speaking course
-        helps speakers outgrow the stage of glossophobia (Fear of Public Speaking) and manage stage fright.This course
-        isn’t just about teaching one how to speak in public. It deals with the psychology of understanding and analyzing
-        one’s audience as....
-      </div>
-    </div>
-    <div class="col-md-2">
-      <button class="readMoreButton" routerLink="service-details2">Read More</button>
-    </div>
-  </div>
+<!--  <div class="services row">-->
+<!--    <div class="col-md-3">-->
+<!--      <img src="../../../assets/services/publicSpeaking.jpeg" alt="">-->
+<!--    </div>-->
+<!--    <div class="aboutServices col-md-7">-->
+<!--      <h1>Public Speaking</h1>-->
+<!--      <div>-->
+<!--        So many ideas have been buried in the grave because of the fear of public speaking. Our public speaking course-->
+<!--        helps speakers outgrow the stage of glossophobia (Fear of Public Speaking) and manage stage fright.This course-->
+<!--        isn’t just about teaching one how to speak in public. It deals with the psychology of understanding and analyzing-->
+<!--        one’s audience as....-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="col-md-2">-->
+<!--      <button class="readMoreButton" routerLink="service-details2">Read More</button>-->
+<!--    </div>-->
+<!--  </div>-->
 
-  <div class="services row">
-    <div class="col-md-3">
-      <img src="../../../assets/services/onlineChildrenHub.jpeg" alt="">
-    </div>
-    <div class="aboutServices col-md-7">
-      <h1>Children Hub</h1>
-      <div>
-        Would you want your child to learn to speak the English language eloquently and confidently? Do you have a child
-        who is always shy and would want them to be more expressive? Would you want your child to be more creative in
-        writing? Would you want your child to learn the different etiquettes for children? Unique Accent Online Children
-        Hub is the place....
+<!--  <div class="services row">-->
+<!--    <div class="col-md-3">-->
+<!--      <img src="../../../assets/services/onlineChildrenHub.jpeg" alt="">-->
+<!--    </div>-->
+<!--    <div class="aboutServices col-md-7">-->
+<!--      <h1>Children Hub</h1>-->
+<!--      <div>-->
+<!--        Would you want your child to learn to speak the English language eloquently and confidently? Do you have a child-->
+<!--        who is always shy and would want them to be more expressive? Would you want your child to be more creative in-->
+<!--        writing? Would you want your child to learn the different etiquettes for children? Unique Accent Online Children-->
+<!--        Hub is the place....-->
 
-      </div>
-    </div>
-    <div class="col-md-2">
-      <button class="readMoreButton" routerLink="service-details3">Read More</button>
-    </div>
-  </div>
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="col-md-2">-->
+<!--      <button class="readMoreButton" routerLink="service-details3">Read More</button>-->
+<!--    </div>-->
+<!--  </div>-->
 
-  <div class="services row">
-    <div class="col-md-3">
-      <img src="../../../assets/services/customerServiceTraining.jpeg" alt="">
-    </div>
-    <div class="aboutServices col-md-7">
-      <h1>Customer Service</h1>
-      <div>
-        Everyone sells one thing or the other. It could be a product or a service. In doing this, the importance of
-        customer relationship cannot be underestimated. This course helps one to understand how to relate with customers
-        in a friendly but professional way. It educates on how to get or lure customers, clients, manage difficult
-        customers/clients and....
-      </div>
-    </div>
-    <div class="col-md-2">
-      <button class="readMoreButton" routerLink="service-details4">Read More</button>
-    </div>
-  </div>
+<!--  <div class="services row">-->
+<!--    <div class="col-md-3">-->
+<!--      <img src="../../../assets/services/customerServiceTraining.jpeg" alt="">-->
+<!--    </div>-->
+<!--    <div class="aboutServices col-md-7">-->
+<!--      <h1>Customer Service</h1>-->
+<!--      <div>-->
+<!--        Everyone sells one thing or the other. It could be a product or a service. In doing this, the importance of-->
+<!--        customer relationship cannot be underestimated. This course helps one to understand how to relate with customers-->
+<!--        in a friendly but professional way. It educates on how to get or lure customers, clients, manage difficult-->
+<!--        customers/clients and....-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="col-md-2">-->
+<!--      <button class="readMoreButton" routerLink="service-details4">Read More</button>-->
+<!--    </div>-->
+<!--  </div>-->
 
-  <div class="services row">
-    <div class="col-md-3">
-      <img src="../../../assets/services/corporateTraining.jpeg" alt="">
-    </div>
-    <div class="aboutServices col-md-7">
-      <h1>Corporate Training</h1>
-      <div>
-        Training the members of staff of an organisation is as good as building the organisation. Corporate organisations
-        can contact us for training on Diction and Elocution, Public Speaking, Professional Etiquette, and Customer
-        Service....
-      </div>
-    </div>
-    <div class="col-md-2">
-      <button class="readMoreButton" routerLink="service-details5">Read More</button>
-    </div>
-  </div>
+<!--  <div class="services row">-->
+<!--    <div class="col-md-3">-->
+<!--      <img src="../../../assets/services/corporateTraining.jpeg" alt="">-->
+<!--    </div>-->
+<!--    <div class="aboutServices col-md-7">-->
+<!--      <h1>Corporate Training</h1>-->
+<!--      <div>-->
+<!--        Training the members of staff of an organisation is as good as building the organisation. Corporate organisations-->
+<!--        can contact us for training on Diction and Elocution, Public Speaking, Professional Etiquette, and Customer-->
+<!--        Service....-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="col-md-2">-->
+<!--      <button class="readMoreButton" routerLink="service-details5">Read More</button>-->
+<!--    </div>-->
+<!--  </div>-->
 
-  <div class="services row">
-    <div class="col-md-3">
-      <img src="" alt="">
-    </div>
-    <div class="aboutServices col-md-7">
-      <h1>Teachers Training</h1>
-      <div>
-        One of the most important professions in the world is teaching. Teachers make them all! This is why teachers
-        training is very important. Teachers have great influence in the minds of their pupils/students. Whatever the
-        teachers teach them is what they receive and live by. This is why training teachers on all of our courses is not
-        just is....
-      </div>
-    </div>
-    <div class="col-md-2">
-      <button class="readMoreButton" routerLink="service-details6">Read More</button>
-    </div>
-  </div>
+<!--  <div class="services row">-->
+<!--    <div class="col-md-3">-->
+<!--      <img src="" alt="">-->
+<!--    </div>-->
+<!--    <div class="aboutServices col-md-7">-->
+<!--      <h1>Teachers Training</h1>-->
+<!--      <div>-->
+<!--        One of the most important professions in the world is teaching. Teachers make them all! This is why teachers-->
+<!--        training is very important. Teachers have great influence in the minds of their pupils/students. Whatever the-->
+<!--        teachers teach them is what they receive and live by. This is why training teachers on all of our courses is not-->
+<!--        just is....-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="col-md-2">-->
+<!--      <button class="readMoreButton" routerLink="service-details6">Read More</button>-->
+<!--    </div>-->
+<!--  </div>-->
 
-  <div class="services row">
-    <div class="col-md-3">
-      <img src="../../../assets/services/schoolConsultation.jpeg" alt="">
-    </div>
-    <div class="aboutServices col-md-7">
-      <h1>School Consultancy</h1>
-      <div>
-        The best time to teach children to speak right and observe basic etiquette is when they are young. We offer
-        diction and basic etiquette classes to schools. This also includes, assembly presentations by our Instructors or
-        pupils/students, organising spelling and pronunciation competitions, organising debates, creating
-        Diction/Elocution club and....
-      </div>
-    </div>
-    <div class="col-md-2">
-      <button class="readMoreButton" routerLink="service-details7">Read More</button>
-    </div>
-  </div>
+<!--  <div class="services row">-->
+<!--    <div class="col-md-3">-->
+<!--      <img src="../../../assets/services/schoolConsultation.jpeg" alt="">-->
+<!--    </div>-->
+<!--    <div class="aboutServices col-md-7">-->
+<!--      <h1>School Consultancy</h1>-->
+<!--      <div>-->
+<!--        The best time to teach children to speak right and observe basic etiquette is when they are young. We offer-->
+<!--        diction and basic etiquette classes to schools. This also includes, assembly presentations by our Instructors or-->
+<!--        pupils/students, organising spelling and pronunciation competitions, organising debates, creating-->
+<!--        Diction/Elocution club and....-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="col-md-2">-->
+<!--      <button class="readMoreButton" routerLink="service-details7">Read More</button>-->
+<!--    </div>-->
+<!--  </div>-->
 
 </div>
