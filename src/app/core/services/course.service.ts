@@ -130,6 +130,6 @@ export class CourseService {
             return res.results;
           }
         )
-      )
-  };
+      );
+  }
 }

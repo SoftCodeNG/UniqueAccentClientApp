@@ -37,7 +37,6 @@ export class CoursesComponent implements OnInit {
 
   getAllCourses(): void {
     this.coursesService.getAllCourses().subscribe(res => {
-      console.log(res);
       this.store.dispatch(new SetCourseList(res));
     });
   }
