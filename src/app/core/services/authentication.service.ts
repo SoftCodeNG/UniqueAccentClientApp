@@ -7,7 +7,7 @@ import {environment} from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService {
+export class AuthenticationService {
   private baseURL = environment.baseURL;
 
   constructor(
@@ -48,7 +48,45 @@ export class AuthService {
     return this.http.post<any>(`${this.baseURL}accounts/register`, payload)
       .pipe(
         map(res => {
-          return res.payload;
+          return res;
+        })
+      );
+  }
+
+  loginWithGoogle(data: any): Observable<any> {
+    const payload = new FormData();
+    payload.append('token', data.token);
+    payload.append('name', data.name);
+
+    return this.http.post<any>(`${this.baseURL}accounts/loginWithGoogle`, payload)
+      .pipe(
+        map(res => {
+          return res;
+        })
+      );
+  }
+
+  requestPasswordChange(data: any): Observable<any> {
+    const payload = new FormData();
+    payload.append('email', data.email);
+
+    return this.http.post<any>(`${this.baseURL}accounts/forgetPassword`, payload)
+      .pipe(
+        map(res => {
+          return res;
+        })
+      );
+  }
+
+  resetPassword(data: any): Observable<any> {
+    const payload = new FormData();
+    payload.append('token', data.token);
+    payload.append('password', data.password);
+
+    return this.http.post<any>(`${this.baseURL}accounts/resetPassword`, payload)
+      .pipe(
+        map(res => {
+          return res;
         })
       );
   }

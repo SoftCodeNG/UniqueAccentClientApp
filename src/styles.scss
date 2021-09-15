@@ -14,12 +14,12 @@ $UniqueAccent-theme: mat-light-theme((
 ));
 @include angular-material-theme($UniqueAccent-theme);
 @import url('https://fonts.googleapis.com/css2?family=Bellota:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Ultra&family=Fredoka+One&display=swap');
+@import '~swiper/swiper-bundle';
 @import "~@fortawesome/fontawesome-free/css/all.css";
 @import "~@fortawesome/fontawesome-free/css/brands.css";
 @import "~@fortawesome/fontawesome-free/css/regular.css";
 @import "~@fortawesome/fontawesome-free/css/solid.css";
 @import "~@fortawesome/fontawesome-free/css/fontawesome.css";
-@import '~swiper/swiper-bundle';
 
 html, body {
   font-family: 'Bellota', cursive;
