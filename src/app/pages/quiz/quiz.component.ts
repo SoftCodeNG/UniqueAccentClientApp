@@ -23,6 +23,8 @@ export class QuizComponent implements OnInit {
   confirmPasscode(passcode: string): void {
     this.quizService.confirmPasscode(passcode).subscribe(res => {
       console.log(res);
+      sessionStorage.setItem('passCode', res.passCode)
+      sessionStorage.setItem('quizId', res.id)
       if (res) {
         this.router.navigate([`/quiz/instruction/${res.slug}`])
       } else {

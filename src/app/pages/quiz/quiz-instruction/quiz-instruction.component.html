@@ -1,40 +1,48 @@
 <main>
   <section class="first-section">
-    <div class="quiz-details">
+    <div>
       <h1 class="title">{{quizDetails.organisation}}</h1>
-      <div class="table">
-        <div class="table-row">
-          <div class="table-data table-head">Start Date</div>
-          <div class="table-data">{{quizDetails.startDate | date}}</div>
+
+      <div class="quizDetails">
+        <div>
+          <div class="tableHead">Start Date</div>
+          <div class="tableBody">{{quizDetails.startDate | date}}</div>
         </div>
-        <div class="table-row">
-          <div class="table-data table-head">End Date</div>
-          <div class="table-data">{{quizDetails.endDate | date}}</div>
+
+        <div>
+          <div class="tableHead">End Date</div>
+          <div class="tableBody">{{quizDetails.endDate | date}}</div>
         </div>
-        <div class="table-row">
-          <div class="table-data table-head">Start Time</div>
-          <div class="table-data">{{quizDetails.startDate | date: 'hh:mm a'}}</div>
+
+        <div>
+          <div class="tableHead">Start Time</div>
+          <div class="tableBody">{{quizDetails.startDate | date: 'hh:mm a'}}</div>
         </div>
-        <div class="table-row">
-          <div class="table-data table-head">End Time</div>
-          <div class="table-data">{{quizDetails.endDate | date: 'hh:mm a'}}</div>
+
+        <div>
+          <div class="tableHead">End Time</div>
+          <div class="tableBody">{{quizDetails.endDate | date: 'hh:mm a'}}</div>
         </div>
-        <div class="table-row">
-          <div class="table-data table-head">Duration</div>
-          <div class="table-data">{{quizDetails.duration}}</div>
+
+        <div>
+          <div class="tableHead">Duration</div>
+          <div class="tableBody">{{quizDetails.duration}}</div>
         </div>
-        <div class="table-row">
-          <div class="table-data table-head">Questions</div>
-          <div class="table-data">{{quizDetails.question}}</div>
+
+        <div>
+          <div class="tableHead">Questions</div>
+          <div class="tableBody">{{quizDetails.question}}</div>
         </div>
       </div>
     </div>
 
-    <img [src]="quizDetails.organisationLogo" alt="">
+    <div class="imgDiv">
+      <img [src]="quizDetails.organisationLogo" alt="">
+    </div>
   </section>
 
   <div class="intro">
-    <h4 class="table-head">Instruction</h4>
+    <h4 class="tableHead">Instruction</h4>
     <p>
       {{quizDetails.instruction}}
     </p>
@@ -43,8 +51,10 @@
   <div class="bottomBox">
     <div class="details">
       <div class="name">Candidate Name</div>
-      <input type="text">
-      <button routerLink="/quiz/quiz1">Start Quiz</button>
+      <input type="text" #candidateName>
+      <div class="name">Candidate Number</div>
+      <input type="text" #candidateNumber>
+      <button (click)="registerCandidate(candidateName.value, candidateNumber.value)">Start Quiz</button>
     </div>
   </div>
 </main>

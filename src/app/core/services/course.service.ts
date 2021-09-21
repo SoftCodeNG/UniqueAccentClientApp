@@ -122,6 +122,7 @@ export class CourseService {
         })
       );
   }
+
   getCoursesForHomepage(): Observable<any>{
     return this.http.get<any>(`${this.baseURL}courses/getCoursesForHomepage`)
       .pipe(

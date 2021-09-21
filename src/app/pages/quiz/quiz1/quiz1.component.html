@@ -2,34 +2,33 @@
   <div class="buttons">
 
 
-
-
     <button
-      *ngFor="let question of allQuestions"
+      *ngFor="let question of allQuestions; let i=index"
       [class.answering]="question === currentQuestion"
-      [class.unanswered]="question !== currentQuestion"
-      (click)="currentQuestion = question">
+      [class.answered]="answeredQuestions.includes(question)"
+      [class.unanswered]="!answeredQuestions.includes(question)"
+      (click)="changeQuestionNumber(question, i)">
       {{question.questionNo}}
     </button>
-<!--    <button class="answered">2</button>-->
-<!--    <button class="answered">3</button>-->
-<!--    <button class="unanswered">4</button>-->
-<!--    <button class="answering">5</button>-->
-<!--    <button class="unanswered">6</button>-->
-<!--    <button class="unanswered">7</button>-->
-<!--    <button class="unanswered">8</button>-->
-<!--    <button class="unanswered">9</button>-->
-<!--    <button class="unanswered">10</button>-->
-<!--    <button class="unanswered">11</button>-->
-<!--    <button class="unanswered">12</button>-->
-<!--    <button class="unanswered">13</button>-->
-<!--    <button class="unanswered">14</button>-->
-<!--    <button class="unanswered">15</button>-->
-<!--    <button class="unanswered">16</button>-->
-<!--    <button class="unanswered">17</button>-->
-<!--    <button class="unanswered">18</button>-->
-<!--    <button class="unanswered">19</button>-->
-<!--    <button routerLink="/quiz/quiz-end">20</button>-->
+    <!--    <button class="answered">2</button>-->
+    <!--    <button class="answered">3</button>-->
+    <!--    <button class="unanswered">4</button>-->
+    <!--    <button class="answering">5</button>-->
+    <!--    <button class="unanswered">6</button>-->
+    <!--    <button class="unanswered">7</button>-->
+    <!--    <button class="unanswered">8</button>-->
+    <!--    <button class="unanswered">9</button>-->
+    <!--    <button class="unanswered">10</button>-->
+    <!--    <button class="unanswered">11</button>-->
+    <!--    <button class="unanswered">12</button>-->
+    <!--    <button class="unanswered">13</button>-->
+    <!--    <button class="unanswered">14</button>-->
+    <!--    <button class="unanswered">15</button>-->
+    <!--    <button class="unanswered">16</button>-->
+    <!--    <button class="unanswered">17</button>-->
+    <!--    <button class="unanswered">18</button>-->
+    <!--    <button class="unanswered">19</button>-->
+    <!--    <button routerLink="/quiz/quiz-end">20</button>-->
   </div>
   <div class="text" *ngIf="currentQuestion">
     <p>
@@ -38,17 +37,33 @@
   </div>
   <div class="speaker">
     <div *ngIf="isRecorded === false" class="record" [class.animate]="isRecording" id="stop" (click)="startRecording()">
-      <svg style="width: 65px; height: auto" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><g><rect fill="none" height="24" width="24"/><rect fill="none" height="24" width="24"/><rect fill="none" height="24" width="24"/></g><g><g/><g><path d="M12,14c1.66,0,3-1.34,3-3V5c0-1.66-1.34-3-3-3S9,3.34,9,5v6C9,12.66,10.34,14,12,14z"/><path d="M17,11c0,2.76-2.24,5-5,5s-5-2.24-5-5H5c0,3.53,2.61,6.43,6,6.92V21h2v-3.08c3.39-0.49,6-3.39,6-6.92H17z"/></g></g></svg>
-<!--      <div class="rotateDiv"></div>-->
+      <svg style="width: 65px; height: auto" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24"
+           height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
+        <g>
+          <rect fill="none" height="24" width="24"/>
+          <rect fill="none" height="24" width="24"/>
+          <rect fill="none" height="24" width="24"/>
+        </g>
+        <g>
+          <g/>
+          <g>
+            <path d="M12,14c1.66,0,3-1.34,3-3V5c0-1.66-1.34-3-3-3S9,3.34,9,5v6C9,12.66,10.34,14,12,14z"/>
+            <path
+              d="M17,11c0,2.76-2.24,5-5,5s-5-2.24-5-5H5c0,3.53,2.61,6.43,6,6.92V21h2v-3.08c3.39-0.49,6-3.39,6-6.92H17z"/>
+          </g>
+        </g>
+      </svg>
+      <!--      <div class="rotateDiv"></div>-->
     </div>
     <div [hidden]="isRecorded === false">
       <audio id="audioPlayer" controls></audio>
       <button>Record again</button>
     </div>
-    </div>
+  </div>
   <div class="details-btn">
-    <button class="prev-next btn-font">Prev</button>
-    <button class="submit-btn btn-font">Submit</button>
-    <button class="prev-next btn-font" id="next">Next</button>
+    <button [disabled]="currentQuestionIndex === 0" (click)="navigate('prev')" class="prev-next btn-font">Prev</button>
+<!--    <button class="submit-btn btn-font">Submit</button>-->
+    <button [hidden]="currentQuestionIndex >= (allQuestions.length - 1)" (click)="navigate('next')" class="prev-next btn-font" id="next">Next</button>
+    <button routerLink="/quiz/quiz-end" *ngIf="currentQuestionIndex === (allQuestions.length - 1)" class="prev-next btn-font">Finish</button>
   </div>
 </div>

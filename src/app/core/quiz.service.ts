@@ -33,6 +33,20 @@ export class QuizService {
       );
   }
 
+  registerCandidate(data: any): Observable<any> {
+    const payload = new FormData();
+    payload.append('candidateName', data.candidateName);
+    payload.append('candidateNumber', data.candidateNumber);
+    payload.append('passCode', data.passCode);
+    payload.append('quizId', data.quizId);
+    return this.http.post<any>(`${this.baseURL}quiz/registerCandidate`, payload)
+      .pipe(
+        map(res => {
+          return res.payload;
+        })
+      );
+  }
+
   uploadMedia(file: any): Observable<any> {
     const payload = new FormData();
     payload.append('file', file);
@@ -40,6 +54,15 @@ export class QuizService {
       .pipe(
         map(res => {
           return res.payload;
+        })
+      );
+  }
+
+  navigateQuiz(direction: string): Observable<any> {
+    return this.http.get<any>(direction)
+      .pipe(
+        map(res => {
+          return res;
         })
       );
   }
