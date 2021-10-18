@@ -1,0 +1,72 @@
+<main>
+  <section class="first-section">
+    <div>
+      <h1 class="title">{{quizDetails.organisation}}</h1>
+
+      <div class="quizDetails">
+        <div>
+          <div class="tableHead">Start Date</div>
+          <div class="tableBody">{{quizDetails.startDate | date}}</div>
+        </div>
+
+        <div>
+          <div class="tableHead">End Date</div>
+          <div class="tableBody">{{quizDetails.endDate | date}}</div>
+        </div>
+
+        <div>
+          <div class="tableHead">Start Time</div>
+          <div class="tableBody">{{quizDetails.startDate | date: 'hh:mm a'}}</div>
+        </div>
+
+        <div>
+          <div class="tableHead">End Time</div>
+          <div class="tableBody">{{quizDetails.endDate | date: 'hh:mm a'}}</div>
+        </div>
+
+        <div>
+          <div class="tableHead">Duration</div>
+          <div class="tableBody">{{quizDetails.duration}}</div>
+        </div>
+
+        <div>
+          <div class="tableHead">Questions</div>
+          <div class="tableBody">{{quizDetails.question}}</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="imgDiv">
+      <img [src]="quizDetails.organisationLogo" alt="">
+    </div>
+  </section>
+
+  <div class="intro">
+    <h4 class="tableHead">Instruction</h4>
+    <p>
+      {{quizDetails.instruction}}
+    </p>
+  </div>
+
+  <div class="bottomBox">
+    <div class="details">
+      <div class="name">Candidate Name</div>
+      <input type="text" #candidateName>
+      <div class="name">Candidate Number</div>
+      <input type="text" #candidateNumber>
+      <button (click)="registerCandidate(candidateName.value, candidateNumber.value)">Start Quiz</button>
+    </div>
+  </div>
+</main>
+<!--duration: 30-->
+<!--endDate: "2021-07-13T08:10:00Z"-->
+<!--id: 12-->
+<!--instruction: "do it well"-->
+<!--organisation: "Softcode"-->
+<!--organisationLogo: "https://uniqueaccent.com.ng/assets/UACLLogo.png"-->
+<!--passCode: null-->
+<!--question: 7-->
+<!--quizQuestions: [{id: 4, questionNo: -2, question: "Do you like bread and akara or akara and pap?", maxScore: 30,…},…]-->
+<!--slug: "design-tips"-->
+<!--startDate: "2021-07-12T08:11:00Z"-->
+<!--title: "Design Tips"-->

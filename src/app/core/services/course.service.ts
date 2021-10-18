@@ -16,16 +16,25 @@ export class CourseService {
     return this.http.get<any>(`${this.baseURL}courses/getPublishedCourses`)
       .pipe(
         map(res => {
-          return res.results;
+          return res;
+        })
+      );
+  }
+
+  navigateCourses(direction: string): Observable<any> {
+    return this.http.get<any>(direction)
+      .pipe(
+        map(res => {
+          return res;
         })
       );
   }
 
   searchAllCourses(value: string): Observable<any> {
-    return this.http.get<any>(`${this.baseURL}courses/searchCourses/${value}`)
+    return this.http.get<any>(`${this.baseURL}courses/searchPublishedCourses/${value}`)
       .pipe(
         map(res => {
-          return res.results;
+          return res;
         })
       );
   }
@@ -113,4 +122,15 @@ export class CourseService {
         })
       );
   }
+
+  getCoursesForHomepage(): Observable<any>{
+    return this.http.get<any>(`${this.baseURL}courses/getCoursesForHomepage`)
+      .pipe(
+        map(
+          res => {
+            return res.results;
+          }
+        )
+      )
+  };
 }

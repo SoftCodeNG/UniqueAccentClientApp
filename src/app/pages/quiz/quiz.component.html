@@ -4,9 +4,12 @@
       <path d="M34.726 1.22577C34.726 1.22577 7.85715 12.2554 4.97834 13.4543C2.09953 14.6531 0.660114 17.5304 0.660114 20.4077C0.660114 23.285 -1.49901 60.8298 34.726 78.9827C34.726 78.9827 38.0138 79.8919 40.5082 78.9827C43.0026 78.0735 74.6695 62.7279 74.6695 20.2878C74.6695 20.2878 74.6695 15.9719 69.6316 13.5741C64.5937 11.1764 40.2362 1.22577 40.2362 1.22577C40.2362 1.22577 37.245 -0.0929979 34.726 1.22577Z" fill="#FF6600"/>
       </svg></div>
     <span class="text">Enter Quiz Code</span>
-    <input type="text">
-    <button>Confirm Code</button>
+    <input type="text" #passCode>
+
+    <button (click)="confirmPasscode(passCode.value)">Confirm Code</button>
+
     <span class="text">Or</span>
+
     <div class="text">View Public Quiz</div>
   </div>
 </div>

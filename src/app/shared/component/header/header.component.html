@@ -12,10 +12,12 @@
       <span routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</span>
       <span routerLink="/services" routerLinkActive="active">Services</span>
       <span routerLink="/courses" routerLinkActive="active">Courses</span>
+      <span routerLink="/quiz" routerLinkActive="active">Quiz</span>
 <!--      <span routerLinkActive="active">Training</span>-->
 <!--      <span class="upcomingTraining">Upcoming Training</span>-->
       <span class="login" routerLink="auth/login" *ngIf="!isLoggedIn">Login</span>
-      <span class="login" routerLink="/profile" *ngIf="isLoggedIn">{{userProfile.user}}</span>
+      <span class="login" routerLink="/profile" *ngIf="userProfile">{{userProfile.user}}</span>
+      <span (click)="logout()" *ngIf="isLoggedIn"><i class="fas fa-power-off"></i></span>
     </nav>
   </div>
 </header>

@@ -7,32 +7,62 @@ main {
 
   .first-section {
     display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
 
     .title {
       font-family: "Philosopher", sans-serif;
-    font-size: 2rem;
-    font-weight: 700;
-    margin-bottom: 40px;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 40px;
     }
 
-    .lessonTable {
-      display: flex;
-      justify-content: space-between;
-      width: 600px;
+    .quizDetails {
+      display: grid;
+      grid-auto-flow: column;
+      gap: 25px;
 
-      .table-row {
-        display: grid;
+      .tableHead {
+      font-family: "Philosopher", sans-serif;
+      }
+
+      .tableBody {
+        font-family: "Bellota", cursive;
+        //font-weight: 600;
       }
     }
+
+    .imgDiv {
+      //width: 100%;
+
+      img {
+        width: 150px;
+        height: 150px;
+      }
+    }
+
+    //.lessonTable {
+    //  display: flex;
+    //  justify-content: space-between;
+    //  width: 600px;
+    //
+    //  .table-row {
+    //    display: grid;
+    //  }
+    //}
   }
 
   .intro {
     width: 800px;
+
+    .tableHead {
+      font-family: "Philosopher", sans-serif;
+      }
   }
 
   .bottomBox {
     width: 70%;
-    height: 200px;
+    height: 240px;
     margin: 20px 15%;
     background: #FF6600;
     box-shadow: 0px 0px 20px #000000;
@@ -63,9 +93,5 @@ main {
         border-radius: 10px;
       }
     }
-  }
-
-  .table-head {
-    font-family: Philosopher;
   }
 }

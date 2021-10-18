@@ -3,17 +3,17 @@
 
   <div class="search">
     <label>
-      <input type="search" #search (keyup)="searchAllCourses(search.value)" (blur)="searchAllCourses(search.value)" (change)="searchAllCourses(search.value)">
+      <input type="search" placeholder="Search Courses" #search (keyup)="searchAllCourses(search.value)" (blur)="searchAllCourses(search.value)" (change)="searchAllCourses(search.value)">
       <i class="fa fa-search"></i>
     </label>
 
-    <i class="fa fa-th-large" (click)="currentView = 'grid'"></i>
-    <i class="fa fa-list-ul" (click)="currentView = 'list'"></i>
+    <i class="fa fa-th-large" [style]="{background: currentView === 'grid' ? '#2e2e2e' : '', color: currentView === 'grid' ? 'white' : ''}" (click)="setItemView('grid')"></i>
+    <i class="fa fa-list-ul" [style]="{background: currentView === 'list' ? '#2e2e2e' : '', color: currentView === 'list' ? 'white' : ''}" (click)="setItemView('list')"></i>
   </div>
 
   <div class="mobileSearch">
     <label>
-      <input type="search" #search (keyup)="searchAllCourses(search.value)" (blur)="searchAllCourses(search.value)" (change)="searchAllCourses(search.value)">
+      <input type="search" placeholder="Search Courses" #search (keyup)="searchAllCourses(search.value)" (blur)="searchAllCourses(search.value)" (change)="searchAllCourses(search.value)">
       <i class="fa fa-search"></i>
     </label>
   </div>
@@ -24,4 +24,8 @@
   <app-course-grid [allCourses]="allCourses" *ngIf="currentView === 'grid'"></app-course-grid>
 
   <app-course-list [allCourses]="allCourses" *ngIf="currentView === 'list'"></app-course-list>
+</div>
+<div class="buttons">
+   <button [disabled]="prev === null" (click)="navigate(prev)"><i class="fas fa-chevron-left"></i>Prev</button>
+   <button [disabled]="next === null" (click)="navigate(next)">Next<i class="fas fa-chevron-right"></i></button>
 </div>

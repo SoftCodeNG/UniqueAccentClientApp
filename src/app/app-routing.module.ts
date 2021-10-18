@@ -2,15 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {LandingPageComponent} from './pages/landing-page/landing-page.component';
 import {ServicesComponent} from './pages/services/services.component';
-import {CourseDetails2Component} from './pages/courses/course-details2/course-details2.component';
-import {CourseDetails3Component} from './pages/courses/course-details3/course-details3.component';
-import {CourseDetails4Component} from './pages/courses/course-details4/course-details4.component';
-import {CourseListComponent} from './pages/courses/course-list/course-list.component';
-import { CourseNotFoundComponent } from './pages/courses/course-not-found/course-not-found.component';
-import { ClassroomComponent } from './pages/courses/classroom/classroom.component';
-import { EnrollQuizComponent } from './pages/quiz/enroll-quiz/enroll-quiz.component';
 import { QuizEndComponent } from './pages/quiz/quiz-end/quiz-end.component';
-import { QuizSectionComponent } from './pages/quiz/quiz-section/quiz-section.component';
+import { QuizInstructionComponent } from './pages/quiz/quiz-instruction/quiz-instruction.component';
 import { Quiz1Component } from './pages/quiz/quiz1/quiz1.component';
 import { Quiz2Component } from './pages/quiz/quiz2/quiz2.component';
 import {ServiceDetailsComponent} from './pages/services/service-details/service-details.component';
@@ -48,29 +41,29 @@ const routes: Routes = [
     loadChildren: () => import('./pages/courses/courses.module').then(m => m.CoursesModule)
   },
   {
+    path: 'quiz',
+    loadChildren: () => import('./pages/quiz/quiz.module').then(m => m.QuizModule)
+  },
+  {
     path: 'services',
     component: ServicesComponent
   },
-  {
-    path: 'enroll-quiz',
-    component: EnrollQuizComponent
-  },
-  {
-    path: 'end-quiz',
-    component: QuizEndComponent
-  },
-  {
-    path: 'start-quiz',
-    component: QuizSectionComponent
-  },
-  {
-    path: 'quiz1',
-    component: Quiz1Component
-  },
-  {
-    path: 'quiz2',
-    component: Quiz2Component
-  },
+  // {
+  //   path: 'end-quiz',
+  //   component: QuizEndComponent
+  // },
+  // {
+  //   path: 'start-quiz',
+  //   component: QuizSectionComponent
+  // },
+  // {
+  //   path: 'quiz1',
+  //   component: Quiz1Component
+  // },
+  // {
+  //   path: 'quiz2',
+  //   component: Quiz2Component
+  // },
   {
     path: 'services/service-details',
     component: ServiceDetailsComponent
